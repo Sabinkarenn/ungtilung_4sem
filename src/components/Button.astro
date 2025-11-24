@@ -1,23 +1,31 @@
 ---
-// Button.astro
 const { variant = "primary", size = "large" } = Astro.props;
 
-const buttonStyling = "btn my-2  border-2 shadow-none rounded-xl";
+const buttonStyling = "btn my-2 border-2 shadow-none rounded-xl";
 
+// Variants
 const variantClasses = {
-  primary: "px-7 py-2 bg-primaryblue60 text-white  border-primaryblue100",
-  secondary: "px-7 py-2 bg-orange60 text-primaryblue100 border-orange100",
+  primary:
+    "bg-primaryblue60 text-beige hover:bg-beige border-primaryblue100 hover:border-primaryblue100",
+  secondary:
+    "bg-orange60 text-beige hover:bg-blue border-orange100 hover:border-orange100",
 };
+
+// Sizes
 const sizeClasses = {
-  large: "px-13 p-6",
-  medium: "p-4",
-  small: "p-2",
+  large: "px-12 py-6",
+  medium: "px-8 py-4",
+  small: "px-4 py-2",
 };
 ---
 
-<!-- Husk at importere CSS hvis nødvendigt -->
 <button
-  class="cursor cursor-(--handcursor)"
-  class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}
-  ><slot /></button
+  class:list={[
+    buttonStyling,
+    variantClasses[variant],
+    sizeClasses[size],
+    "cursor-pointer",
+  ]}
 >
+  <slot />
+</button>
