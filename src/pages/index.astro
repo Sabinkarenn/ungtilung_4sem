@@ -1,15 +1,46 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
-import thumbsup from "../assets/images/thumbsup.png";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import heroimage from "../assets/images/heroforside.webp";
 ---
-<MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+
+<MainLayout title="Ung til ung">
+  <!-- Hero section -->
+
+  <section
+    class="w-full bg-gradient-to-b from-[#E8EBFF] to-[#FFF8E8] py-20 px-6 border-t-2 border-blue-600"
+  >
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+    >
+      <!-- Headline & Tagline -->
+      <div class="flex flex-col gap-6">
+        <h1 class="text-5xl md:text-6xl font-bold text-blue-600 leading-tight">
+          Ung til ung
+        </h1>
+
+        <p class="text-lg text-darkblue max-w-xl">
+          Dit digitale fællesskab, der hjælper dig skabe det liv, du ønsker —
+          alene og sammen med andre
+        </p>
+
+        <div class="mt-4">
+          <Link href="" variant="secondary" size="medium"> Læs mere </Link>
+        </div>
+      </div>
+
+      <!--Hero image -->
+      <Image src={heroimage} alt="3 happy people" class="" />
+    </div>
+  </section>
+
+  <!-- What is ung til ung section -->
+
+  <!-- vores tilbud card section -->
+
+  <!-- Volunteer section-->
+
+  <!-- Form section-->
 </MainLayout>

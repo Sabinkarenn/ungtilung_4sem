@@ -1,5 +1,78 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<header class="w-full bg-beige border-b-2 border-blue-600">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
+    <!-- Left: Logo -->
+    <a href="/" class="flex items-center gap-2">
+      <img src="/ungtilunglogo.svg" alt="Logo" class="h-10 w-auto" />
+    </a>
+
+    <!-- MOBILE BURGER -->
+    <div class="md:hidden flex items-center">
+      <input id="menu-toggle" type="checkbox" class="hidden peer" />
+
+      <!-- Burger icon -->
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-darkblue"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+
+      <!-- Mobile dropdown menu -->
+      <div
+        class="absolute left-0 top-full w-full bg-beige border-b-2 border-blue-600 hidden peer-checked:block shadow-md z-40"
+      >
+        <ul class="flex flex-col items-center gap-6 py-8 text-lg text-darkblue">
+          <li><a href="/" class="hover:text-blue-600">Forside</a></li>
+          <li>
+            <a href="/vores-tilbud" class="hover:text-blue-600">Vores tilbud</a>
+          </li>
+          <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+          <li>
+            <a href="/frivillig" class="hover:text-blue-600">Frivillig</a>
+          </li>
+          <li><a href="/om-os" class="hover:text-blue-600">Om os</a></li>
+
+          <div class="pt-4">
+            <Link href="" variant="primary" size="medium">
+              Opret bruger / Login
+            </Link>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <div class="hidden md:flex items-center gap-10">
+      <ul class="flex items-center gap-10 text-darkblue text-lg">
+        <li><a href="/" class="hover:text-blue-600">Forside</a></li>
+        <li>
+          <a href="/vores-tilbud" class="hover:text-blue-600">Vores tilbud</a>
+        </li>
+        <li><a href="/blog" class="hover:text-blue-600">Blog</a></li>
+        <li><a href="/frivillig" class="hover:text-blue-600">Frivillig</a></li>
+        <li><a href="/om-os" class="hover:text-blue-600">Om os</a></li>
+      </ul>
+
+      <Link href="" variant="primary" size="medium">
+        Opret bruger / Login
+      </Link>
+    </div>
+  </nav>
+</header>
