@@ -8,12 +8,12 @@ import Heading from "../components/Heading.astro";
 
 <header class="w-full bg-beige border-b-2 border-blue-600">
   <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
-    <!-- Left: Logo -->
+    <!-- Left Logo -->
     <a href="/" class="flex items-center gap-2">
       <img src="/ungtilunglogo.svg" alt="Logo" class="h-10 w-auto" />
     </a>
 
-    <!-- MOBILE BURGER -->
+    <!-- Mobile burger menu -->
     <div class="md:hidden flex items-center">
       <input id="menu-toggle" type="checkbox" class="hidden peer" />
 
@@ -39,7 +39,7 @@ import Heading from "../components/Heading.astro";
         class="absolute left-0 top-full w-full bg-beige border-b-2 border-blue-600 hidden peer-checked:block shadow-md z-40"
       >
         <ul class="flex flex-col items-center gap-6 py-8 text-lg text-darkblue">
-          <li><a href="/index" class="hover:text-blue-600">Forside</a></li>
+          <li><a href="/" class="hover:text-blue-600">Forside</a></li>
           <li>
             <a href="/vorestilbud" class="hover:text-blue-600">Vores tilbud</a>
           </li>
@@ -59,9 +59,9 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <!-- Desktop menu-->
-    <div class="hidden md:flex items-center gap-10">
+    <div class="hidden md:flex gap-10">
       <ul class="flex items-center gap-10 text-primaryblue100 text-lg">
-        <li><a href="/index" class="hover:text-primaryblue60">Forside</a></li>
+        <li><a href="/" class="hover:text-primaryblue60">Forside</a></li>
         <li>
           <a href="/vorestilbud" class="hover:text-primaryblue60"
             >Vores tilbud</a
@@ -69,9 +69,7 @@ import Heading from "../components/Heading.astro";
         </li>
         <li><a href="/blog" class="hover:text-primaryblue60">Blog</a></li>
         <li>
-          <a href="/blivfrivillig" class="hover:text-bprimaryblue60"
-            >Frivillig</a
-          >
+          <a href="/frivillig" class="hover:text-bprimaryblue60">Frivillig</a>
         </li>
         <li><a href="/omos" class="hover:text-primaryblue60">Om os</a></li>
       </ul>
