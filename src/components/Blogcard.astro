@@ -1,0 +1,38 @@
+---
+const {
+  url = "/singleview",
+  cardimage = "",
+  cardimagealt = "",
+  cardtitle = "",
+  cardtekst = "",
+} = Astro.props;
+import Link from "./Link.astro";
+import Heading from "./Heading.astro";
+---
+
+<a href={url} class="block w-full no-underline text-inherit">
+  <div
+    class="relative w-full h-full max-w-xs mx-auto hover:scale-105 transition-transform duration-300"
+  >
+    <!-- Kort med papirtekstur og kant -->
+    <div
+      class="card w-full max-w-xs bg-center border-2 border-darkblue p-4"
+      style="background-image: url('paper.webp');"
+    >
+      <figure class="relative p-1 rounded-lg">
+        <img
+          src={`/${cardimage}`}
+          alt={cardimagealt}
+          class="w-full h-60 object-cover rounded-lg border-2 border-darkblue"
+        />
+      </figure>
+      <div class="card-body items-center text-center">
+        <div class="text-center">
+          <Heading htmlheading="h3" size="small">{cardtitle}</Heading>
+        </div>
+
+        <p class="text-lg">{cardtekst}</p>
+      </div>
+    </div>
+  </div>
+</a>

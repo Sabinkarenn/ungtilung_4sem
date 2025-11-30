@@ -3,7 +3,309 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
+import Blogcard from "../components/Blogcard.astro";
 import heroimage from "../assets/images/heroforside.webp";
 ---
 
-<MainLayout />
+<MainLayout>
+  <!-- Hero section -->
+
+  <section
+    class="w-full bg-gradient-to-b from-[#D6E6CD] to-[#FBF5EC] py-20 px-6"
+  >
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+    >
+      <!-- Headline & Tagline -->
+      <div class="flex flex-col gap-2">
+        <Heading htmlheading="h1" size="xlarge">Blog</Heading>
+
+        <p class="max-w-xl">
+          Udforsk blog indlæg der er fyldt med viden, indsigt og inspiration til
+          din hverdag.
+        </p>
+
+        <div class="mt-4">
+          <Link href="" variant="secondary" size="medium"> Chatten </Link>
+        </div>
+      </div>
+
+      <!--Hero image -->
+      <Image src={heroimage} alt="3 happy people" class="" />
+    </div>
+  </section>
+
+  <section class="text-center px-4">
+    <Heading htmlheading="h2" size="large" stylingclasses="text-orange"
+      >Se events for dagene her!</Heading
+    >
+    <div x-data="{ dagaktiv: 'Alle blogs' }">
+      <!-- Knapper til alle blogs -->
+      <div
+        class="flex flex-col items-center gap-6 lg:flex-row lg:justify-center lg:gap-13 mb-10"
+      >
+        <button
+          @click="dagaktiv = 'alleblogs'"
+          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
+          :class="{ 'bg-darkyellow': dagaktiv === 'alleblogs' }"
+        >
+          Alle blogs
+        </button>
+
+        <button
+          @click="dagaktiv = 'dag2'"
+          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
+          :class="{ 'bg-darkyellow': dagaktiv === 'dag2' }"
+        >
+          d. 24 juli
+        </button>
+
+        <button
+          @click="dagaktiv = 'dag3'"
+          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
+          :class="{ 'bg-darkyellow': dagaktiv === 'dag3' }"
+        >
+          d. 25 juli
+        </button>
+
+        <button
+          @click="dagaktiv = 'dag4'"
+          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
+          :class="{ 'bg-darkyellow': dagaktiv === 'dag4' }"
+        >
+          d. 26 juli
+        </button>
+      </div>
+      <!-- Alle blogs -->
+      <!-- grid til cards -->
+      <div
+        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
+        x-show="dagaktiv === 'dag1'"
+      >
+        <Blogcard
+          url="/singleview"
+          cardimage="kridt.webp"
+          cardimagealt="Kridt"
+          cardtitle="Kridtmaling"
+          cardtekst="kl. 09.00 // Krea"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="skum.webp"
+          cardimagealt="Skum"
+          cardtitle="Skum glidebane"
+          cardtekst="kl. 10.15 // Plænen"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="badning.webp"
+          cardimagealt="Nøgenbadning"
+          cardtitle="Nøgenbadning"
+          cardtekst="kl. 11.00 // Søen"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="øl.webp"
+          cardimagealt="Ølympiade"
+          cardtitle="Ølympiade"
+          cardtekst="kl. 12.30 // Plænen"
+        />
+
+        <!-- dag 1 -->
+        <!-- grid til cards -->
+        <div
+          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
+          x-show="dagaktiv === 'dag1'"
+        >
+          <Blogcard
+            url="/singleview"
+            cardimage="kridt.webp"
+            cardimagealt="Kridt"
+            cardtitle="Kridtmaling"
+            cardtekst="kl. 09.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="skum.webp"
+            cardimagealt="Skum"
+            cardtitle="Skum glidebane"
+            cardtekst="kl. 10.15 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="badning.webp"
+            cardimagealt="Nøgenbadning"
+            cardtitle="Nøgenbadning"
+            cardtekst="kl. 11.00 // Søen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="øl.webp"
+            cardimagealt="Ølympiade"
+            cardtitle="Ølympiade"
+            cardtekst="kl. 12.30 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="mediter.webp"
+            cardimagealt="Glad pige"
+            cardtitle="Meditation"
+            cardtekst="kl. 14.00 // Tippien"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="tshirt.webp"
+            cardimagealt="Hjemmelavede tshirts"
+            cardtitle="Custom t-hsirts"
+            cardtekst="kl. 15.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="dance.webp"
+            cardimagealt="En der danser"
+            cardtitle="Dancebattle"
+            cardtekst="kl. 17.00 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="bingo.webp"
+            cardimagealt="bingo"
+            cardtitle="Bingo"
+            cardtekst="kl. 19.00 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="gøgl.webp"
+            cardimagealt="gøgl"
+            cardtitle="Gøgl"
+            cardtekst="kl. 21.00 // Tippien"
+          />
+        </div>
+        <!-- dag 2 -->
+        <div
+          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+          x-show="dagaktiv === 'dag2'"
+        >
+          <Blogcard
+            url="/singleview"
+            cardimage="strik.webp"
+            cardimagealt="Strikket solsikke"
+            cardtitle="Strik"
+            cardtekst="kl. 09.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="trille.webp"
+            cardimagealt="Trillebør ræs"
+            cardtitle="Trillebør ræs"
+            cardtekst="kl. 10.15 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="båd.webp"
+            cardimagealt="Båd i havn"
+            cardtitle="Båd ræs"
+            cardtekst="kl. 11.00 // Søen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="kævle.webp"
+            cardimagealt="Folk der drikker"
+            cardtitle="Kævle"
+            cardtekst="kl. 12.30 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="yoga.webp"
+            cardimagealt="folk der strækker ud"
+            cardtitle="Yoga"
+            cardtekst="kl. 14.00 // Tippien"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="tusch.webp"
+            cardimagealt="Mand der tegner"
+            cardtitle="Tusch tegn"
+            cardtekst="kl. 15.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="limbo.webp"
+            cardimagealt="En der er faldet"
+            cardtitle="Limbo"
+            cardtekst="kl. 17.00 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="gæt.webp"
+            cardimagealt="Folk der gætter"
+            cardtitle="Gæt og grimasser"
+            cardtekst="kl. 19.00 // Plænen"
+          />
+        </div>
+        <!-- dag 3 -->
+        <div
+          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+          x-show="dagaktiv === 'dag3'"
+        >
+          <Blogcard
+            url="/singleview"
+            cardimage="spil.webp"
+            cardimagealt="baggammon"
+            cardtitle="Brætspil"
+            cardtekst="kl. 14.00 // Tippien"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="værksted.webp"
+            cardimagealt="Mand der saver"
+            cardtitle="Værksted"
+            cardtekst="kl. 15.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="bål.webp"
+            cardimagealt="folk der sidder omkring bål"
+            cardtitle="Fælles bål"
+            cardtekst="kl. 17.00 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="comedy.webp"
+            cardimagealt="Pige på en scene"
+            cardtitle="Comedy"
+            cardtekst="kl. 19.00 // Plænen"
+          />
+        </div>
+        <!-- dag 4 -->
+        <div
+          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+          x-show="dagaktiv === 'dag4'"
+        >
+          <Blogcard
+            url="/singleview"
+            cardimage="skrald.webp"
+            cardimagealt="Mænd med skraldeposer"
+            cardtitle="Skralde patrulje"
+            cardtekst="kl. 09.00 // Krea"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="dans.webp"
+            cardimagealt="folk der danser"
+            cardtitle="Dans"
+            cardtekst="kl. 10.15 // Plænen"
+          />
+          <Blogcard
+            url="/singleview"
+            cardimage="akrobatik.webp"
+            cardimagealt="Mand der står på hænder"
+            cardtitle="Akrobatik"
+            cardtekst="kl. 11.00 // Søen"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

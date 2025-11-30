@@ -4,7 +4,6 @@
 /* Import plugins */
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-@plugin "daisyui";
 
 /* Custom theme tokens */
 @theme {
@@ -38,7 +37,7 @@
 }
 
 @font-face {
-  font-family: "Bommer slap";
+  font-family: "bommerslap";
   src: url("/bommer.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -52,11 +51,11 @@
   ::backdrop,
   ::file-selector-button {
     h1 {
-      font-family: "Bommer slap";
+      font-family: "bommerslap";
     }
     h2 {
       font-family: "GT Walsheim", sans-serif;
-      @apply text-primarydarkblue60;
+      @apply text-primaryblue60;
     }
 
     h3,
@@ -66,7 +65,7 @@
     p,
     li,
     a {
-      @apply text-darkblue;
+      @apply text-primaryblue100;
       font-family: "GT Walsheim", sans-serif;
     }
 
@@ -80,11 +79,11 @@
     }
     div {
       font-family: "GT Walsheim", sans-serif;
-      @apply text-primarydarkblue60;
+      @apply text-primaryblue60;
     }
     button {
       font-family: "GT Walsheim", sans-serif;
-      @apply text-primarydarkblue60;
+      @apply text-primaryblue100;
       @apply text-lg;
       @apply font-bold;
     }

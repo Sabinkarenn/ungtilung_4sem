@@ -1,26 +1,32 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
+import Tilbudscard from "../components/tilbudscard.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import heroimage from "../assets/images/heroforside.webp";
-import image1 from "../assets/images/image1.webp";
+import heroimage from "../assets/images/heroimage1.webp";
+import image2 from "../assets/images/image2.webp";
+import anonym from "../assets/images/anonym.webp";
+import samtale from "../assets/images/samtale.webp";
+import fælleskab from "../assets/images/fælleskab.webp";
+
+import Heading from "../components/Heading.astro";
+import Slider from "../components/Slider.astro";
+import Form from "../components/Form.astro";
 ---
 
 <MainLayout title="Ung til ung">
   <!-- Hero section -->
 
   <section
-    class="w-full bg-gradient-to-b from-[#E8EBFF] to-[#FFF8E8] py-20 px-6 border-t-2 border-blue-600"
+    class="w-full bg-gradient-to-b from-[#BDC3FC] to-[#FBF5EC] py-20 px-6"
   >
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
     >
       <!-- Headline & Tagline -->
-      <div class="flex flex-col gap-6">
-        <h1 class="text-5xl md:text-6xl font-bold text-blue-600 leading-tight">
-          Ung til ung
-        </h1>
+      <div class="flex flex-col gap-2">
+        <Heading htmlheading="h1" size="xlarge">Ung til ung</Heading>
 
         <p class="text-lg text-darkblue max-w-xl">
           Dit digitale fællesskab, der hjælper dig skabe det liv, du ønsker —
@@ -32,19 +38,46 @@ import image1 from "../assets/images/image1.webp";
         </div>
       </div>
 
-      <!--Hero image -->
-      <Image src={heroimage} alt="3 happy people" class="" />
+      <!-- Hero image -->
+      <div class="relative w-full max-w-[400px] mx-auto">
+        <!-- Orange outline -->
+        <div
+          class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+           rounded-3xl border-l-0 border-t-0"
+        >
+        </div>
+
+        <div class="relative rounded-3xl p-4">
+          <Image
+            src={heroimage}
+            alt="3 happy people"
+            class="rounded-3xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Hvad er ung til ung section -->
-  <section class="py-12 bg-[rgba(250,247,243,1)]">
+
+  <section class="mt-20">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <!-- image -->
-        <div class="relative flex justify-center lg:justify-start">
-          <div class="relative z-10 w-full max-w-md md:max-w-sm lg:max-w-none">
-            <Image src={image1} alt="2 people hugging" class="" />
+        <div class="relative w-full max-w-[400px] mx-auto">
+          <!-- Orange outline -->
+          <div
+            class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+             rounded-3xl border-l-0 border-t-0"
+          >
+          </div>
+
+          <div class="relative rounded-3xl p-4">
+            <Image
+              src={image2}
+              alt="2 friends hugging"
+              class="rounded-3xl w-full h-auto object-cover"
+            />
           </div>
         </div>
 
@@ -56,13 +89,13 @@ import image1 from "../assets/images/image1.webp";
             Ingen kan alt – alle kan noget
           </h2>
 
-          <p class="mt-5 text-slate-700 text-sm md:text-base max-w-prose">
+          <p class="mt-5 md:text-base max-w-prose">
             Hvis du, ligesom mange andre unge, oplever et behov for hjælp og
             støtte til dine udfordringer, tanker og oplevelser, er vi her for
             dig.
           </p>
 
-          <p class="mt-4 text-slate-700 text-sm md:text-base max-w-prose">
+          <p class="mt-4 md:text-base max-w-prose">
             Vi er mere end 100 frivillige, og vi har mange forskellige tilbud,
             som også kan hjælpe dig. Fælles for vores tilbud, er, at det hele
             foregår digitalt – så du kan sidde hjemmefra og tage dit mentale
@@ -70,7 +103,7 @@ import image1 from "../assets/images/image1.webp";
           </p>
 
           <div class="mt-4 max-w-prose">
-            <p class="text-sm md:text-base text-slate-700">
+            <p class="md:text-base">
               Opret en gratis profil og gå på opdagelse i vores tilbud af
             </p>
             <ul
@@ -97,11 +130,79 @@ import image1 from "../assets/images/image1.webp";
     </div>
   </section>
 
-  <!-- vores tilbud card section -->
-  <section>
-    <div></div>
+  <!-- vores tilbud section -->
+  <section class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Tilbudscard
+        url="/samtaleforlob"
+        bg="bg-[#A7CF9F]"
+        icon="samtale.webp"
+        iconalt="Samtaleforløb"
+        title="Samtaleforløb"
+      />
+
+      <Tilbudscard
+        url="/faellesskab"
+        bg="bg-[#C6C6F6]"
+        icon="faellesskab-icon.svg"
+        iconalt="Fællesskab"
+        title="Faellesskab"
+      />
+
+      <Tilbudscard
+        url="/chat"
+        bg="bg-[#234CFF]"
+        icon="chat-icon.svg"
+        iconalt="Anonym chat"
+        title="Anonym chat"
+      />
+
+      <Tilbudscard
+        url="/kurser"
+        bg="bg-[#5A7F4B]"
+        icon="kursus-icon.svg"
+        iconalt="Kurser"
+        title="Kurser"
+      />
+    </div>
   </section>
+
   <!-- Volunteer section-->
 
+  <section class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div><Image src={image2} alt="happy man on bike" class="" /></div>
+    <div>
+      <!-- Boks -->
+      <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
+        <Heading
+          htmlheading="h2"
+          size="xsmall"
+          stylingclasses="text-primaryblue60"
+        >
+          Bliv friviilig
+        </Heading>
+        <p>
+          Hos UngTilUng er vi mere end 100 aktive frivillige, men vi har altid
+          brug for flere, så vi sammen kan støtte unge i at skabe det liv, de
+          ønsker. Bliv en del af vores stærke frivilligfællesskab og vær med til
+          at hjælpe unge.
+        </p>
+        <div class="mt-4">
+          <Link href="" variant="secondary" size="medium"> Læs mere </Link>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <!-- Citat slider section-->
+  <section class="mt-20">
+    <Slider />
+  </section>
+
   <!-- Form section-->
+  <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <div><Form /></div>
+    <div>
+      <Image src={heroimage} alt="3 happy people" class="" />
+    </div>
+  </section>
 </MainLayout>

@@ -1,0 +1,26 @@
+---
+const {
+  url = "/",
+  bg = "bg-green-300", // farve på kortet
+  icon = "", // billedfil
+  iconalt = "",
+  title = "",
+} = Astro.props;
+---
+
+<a href={url} class="block w-full no-underline text-inherit">
+  <div
+    class="relative w-full max-w-xs mx-auto transition-transform duration-300 hover:scale-105"
+  >
+    <!-- Selve kortet -->
+    <div
+      class={`rounded-3xl p-6 flex flex-col items-center justify-between h-72 ${bg}`}
+    >
+      <!-- Illustration -->
+      <img src={`/${icon}`} alt={iconalt} class="w-32 h-32 object-contain" />
+
+      <!-- Titel -->
+      <p class="text-white text-xl font-medium">{title}</p>
+    </div>
+  </div>
+</a>
