@@ -34,12 +34,12 @@ import Form from "../components/Form.astro";
         </p>
 
         <div class="mt-4">
-          <Link href="" variant="secondary" size="medium"> Læs mere </Link>
+          <Button variant="secondary" size="medium"> Læs mere </Button>
         </div>
       </div>
 
       <!-- Hero image -->
-      <div class="relative w-full max-w-[400px] mx-auto">
+      <div class="relative w-full max-w-[370px] mx-auto">
         <!-- Orange outline -->
         <div
           class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
@@ -61,7 +61,7 @@ import Form from "../components/Form.astro";
   <!-- Hvad er ung til ung section -->
 
   <section class="mt-20">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <!-- image -->
         <div class="relative w-full max-w-[400px] mx-auto">
@@ -83,11 +83,9 @@ import Form from "../components/Form.astro";
 
         <!-- tekst indhold -->
         <div class="text-base lg:pl-8">
-          <h2
-            class="text-3xl md:text-4xl font-extrabold text-orange-500 leading-tight"
+          <Heading htmlheading="h2" size="large"
+            >Ingen kan alt – alle kan noget</Heading
           >
-            Ingen kan alt – alle kan noget
-          </h2>
 
           <p class="mt-5 md:text-base max-w-prose">
             Hvis du, ligesom mange andre unge, oplever et behov for hjælp og
@@ -118,12 +116,7 @@ import Form from "../components/Form.astro";
           </div>
 
           <div class="mt-8">
-            <a
-              href="#opret-bruger"
-              class="inline-block px-6 py-3 rounded-full bg-indigo-600 text-white font-medium shadow-md hover:shadow-lg transition-shadow"
-            >
-              Opret bruger
-            </a>
+            <Button variant="primary" size="medium"> Læs mere </Button>
           </div>
         </div>
       </div>
@@ -135,32 +128,32 @@ import Form from "../components/Form.astro";
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <Tilbudscard
         url="/samtaleforlob"
-        bg="bg-[#A7CF9F]"
-        icon="samtale.webp"
+        bg="bg-green40"
+        icon="samtale.svg"
         iconalt="Samtaleforløb"
         title="Samtaleforløb"
       />
 
       <Tilbudscard
-        url="/faellesskab"
-        bg="bg-[#C6C6F6]"
-        icon="faellesskab-icon.svg"
+        url="/fællesskab"
+        bg="bg-primaryblue60"
+        icon="fællesskab.svg"
         iconalt="Fællesskab"
-        title="Faellesskab"
+        title="Fællesskab"
       />
 
       <Tilbudscard
         url="/chat"
-        bg="bg-[#234CFF]"
-        icon="chat-icon.svg"
+        bg="bg-primaryblue20"
+        icon="chat.svg"
         iconalt="Anonym chat"
         title="Anonym chat"
       />
 
       <Tilbudscard
         url="/kurser"
-        bg="bg-[#5A7F4B]"
-        icon="kursus-icon.svg"
+        bg="bg-green80"
+        icon="hjælp.svg"
         iconalt="Kurser"
         title="Kurser"
       />

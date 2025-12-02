@@ -1,19 +1,26 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import Heading from "../components/Heading.astro";
+import rådgivning from "../assets/images/rådgivning.webp";
+import fn from "../assets/images/fn.webp";
+import mind from "../assets/images/mind.webp";
 ---
 
-<footer class="bg-beige border-t-2 border-blue-600 py-12 px-6">
+<footer class="bg-beige border-t-2 border-primaryblue60 py-12 px-6">
   <div
-    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start"
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 items-start"
   >
     <!-- Kolonne 1: Logo -->
-    <div class="flex flex-col items-center md:items-start">
-      <img src="/logo.svg" alt="Logo" class="h-20 w-auto mb-8" />
+    <div class="flex flex-col md:items-start">
+      <img src="/ungtilunglogo.svg" alt="Logo" class="h-10 w-auto mb-8" />
     </div>
 
     <!-- Kolonne 2: Find os -->
     <div class="flex flex-col items-center text-center">
-      <h3 class="text-blue-600 text-xl font-semibold mb-6">Find os</h3>
+      <Heading htmlheading="h2" size="small">Find os</Heading>
 
       <div class="flex flex-col gap-6">
         <a href="#" class="flex justify-center">
@@ -30,11 +37,11 @@
 
     <!-- Kolonne 3: Kontakt + partnerlogoer -->
     <div
-      class="flex flex-col items-center md:items-start text-center md:text-left gap-10"
+      class="flex flex-col items-center md:items-end text-end md:text-left gap-10"
     >
       <!-- Kontakt -->
       <div>
-        <h3 class="text-blue-600 text-xl font-semibold mb-4">Kontakt os</h3>
+        <Heading htmlheading="h2" size="small">Kontakt os</Heading>
         <p class="leading-relaxed">
           UngTilUng<br />
           Esromgade 15, 5<br />
@@ -48,21 +55,13 @@
       <div
         class="flex flex-col sm:flex-row items-center sm:justify-end gap-6 mt-6"
       >
-        <img
-          src="/fn-verdensmål.png"
-          class="h-14 w-auto"
-          alt="FN's verdensmål"
+        <Image
+          src={fn}
+          alt="FN verdensmål logo"
+          class="w-full h-auto object-cover"
         />
-        <img
-          src="/mind-community.png"
-          class="h-10 w-auto"
-          alt="Mind Community"
-        />
-        <img
-          src="/rådgivnings-danmark.png"
-          class="h-20 w-auto"
-          alt="Rådgivnings Danmark"
-        />
+        <Image src={mind} alt="logo" class="w-full h-auto object-cover" />
+        <Image src={rådgivning} alt="logo" class="w-full h-auto object-cover" />
       </div>
     </div>
   </div>

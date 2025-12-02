@@ -1,7 +1,7 @@
 ---
 const {
   url = "/",
-  bg = "bg-green-300", // farve på kortet
+  bg = "", // farve på kortet
   icon = "", // billedfil
   iconalt = "",
   title = "",
@@ -10,17 +10,23 @@ const {
 
 <a href={url} class="block w-full no-underline text-inherit">
   <div
-    class="relative w-full max-w-xs mx-auto transition-transform duration-300 hover:scale-105"
+    class="relative w-full max-w-[220px] mx-auto transition-transform duration-300 hover:scale-105"
   >
     <!-- Selve kortet -->
     <div
-      class={`rounded-3xl p-6 flex flex-col items-center justify-between h-72 ${bg}`}
+      class={`rounded-[32px] p-6 flex flex-col items-center justify-between h-[320px] shadow-md ${bg}`}
     >
       <!-- Illustration -->
-      <img src={`/${icon}`} alt={iconalt} class="w-32 h-32 object-contain" />
+      <img
+        src={`/${icon}`}
+        alt={iconalt}
+        class="w-[110px] h-[110px] object-contain"
+      />
 
       <!-- Titel -->
-      <p class="text-white text-xl font-medium">{title}</p>
+      <p class="text-white text-lg font-medium tracking-wide mt-4">
+        {title}
+      </p>
     </div>
   </div>
 </a>

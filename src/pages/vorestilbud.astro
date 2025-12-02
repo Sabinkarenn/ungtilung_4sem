@@ -4,7 +4,9 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
-import heroimage from "../assets/images/heroimage1.webp";
+import heroimage2 from "../assets/images/heroimage2.webp";
+import image6 from "../assets/images/image6.webp";
+import Slider2 from "../components/Slider2.astro";
 ---
 
 <MainLayout>
@@ -26,18 +28,53 @@ import heroimage from "../assets/images/heroimage1.webp";
         </p>
 
         <div class="mt-4">
-          <Link href="" variant="secondary" size="medium"> Chatten </Link>
+          <Button variant="secondary" size="medium"> Chatten </Button>
         </div>
       </div>
 
-      <!--Hero image -->
-      <Image src={heroimage} alt="3 happy people" class="" />
-    </div>
-  </section>
+      <!-- Hero image -->
+      <div class="relative w-full max-w-[370px] mx-auto">
+        <!-- Orange outline -->
+        <div
+          class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+               rounded-3xl border-l-0 border-t-0"
+        >
+        </div>
 
-  <!-- chattens åbningstider section -->
-  <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
+        <div class="relative rounded-3xl p-4">
+          <Image
+            src={heroimage2}
+            alt="3 happy people"
+            class="rounded-3xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- chattens åbningstider section -->
+    <section class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- image -->
+      <div class="relative w-full max-w-[380px] mx-auto">
+        <!-- Orange outline -->
+        <div
+          class="absolute -top-6 right-[-25px]
+           h-[92%] w-[95%]
+           border-2 border-orange60
+           rounded-3xl
+           border-l-0 border-t-0"
+        >
+        </div>
+
+        <!-- Image container -->
+        <div class="relative rounded-3xl overflow-hidden shadow-sm">
+          <Image
+            src={image6}
+            alt="2 happy people"
+            class="rounded-3xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
       <!-- Boks -->
       <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
         <Heading
@@ -85,6 +122,10 @@ import heroimage from "../assets/images/heroimage1.webp";
           </li>
         </ul>
       </aside>
-    </div>
+    </section>
+  </section>
+  <!-- Citat slider section-->
+  <section class="mt-20">
+    <Slider2 />
   </section>
 </MainLayout>
