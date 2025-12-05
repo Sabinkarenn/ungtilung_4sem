@@ -5,7 +5,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Blogcard from "../components/Blogcard.astro";
-import heroimage from "../assets/images/heroforside.webp";
+import heroimage3 from "../assets/images/heroimage3.webp";
 ---
 
 <MainLayout>
@@ -27,12 +27,27 @@ import heroimage from "../assets/images/heroforside.webp";
         </p>
 
         <div class="mt-4">
-          <Link href="" variant="secondary" size="medium"> Chatten </Link>
+          <Button variant="secondary" size="medium"> Se ugens tema </Button>
         </div>
       </div>
 
-      <!--Hero image -->
-      <Image src={heroimage} alt="3 happy people" class="" />
+      <!-- Hero image -->
+      <div class="relative w-full max-w-[370px] mx-auto">
+        <!-- Orange outline -->
+        <div
+          class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+           rounded-3xl border-l-0 border-t-0"
+        >
+        </div>
+
+        <div class="relative rounded-3xl p-4">
+          <Image
+            src={heroimage3}
+            alt="People happy"
+            class="rounded-3xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -79,233 +94,27 @@ import heroimage from "../assets/images/heroforside.webp";
       </div>
       <!-- Alle blogs -->
       <!-- grid til cards -->
-      <div
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
-        x-show="dagaktiv === 'dag1'"
-      >
-        <Blogcard
-          url="/singleview"
-          cardimage="kridt.webp"
-          cardimagealt="Kridt"
-          cardtitle="Kridtmaling"
-          cardtekst="kl. 09.00 // Krea"
-        />
-        <Blogcard
-          url="/singleview"
-          cardimage="skum.webp"
-          cardimagealt="Skum"
-          cardtitle="Skum glidebane"
-          cardtekst="kl. 10.15 // Plænen"
-        />
-        <Blogcard
-          url="/singleview"
-          cardimage="badning.webp"
-          cardimagealt="Nøgenbadning"
-          cardtitle="Nøgenbadning"
-          cardtekst="kl. 11.00 // Søen"
-        />
-        <Blogcard
-          url="/singleview"
-          cardimage="øl.webp"
-          cardimagealt="Ølympiade"
-          cardtitle="Ølympiade"
-          cardtekst="kl. 12.30 // Plænen"
-        />
+      <Blogcard
+        url="/singleview"
+        cardimage="venner.jpg"
+        cardimagealt="To venner"
+        category="Venskab"
+        categoryColor="bg-green40"
+        date="2. april 2025"
+        author="Anne P."
+        cardtitle="Det nemme venskab er en illusion"
+      />
 
-        <!-- dag 1 -->
-        <!-- grid til cards -->
-        <div
-          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
-          x-show="dagaktiv === 'dag1'"
-        >
-          <Blogcard
-            url="/singleview"
-            cardimage="kridt.webp"
-            cardimagealt="Kridt"
-            cardtitle="Kridtmaling"
-            cardtekst="kl. 09.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="skum.webp"
-            cardimagealt="Skum"
-            cardtitle="Skum glidebane"
-            cardtekst="kl. 10.15 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="badning.webp"
-            cardimagealt="Nøgenbadning"
-            cardtitle="Nøgenbadning"
-            cardtekst="kl. 11.00 // Søen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="øl.webp"
-            cardimagealt="Ølympiade"
-            cardtitle="Ølympiade"
-            cardtekst="kl. 12.30 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="mediter.webp"
-            cardimagealt="Glad pige"
-            cardtitle="Meditation"
-            cardtekst="kl. 14.00 // Tippien"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="tshirt.webp"
-            cardimagealt="Hjemmelavede tshirts"
-            cardtitle="Custom t-hsirts"
-            cardtekst="kl. 15.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="dance.webp"
-            cardimagealt="En der danser"
-            cardtitle="Dancebattle"
-            cardtekst="kl. 17.00 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="bingo.webp"
-            cardimagealt="bingo"
-            cardtitle="Bingo"
-            cardtekst="kl. 19.00 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="gøgl.webp"
-            cardimagealt="gøgl"
-            cardtitle="Gøgl"
-            cardtekst="kl. 21.00 // Tippien"
-          />
-        </div>
-        <!-- dag 2 -->
-        <div
-          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
-          x-show="dagaktiv === 'dag2'"
-        >
-          <Blogcard
-            url="/singleview"
-            cardimage="strik.webp"
-            cardimagealt="Strikket solsikke"
-            cardtitle="Strik"
-            cardtekst="kl. 09.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="trille.webp"
-            cardimagealt="Trillebør ræs"
-            cardtitle="Trillebør ræs"
-            cardtekst="kl. 10.15 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="båd.webp"
-            cardimagealt="Båd i havn"
-            cardtitle="Båd ræs"
-            cardtekst="kl. 11.00 // Søen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="kævle.webp"
-            cardimagealt="Folk der drikker"
-            cardtitle="Kævle"
-            cardtekst="kl. 12.30 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="yoga.webp"
-            cardimagealt="folk der strækker ud"
-            cardtitle="Yoga"
-            cardtekst="kl. 14.00 // Tippien"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="tusch.webp"
-            cardimagealt="Mand der tegner"
-            cardtitle="Tusch tegn"
-            cardtekst="kl. 15.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="limbo.webp"
-            cardimagealt="En der er faldet"
-            cardtitle="Limbo"
-            cardtekst="kl. 17.00 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="gæt.webp"
-            cardimagealt="Folk der gætter"
-            cardtitle="Gæt og grimasser"
-            cardtekst="kl. 19.00 // Plænen"
-          />
-        </div>
-        <!-- dag 3 -->
-        <div
-          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
-          x-show="dagaktiv === 'dag3'"
-        >
-          <Blogcard
-            url="/singleview"
-            cardimage="spil.webp"
-            cardimagealt="baggammon"
-            cardtitle="Brætspil"
-            cardtekst="kl. 14.00 // Tippien"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="værksted.webp"
-            cardimagealt="Mand der saver"
-            cardtitle="Værksted"
-            cardtekst="kl. 15.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="bål.webp"
-            cardimagealt="folk der sidder omkring bål"
-            cardtitle="Fælles bål"
-            cardtekst="kl. 17.00 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="comedy.webp"
-            cardimagealt="Pige på en scene"
-            cardtitle="Comedy"
-            cardtekst="kl. 19.00 // Plænen"
-          />
-        </div>
-        <!-- dag 4 -->
-        <div
-          class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
-          x-show="dagaktiv === 'dag4'"
-        >
-          <Blogcard
-            url="/singleview"
-            cardimage="skrald.webp"
-            cardimagealt="Mænd med skraldeposer"
-            cardtitle="Skralde patrulje"
-            cardtekst="kl. 09.00 // Krea"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="dans.webp"
-            cardimagealt="folk der danser"
-            cardtitle="Dans"
-            cardtekst="kl. 10.15 // Plænen"
-          />
-          <Blogcard
-            url="/singleview"
-            cardimage="akrobatik.webp"
-            cardimagealt="Mand der står på hænder"
-            cardtitle="Akrobatik"
-            cardtekst="kl. 11.00 // Søen"
-          />
-        </div>
-      </div>
+      <Blogcard
+        url="/singleview"
+        cardimage="angst.jpg"
+        cardimagealt="Ung med computer"
+        category="Angst"
+        categoryColor="bg-primaryblue60"
+        date="3. december 2024"
+        author="Anne P."
+        cardtitle="Sådan falder du i søvn selvom du har tankemylder"
+      />
     </div>
   </section>
 </MainLayout>

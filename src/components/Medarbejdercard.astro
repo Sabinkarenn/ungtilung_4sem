@@ -1,0 +1,100 @@
+---
+// MedarbejderCard.astro
+const {
+  url = "/singleview",
+  image = "/assets/images/default-person.jpg",
+  imageAlt = "Medarbejder foto",
+  name = "Navn Navnesen",
+  role = "Stilling",
+  bio = "Kort beskrivelse af medarbejderen. F.eks. ansvar og baggrund.",
+  email = "hej@eksempel.dk",
+  linkedin = "#",
+} = Astro.props;
+---
+
+<a
+  href={url}
+  class="block w-full no-underline text-inherit"
+  aria-label={`Gå til ${name}`}
+>
+  <div
+    class="relative w-full max-w-[360px] mx-auto hover:scale-[1.02] transition-transform duration-300"
+  >
+    <!-- Outer card -->
+    <div
+      class="rounded-2xl border-2 border-orange-400 bg-beige p-6 flex flex-col gap-6 relative overflow-hidden"
+    >
+      <!-- Image wrapper (giver indre kant + afrundede hjørner) -->
+      <div class="w-full flex justify-center">
+        <div
+          class="w-full max-w-[260px] rounded-lg border-2 border-orange-400 p-2 bg-white"
+        >
+          <img
+            src={image}
+            alt={imageAlt}
+            class="w-full h-[260px] object-cover rounded-lg block"
+          />
+        </div>
+      </div>
+
+      <!-- Tekstindhold -->
+      <div class="px-2">
+        <h3
+          class="text-2xl text-primaryblue100 font-semibold leading-tight mb-1"
+        >
+          {name}
+        </h3>
+        <p class="text-sm text-primaryblue80 font-semibold mb-3">{role}</p>
+
+        <p class="text-sm text-primaryblue80 leading-relaxed">
+          {bio}
+        </p>
+      </div>
+
+      <!-- Footer: email venstre, linkedin ikon nederst højre -->
+      <div class="mt-4 px-2 flex items-center justify-between">
+        <a
+          href={`mailto:${email}`}
+          class="flex items-center gap-2 text-primaryblue100 text-sm no-underline"
+        >
+          <!-- email icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 text-primaryblue100"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <span class="underline">{email}</span>
+        </a>
+
+        <a
+          href={linkedin}
+          class="inline-flex items-center justify-center bg-orange-100 border-2 border-orange-400 rounded-lg w-10 h-10"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Link til LinkedIn"
+        >
+          <!-- LinkedIn icon (simple) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-primaryblue100"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8 8h3.8v2.2h.1c.5-1 1.8-2.2 3.7-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9-2.4 0-2.7 1.8-2.7 3.8V24H8V8z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</a>

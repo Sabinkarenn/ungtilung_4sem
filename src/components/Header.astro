@@ -36,14 +36,16 @@ import Heading from "../components/Heading.astro";
         </ul>
       </div>
 
-      <!-- RIGHT: CTA (desktop) + burger (mobil) -->
+      <!--CTA (desktop) + burger (mobil) -->
       <div class="flex items-center gap-4">
         <!-- Desktop CTA -->
         <div class="hidden md:block">
-          <Button variant="primary" size="medium"> Læs mere </Button>
+          <Button variant="primary" size="medium">
+            Opret brugere / Login
+          </Button>
         </div>
 
-        <!-- Mobile burger (vises kun md:hidden) -->
+        <!-- Mobile burger -->
         <div class="md:hidden relative">
           <input
             id="menu-toggle"
@@ -52,7 +54,7 @@ import Heading from "../components/Heading.astro";
             aria-controls="mobile-menu"
           />
 
-          <!-- Burger-ikon (placeret til højre via flex på parent) -->
+          <!-- Burger-ikon -->
           <label
             for="menu-toggle"
             id="menu-toggle-label"
@@ -79,33 +81,59 @@ import Heading from "../components/Heading.astro";
           <!-- Mobile dropdown (fylder under nav) -->
           <div
             id="mobile-menu"
-            class="absolute right-0 left-0 top-full bg-beige border-t-2 border-primaryblue60 z-40 origin-top transform scale-y-0 opacity-0 pointer-events-none transition-all duration-200 peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
+            class="absolute top-full left-0 right-0 bg-beige z-40 origin-top transform scale-y-0 opacity-0 pointer-events-none transition-all duration-200 peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
             style="transform-origin: top;"
             aria-hidden="true"
           >
-            <ul class="flex flex-col gap-5 py-8 px-6 text-darkblue">
-              <li><a href="/" class="hover:text-primaryblue60">Forside</a></li>
-              <li>
-                <a href="/vorestilbud" class="hover:text-primaryblue60"
-                  >Vores tilbud</a
-                >
-              </li>
-              <li><a href="/blog" class="hover:text-primaryblue60">Blog</a></li>
-              <li>
-                <a href="/frivillig" class="hover:text-primaryblue60"
-                  >Frivillig</a
-                >
-              </li>
-              <li>
-                <a href="/omos" class="hover:text-primaryblue60">Om os</a>
-              </li>
+            <!-- Inder-container så dropdown får luft omkring sig som i designet -->
+            <div class="mx-4 my-4 bg-beige p-6 rounded-xl">
+              <!-- Øverste række: CTA + luk ikon -->
+              <div class="flex items-center justify-between mb-10">
+                <Button variant="primary" size="small">
+                  Opret bruger / login
+                </Button>
 
-              <div class="pt-4">
-                <Link href="" variant="primary" size="medium"
-                  >Opret bruger / Login</Link
-                >
+                <!-- Close icon - samme stil som i billedet -->
+                <label for="menu-toggle" class="cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-primaryblue60"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </label>
               </div>
-            </ul>
+
+              <!-- Navigation links -->
+              <ul
+                class="flex flex-col gap-8 text-primaryblue100 text-2xl font-normal"
+              >
+                <li>
+                  <a href="/" class="hover:text-primaryblue60">Forside</a>
+                </li>
+                <li>
+                  <a href="/vorestilbud" class="hover:text-primaryblue60"
+                    >Vores tilbud</a>
+                </li>
+                <li>
+                  <a href="/blog" class="hover:text-primaryblue60">Blog</a>
+                </li>
+                <li>
+                  <a href="/frivillig" class="hover:text-primaryblue60"
+                    >Frivillig</a>
+                </li>
+                <li>
+                  <a href="/omos" class="hover:text-primaryblue60">Om os</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

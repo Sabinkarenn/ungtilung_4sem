@@ -3,170 +3,50 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import heroimage from "../assets/images/heroforside.webp";
 import Heading from "../components/Heading.astro";
+import heroimage3 from "../assets/images/heroimage3.webp";
 ---
 
-<MainLayout <!-- om nakke section -->
-  <div
-    class="bg-darkyellow items-center text-center cursor-pointer border-2 border-darkblue p-4 md:w-16"
-    @click="info = 'info1'"
+<MainLayout>
+  <!-- Hero section -->
+
+  <section
+    class="w-full bg-gradient-to-b from-[#D6E6CD] to-[#FBF5EC] py-20 px-6"
   >
-    <Heading
-      htmlheading="h3"
-      size="medium"
-      stylingclasses="md:rotate-90 text-nowrap mb-0">Om Nakkefestival</Heading
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
     >
-  </div>
-  <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
-  <div x-show="info === 'info1'" x-transition class="p-4">
-    <p>
-      Når man træder ind på Nakkefestivalen, så føler man sig velkommen. Vi er
-      en stor lejr, hvor vi har fællestelte som tipien og plads til at hænge ud
-      rundt omkring scenerne. Her er ikke tradition for små private lejre, fordi
-      folk, som kommer på Nakke, er åbne for nye mennesker og fordi det netop er
-      charmen ved Nakke. Rummet er fyldt med kreative indslag, som en invitation
-      til smil og glæde, og næsten uden undtagelser kommer en stor del fra
-      festivaldeltagerne selv.
-    </p>
-    <p class="italic">På Nakke kommer man ikke på festival, man er festival!</p>
-    <p>
-      Nakkefestival er en musikfestival, og på den front er festivalen også
-      inkluderende. Der bookes med plads til mange forskellige genrer, og helt
-      essentielt bookes der gerne nye udfordrende kunstnere, som ellers ikke
-      falder under normale kategorier. Med to scener fyldes rummet med
-      blandinger af alt fra historiefortællinger til at stå op på, henover
-      kunstnere der synger på selvopfundne sprog, til up-coming bands med god
-      lyd og slutter af med fede beats og dans på vores lukkede scene.
-    </p>
-    <p class="italic">På Nakke favner vi og udvider.</p>
-    <p>
-      Og barskabet kan folk godt lade stå derhjemme. Man må ikke tage glas med
-      ind på festivalen, men det er blot fordi, at fodboldbanerne er lånt, og de
-      skal være helt rene for alt, når de afleveres igen. Men der sørges for, at
-      man ikke vil mangle noget til ganen, hverken fast eller flydende. Uanset
-      om man er kødspiser eller veganer, så er der mad til så lave priser, og
-      uanset om man er til øl, bitter eller drinks, så findes det, man mangler
-      til festen.
-    </p>
-    <p>
-      Nakke er et lille sted, hvor man ikke skal langt for den næste gode
-      oplevelse. Nakkefestivalen er et åndehul, hvor du er velkommen til at
-      slappe af i, blive udfordret i, blive nurset i og skabe den gode fest i.
-    </p>
-    <p>Nakkeånden glæder sig til at se dig &lt;3 &lt;3 &lt;3</p>
-  </div>
-  <!-- praktisk info section -->
-  <div
-    class="bg-yellow cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
-    @click="info = 'info2'"
-  >
-    <Heading
-      htmlheading="h3"
-      size="medium"
-      stylingclasses="md:rotate-90 text-nowrap mb-0">Praktisk info</Heading
-    >
-  </div>
-  <div x-show="info === 'info2'" x-transition class="p-4">
-    <p>
-      Modsat andre større festivaler er der nogle genstande vi desværre ikke kan
-      tillade på vores lille søde festivalplads.
-    </p>
-    <Heading htmlheading="h4" size="small">Derfor, ingen:</Heading>
+      <!-- Headline & Tagline -->
+      <div class="flex flex-col gap-2">
+        <Heading htmlheading="h1" size="xlarge">Bliv frivllig</Heading>
 
-    <ul style="list-style-type: disc; margin-left: 1.5em;">
-      <li>Pavilloner</li>
-      <li>
-        Store lydanlæg (med og uden hjul) / Dette gælder også store
-        ghettoblastere eller lignende mobile anlæg
-      </li>
-      <li>
-        Alt af glas er strengt forbudt på festivalpladsen – fra alkohol, øl,
-        syltetøj osv. Skal du have noget ind, der er købt i en glasbeholder, må
-        du hælde det over på noget andet først.
-      </li>
-      <li>
-        Ingen vogne eller trækvogne; de må parkeres pænt ude foran pladsen. (Det
-        samme gælder også cykler)
-      </li>
-      <li>
-        Det er god stil at have sit eget bestik og tallerken med når man spiser
-        i det veganske køkken, da vi så sparer en masse kedelig skrald (der vil
-        være opvask stationer så du kan spise af en ren tallerken).
-      </li>
-    </ul>
-    <Heading htmlheading="h4" size="small">Telte:</Heading>
+        <p class="max-w-xl">
+          Hos UngTilUng kan du være den, der gør hverdagen lidt lettere for
+          andre unge
+        </p>
 
-    <p>
-      Nakke er en lille festival med plads til små telte, derfor anbefaler vi
-      alle vores gæster kun at have den størrelse telt, som man har brug for
-      med. Der er ikke en kultur for camps eller for at hænge ud i teltområdet,
-      men derimod foran scenerne, i baren eller i Kreas chillout områder. Slå
-      gerne dit telt op så tæt på hinanden, så vi slipper for at flytte rundt på
-      telte, når de er sat op. Det er vigtigt at teltene bliver sat op inden for
-      det markerede område af hensyn til bare tæer og brandsikkerhed. Kort sagt,
-      vær praktisk, effektiv, hensynsfuld og fornuftig når det gælder
-      teltopsætning og bagage. &lt;3 &lt;3
-    </p>
-    <Heading htmlheading="h4" size="small">Åben ild:</Heading>
+        <div class="mt-4">
+          <Button variant="secondary" size="medium"> Læs mere </Button>
+        </div>
+      </div>
 
-    <p>Kun tilladt på vores kogeøer, som findes på forpladsen.</p>
-    <Heading htmlheading="h4" size="small">Narkopolitik:</Heading>
+      <!-- Hero image -->
+      <div class="relative w-full max-w-[370px] mx-auto">
+        <!-- Orange outline -->
+        <div
+          class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+       rounded-3xl border-l-0 border-t-0"
+        >
+        </div>
 
-    <p>
-      Nakkefestivalen støtter ikke indtagelse, anvendelse eller salg af
-      euforiserende stoffer på festival- og campingområdet.
-    </p>
-    <p>
-      Når alt dette er sagt er der kun tilbage at sige: Vi glæder os sindssygt
-      meget til at feste med jer fra onsdag, og vi ved allerede nu, at det
-      bliver en fest uden lige! &lt;3 &lt;3 &lt;3
-    </p>
-  </div>
-  <!-- find vej section -->
-  <div
-    class="bg-pink cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
-    @click="info = 'info3'"
-  >
-    <Heading
-      htmlheading="h3"
-      size="medium"
-      stylingclasses="md:rotate-90 text-nowrap mb-0">Find vej</Heading
-    >
-  </div>
-  <div x-show="info === 'info3'" x-transition class="p-4">
-    <p class="italic">
-      Nakkefestival er en lille dansk non-profit musikfestival beliggende i
-      Odsherred i det nordvestlige Sjælland. Endskønt festivalen strengt taget
-      ligger indenfor Rørvigs grænser, er den opkaldt efter den lille landsby
-      Nakke, der ligger tættere på festivalpladsen end selve Rørvig by.
-      Nakkefestival afholdes på boldbanerne bag Rørvighallen med Rørvig
-      Sognegård og Rørvig Friskole som naboer.
-    </p>
-    <Heading htmlheading="h4" size="small">Transport</Heading>
-
-    <p>
-      Vil man tage brug af den offentlige transport på sin rejse mod
-      Nakkefestival, så er der fint med muligheder:
-    </p>
-    <p>
-      Kommer man fra København af, kan man tage regionaltoget mod Kalundborg,
-      stå af på Holbæk station for derefter at tage bus 560 mod Nykøbing Sj. st.
-      Fra Nykøbing St. st. kan man derfra tage bus 562 mod Nykøbing Sj. st., for
-      så at stå af ved stoppet Sognegården (Odsherred). Der efter mangler man
-      blot at gå et kort stykke vej til indgangen af Nakkefestivalen.
-    </p>
-    <p>
-      En anden mulighed er at tage S-toget, linje A til Hillerød st., skifte til
-      Lokalbane 920R mod Hundested Havn St. og så tage færgen til Rørvig havn,
-      hvorfra man enten kan gå, cykle eller tage en bus 562 mod Nykøbing Sj. st.
-      og så endeligt stå af ved stoppestedet Sognegården (Odsherred).
-    </p>
-    <p>
-      Kommer man fra Roskilde af, eller længere vest på, kan det igen bedst
-      betale sig at tage til Holbæk station og derfra følge de ovenstående
-      rejsebeskrivelser. Vi glæder os til at se jer! &lt;3 &lt;3 &lt;3
-    </p>
-  </div>
+        <div class="relative rounded-3xl p-4">
+          <Image
+            src={heroimage3}
+            alt="People happy"
+            class="rounded-3xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
 </MainLayout>
-/>
