@@ -6,10 +6,10 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import heroimage from "../assets/images/heroimage1.webp";
 import image2 from "../assets/images/image2.webp";
+import image4 from "../assets/images/image4.webp";
 import anonym from "../assets/images/anonym.webp";
 import samtale from "../assets/images/samtale.webp";
 import fælleskab from "../assets/images/fælleskab.webp";
-
 import Heading from "../components/Heading.astro";
 import Slider from "../components/Slider.astro";
 import Form from "../components/Form.astro";
@@ -124,8 +124,10 @@ import Form from "../components/Form.astro";
   </section>
 
   <!-- vores tilbud section -->
-  <section class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <section
+    class="justify-center items-center mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
+  >
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:m-4 gap-6">
       <Tilbudscard
         url="/samtaleforlob"
         bg="bg-green40"
@@ -181,7 +183,7 @@ import Form from "../components/Form.astro";
           at hjælpe unge.
         </p>
         <div class="mt-4">
-          <Link href="" variant="secondary" size="medium"> Læs mere </Link>
+          <Button variant="secondary" size="medium"> Læs mere </Button>
         </div>
       </aside>
     </div>
@@ -192,10 +194,28 @@ import Form from "../components/Form.astro";
   </section>
 
   <!-- Form section-->
-  <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+  <section
+    class="mt-20 mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+  >
     <div><Form /></div>
-    <div>
-      <Image src={heroimage} alt="3 happy people" class="" />
+
+    <!-- image-->
+
+    <div class="relative w-full max-w-[370px] mx-auto">
+      <!-- Orange outline -->
+      <div
+        class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+         rounded-3xl border-l-0 border-t-0"
+      >
+      </div>
+
+      <div class="relative rounded-3xl p-4">
+        <Image
+          src={image4}
+          alt="2 happy people"
+          class="rounded-3xl w-full h-auto object-cover"
+        />
+      </div>
     </div>
   </section>
 </MainLayout>

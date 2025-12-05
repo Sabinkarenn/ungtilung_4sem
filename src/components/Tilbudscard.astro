@@ -1,11 +1,5 @@
 ---
-const {
-  url = "/",
-  bg = "", // farve på kortet
-  icon = "", // billedfil
-  iconalt = "",
-  title = "",
-} = Astro.props;
+const { url = "/", bg = "", icon = "", iconalt = "", title = "" } = Astro.props;
 ---
 
 <a href={url} class="block w-full no-underline text-inherit">
@@ -14,17 +8,17 @@ const {
   >
     <!-- Selve kortet -->
     <div
-      class={`rounded-[32px] p-6 flex flex-col items-center justify-between h-[320px] shadow-md ${bg}`}
+      class={`rounded-3xl p-30 flex flex-col items-center justify-center h-[400px]  ${bg}`}
     >
       <!-- Illustration -->
       <img
         src={`/${icon}`}
         alt={iconalt}
-        class="w-[110px] h-[110px] object-contain"
+        class="w-[300px] h-[300px] object-contain"
       />
 
       <!-- Titel -->
-      <p class="text-white text-lg font-medium tracking-wide mt-4">
+      <p class="text-white tracking-wide">
         {title}
       </p>
     </div>

@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import MedarbejderCard from "../components/Medarbejdercard.astro";
 import heroimage5 from "../assets/images/heroimage5.webp";
 import imageomos1 from "../assets/images/imageomos1.webp";
+import Slider3 from "../components/Slider3.astro";
 
 import Heading from "../components/Heading.astro";
 ---
@@ -93,16 +94,16 @@ import Heading from "../components/Heading.astro";
 
   <!-- Mød teamet section -->
   <section class="mt-20">
-    <div class="flex justify-center text-center w-full">
+    <div class="justify-center text-center">
       <Heading htmlheading="h2" size="large">Med teamet</Heading>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
       <!-- Jannik -->
 
       <MedarbejderCard
         url="/team/jannik"
-        image="/assets/images/jannik.jpg"
+        image="Jannik.webp"
         imageAlt="Jannik Dobusz"
         name="Jannik Dobusz"
         role="Direktør"
@@ -114,81 +115,84 @@ import Heading from "../components/Heading.astro";
       <!-- Pernille -->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/pernille"
+        image="pernille.webp"
+        imageAlt="Pernille Skov"
+        name="Pernille Skov"
+        role="Projektleder for rådgivning"
+        bio="Jeg er ansvarlig for frivillige chattere og supervisorer samt udviklingen af vores rådgivningstilbud i UngTilUng. Psykoterapeut og Cand. Mag. i Psykologi & Medievidenskab"
+        email="ps@ungtilung.com"
+        linkedin=""
       />
 
       <!-- Julie-->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/julie"
+        image="julie.webp"
+        imageAlt="Julie Marie Jensen"
+        name="Julie Marie Jensen"
+        role="Projektleder for digitale fælleskaber"
+        bio="Jeg er ansvarlig for frivillige i kommunikationsteamet og for gruppelederne for vores fællesskaber samt udviklingen af vores kommunikations- og fællesskabstilbud. Cand. Mag. i Dansk & Psykologi"
+        email="jmj@ungtilung.com"
+        linkedin=""
       />
 
       <!-- Louise -->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/louise"
+        image="louise.webp"
+        imageAlt="Louise Thorendal"
+        name="Louise Thorendal"
+        role="Adminstrativ medarbejder"
+        bio="Jeg sidder primært med administrativt og IT/teknik, og derudover er jeg er studerende på CBS, hvor jeg læser psykologi og erhvervsøkonomi."
+        email="lt@ungtilung.com"
+        linkedin=""
       />
 
       <!-- Rosalina -->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/rosalina"
+        image="rosalina.webp"
+        imageAlt="Rosalina Clausen"
+        name="Rosalina Clausen"
+        role="Content Creator"
+        bio="Jeg er ansvarlig for vores sociale medier og læser derudover på RUC.."
+        email="rgc@ungtilung.com"
+        linkedin=""
       />
 
       <!-- Amalie -->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/amalie"
+        image="amalie.webp"
+        imageAlt="Amalie Winther"
+        name="Amalie Winther"
+        role="Frivilligkoordinator"
+        bio="Jeg arbejder med rekruttering og onboarding af frivillige og har fokus på at sikre god trivsel, opfølgning og fastholdelse. Cand.Soc i Udviklingsstudier og internationale forhold "
+        email="awa@ungtilung.com"
+        linkedin=""
       />
 
       <!-- Mikkel -->
 
       <MedarbejderCard
-        url="/team/jannik"
-        image="/assets/images/jannik.jpg"
-        imageAlt="Jannik Dobusz"
-        name="Jannik Dobusz"
-        role="Direktør"
-        bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
-        email="jdj@ungtilung.com"
-        linkedin="https://www.linkedin.com/in/jannik"
+        url="/team/mikkel"
+        image="mikkel.webp"
+        imageAlt="Mikkel Birger"
+        name="Mikkel Birger"
+        role="Analyse & evaluering"
+        bio="Jeg arbejder med datanalyse og evaluring af vores frivillige og aktiviteter, så vi kan sikre de bedste processer og optimale forhold for vores unge og frivillige."
+        email="mb@f-ungtrivsel.dk"
+        linkedin=""
       />
     </div>
   </section>
-  <!-- Vores vission section -->
+  <!-- Vores vision section -->
+  <section class="mt-20 mb-20">
+    <Slider3 />
+  </section>
 </MainLayout>

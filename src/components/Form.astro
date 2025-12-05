@@ -4,17 +4,13 @@ import Button from "../components/Button.astro";
 import Heading from "./Heading.astro";
 ---
 
-<section class="flex items-center justify-center min-h-screen">
+<section class="min-h-screen">
   <div>
-    <!-- Beskrivelsen af hvad det vil sige at være frivillig start -->
-    <div class="text-center">
-      <Heading htmlheading="h3" size="medium">Tilmeld dig her</Heading>
+    <div>
+      <Heading htmlheading="h3" size="medium"
+        >Er der noget du ikke har fået svar på? Skriv til vores brevkasse!</Heading
+      >
     </div>
-    <p class="text-center md:w-[60ch]">
-      Skriv lidt om dig selv og hvorfor du gerne vil være frivillig, så
-      kontakter vi dig og finder den bedste frivillig mulighed for dig!
-    </p>
-    <!-- Beskrivelsen af hvad det vil sige at være frivillig slut -->
 
     <div class="max-w-md mx-auto">
       <div class="formstart">
@@ -22,10 +18,10 @@ import Heading from "./Heading.astro";
         <section>
           <div>
             <label>
-              <span>Dit navn</span><br />
+              <span>Navn</span><br />
               <input
                 type="text"
-                class="border-2 border-darkblue rounded-lg focus:border-orange focus:ring focus:ring-brightorange focus:ring-opacity-50"
+                class="w-full border-2 border-darkblue rounded-lg focus:border-orange focus:ring focus:ring-brightorange focus:ring-opacity-50"
                 placeholder="Navn"
               />
             </label>
@@ -37,7 +33,7 @@ import Heading from "./Heading.astro";
         <section>
           <div>
             <label>
-              <span class="mb-2">Din email</span><br />
+              <span class="mb-2">E-mail</span><br />
               <input
                 type="email"
                 class="w-full rounded-lg border-2 border-darkblue focus:border-orange focus:ring focus:ring-brightorange focus:ring-opacity-50"
@@ -54,35 +50,29 @@ import Heading from "./Heading.astro";
             <label>
               <span class="mb-2">Udfyldningsblanket</span><br />
               <textarea
-                class="w-full rounded-lg border-2 border-darkblue focus:border-orange focus:ring focus:ring-brightorange focus:ring-opacity-50"
-                placeholder="Jeg ønsker at blive frivillig fordi..."
+                class="w-full rounded-lg border-2 border-primaryblue60 focus:border-primaryblue100 focus:ring focus:ring-primaryblue40 focus:ring-opacity-50"
+                placeholder="Skriv tekst her"
                 rows="8"></textarea>
             </label>
           </div>
         </section>
         <!-- udfyld sektion slut -->
 
-        <!-- har du været på nakke før start -->
         <form>
           <input type="radio" id="html" name="fav_language" value="HTML" />
-          <label for="html" class="text-darkblue"
-            >Ja, jeg har været på Nakkefestival før</label
-          ><br />
-          <input type="radio" id="css" name="fav_language" value="CSS" />
-          <label for="css" class="text-darkblue"
-            >Nej, det bliver min første</label
+          <label for="html" class="text-primaryblue100"
+            >Jeg accepterer UngTilUngs persondatapolitik</label
           ><br />
         </form>
-        <!-- har du været på nakke før slut -->
 
         <form id="volunteerForm">
           <div class="flex items-center justify-center m-4">
             <button
               id="openPopup"
               type="button"
-              class="btn my-2 border-2 shadow-none rounded-xl bg-darkblue text-beige hover:bg-blue border-blue hover:border-darkblue cursor cursor-(--handcursor)"
+              class="btn my-2 border-2 shadow-none rounded-xl bg-darkblue text-beige hover:bg-blue border-primaryblue60 hover:border-primaryblue60cursor cursor-(--handcursor)"
             >
-              Send din tilmelding
+              Send til brevkassen
             </button>
           </div>
         </form>

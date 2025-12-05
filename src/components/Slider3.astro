@@ -1,0 +1,122 @@
+<section class="max-w-5xl mx-auto px-6 py-12">
+  <div class="relative">
+    <!-- SLIDER CARD -->
+    <div
+      class="rounded-2xl border-2 border-primaryblue100 bg-beige p-10 relative"
+    >
+      <!-- Buttons (piles) -->
+      <button
+        id="prevBtn"
+        class="absolute right-20 top-6 w-10 h-10 rounded-full border-2 border-primaryblue100 flex items-center justify-center text-primaryblue100"
+      >
+        ←
+      </button>
+
+      <button
+        id="nextBtn"
+        class="absolute right-6 top-6 w-10 h-10 rounded-full border-2 border-primaryblue100 flex items-center justify-center text-primaryblue100"
+      >
+        →
+      </button>
+
+      <!-- SLIDES -->
+      <div id="slideWrapper">
+        <!-- Slide 1 -->
+        <div class="slide">
+          <h3 class="text-2xl text-primaryblue100 font-semibold mb-4">
+            Vores vision
+          </h3>
+          <p class="text-primaryblue80 leading-relaxed mb-4">
+            UngTilUngs vision er at unge i alderen 18-35 skal trives i deres
+            liv, og have værktøjer og ressourcer til at håndtere hverdagens
+            udfordringer.
+          </p>
+          <p class="text-primaryblue80 leading-relaxed">
+            UngTilUng vil skabe et online univers, hvor unge kan dele tanker,
+            følelser og udfordringer og finde støtte i digitale fællesskaber.
+          </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide hidden">
+          <h3 class="text-2xl text-primaryblue100 font-semibold mb-4">
+            Vores mission
+          </h3>
+          <p class="text-primaryblue80 leading-relaxed mb-4">
+            Vi ønsker at unge kan lære af hinanden, støtte hinanden og skabe
+            nye, sunde relationer.
+          </p>
+          <p class="text-primaryblue80 leading-relaxed">
+            Alle unge skal vide, at man trygt kan søge hjælp, og at der altid er
+            støtte at finde hos UngTilUngs frivillige.
+          </p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide hidden">
+          <h3 class="text-2xl text-primaryblue100 font-semibold mb-4">
+            Vores værdier
+          </h3>
+          <p class="text-primaryblue80 leading-relaxed mb-4">
+            Fællesskab, tryghed og autenticitet er grundstenene i vores tilgang
+            til unge og frivillige.
+          </p>
+          <p class="text-primaryblue80 leading-relaxed">
+            Vi arbejder for at skabe et rum hvor man kan være sig selv og
+            udvikle sig uden fordomme.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="flex justify-center gap-4 mt-6">
+      <button class="dot w-3 h-3 rounded-full bg-primaryblue100" data-slide="0"
+      ></button>
+      <button
+        class="dot w-3 h-3 rounded-full border-2 border-primaryblue100 bg-transparent"
+        data-slide="1"></button>
+      <button
+        class="dot w-3 h-3 rounded-full border-2 border-primaryblue100 bg-transparent"
+        data-slide="2"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  const next = document.getElementById("nextBtn");
+  const prev = document.getElementById("prevBtn");
+
+  let index = 0;
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length; // wrap-around
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle("hidden", idx !== index);
+    });
+
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add("bg-primaryblue100");
+        dot.classList.remove("bg-transparent", "border-2");
+      } else {
+        dot.classList.add("bg-transparent", "border-2");
+        dot.classList.remove("bg-primaryblue100");
+      }
+    });
+  }
+
+  next.addEventListener("click", () => showSlide(index + 1));
+  prev.addEventListener("click", () => showSlide(index - 1));
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      showSlide(parseInt(dot.dataset.slide));
+    });
+  });
+
+  // Start with slide 0
+  showSlide(0);
+</script>

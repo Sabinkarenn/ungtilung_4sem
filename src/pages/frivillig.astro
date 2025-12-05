@@ -5,6 +5,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import heroimage3 from "../assets/images/heroimage3.webp";
+import image6 from "../assets/images/image6.webp";
 ---
 
 <MainLayout>
@@ -49,4 +50,272 @@ import heroimage3 from "../assets/images/heroimage3.webp";
       </div>
     </div>
   </section>
-</MainLayout>
+
+  <!-- Infografik section -->
+
+  <section class="mt-20 py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <!-- Titel -->
+      <Heading htmlheading="h2" size="large">Vil du være med?</Heading>
+
+      <!-- Intro tekst -->
+      <p class="max-w-3xl mx-auto mb-15 text-left">
+        Iftet i 2013 med formålet om at hjælpe unge mellem 16–35 år med at
+        styrke deres trivsel – gennem digitale initiativer. UngTilUng er drevet
+        af et fagligt stærkt team og mere end 100 passionerede frivillige.
+      </p>
+      <!-- Ikon-række -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start"
+      >
+        <!-- icon 1 -->
+        <div class="flex flex-col items-center text-center px-4">
+          <div
+            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+          >
+            <img src="/earth.svg" alt="earth icon" class="h-10" />
+          </div>
+          <Heading htmlheading="h2" size="small"
+            >100+ frivillige på landsplan</Heading
+          >
+        </div>
+
+        <!-- icon 2 -->
+        <div class="flex flex-col items-center text-center px-4">
+          <div
+            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+          >
+            <img src="/plant.svg" alt="plant icon" class="h-10" />
+          </div>
+          <Heading htmlheading="h2" size="small"
+            >Udvikl dine kompetencer</Heading
+          >
+        </div>
+
+        <!-- icon 1 -->
+        <div class="flex flex-col items-center text-center px-4">
+          <div
+            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+          >
+            <img src="/heart.svg" alt="heart icon" class="h-10" />
+          </div>
+          <Heading htmlheading="h2" size="small"
+            >Bliv en del af et stærkt fællesskab</Heading
+          >
+        </div>
+      </div>
+
+      <!-- Info slider section -->
+
+      <section class="mt-30 relative px-4 mb-20" x-data="{ info: 'info1' }">
+        <div class="max-w-5xl mx-auto">
+          <!-- TOP TABS (mobile: stacked, desktop: row) -->
+          <div class="flex flex-col md:flex-row gap-3 mb-6">
+            <button
+              @click="info = 'info1'"
+              :class="info === 'info1' ? 'bg-green60 ring-2 ring-primaryblue100' : 'bg-green20'"
+              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+            >
+              Oftest stillede spørgsmål
+            </button>
+
+            <button
+              @click="info = 'info2'"
+              :class="info === 'info2' ? 'bg-blue60 ring-2 ring-primaryblue100' : 'bg-blue20'"
+              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+            >
+              UngTilUngs værdier
+            </button>
+
+            <button
+              @click="info = 'info3'"
+              :class="info === 'info3' ? 'bg-orange60 ring-2 ring-primaryblue100' : 'bg-orange20'"
+              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+            >
+              Etiske principper
+            </button>
+
+            <button
+              @click="info = 'info4'"
+              :class="info === 'info4' ? 'bg-green-light ring-2 ring-primaryblue100' : 'bg-green-10'"
+              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+            >
+              Sådan hjælper chatten
+            </button>
+
+            <button
+              @click="info = 'info5'"
+              :class="info === 'info5' ? 'bg-violet-light ring-2 ring-primaryblue100' : 'bg-violet-10'"
+              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+            >
+              Kontakt & Support
+            </button>
+          </div>
+
+          <!-- CARD / INDHOLD -->
+          <div
+            class="rounded-2xl border-2 border-primaryblue100 bg-beige p-8 min-h-[260px]"
+          >
+            <!-- Slide 1 -->
+            <article
+              x-show="info === 'info1'"
+              x-cloak
+              x-transition
+              class="space-y-4"
+            >
+              <h3 class="text-2xl text-primaryblue100 font-semibold">
+                Oftest stillede spørgsmål
+              </h3>
+              <p class="font-semibold">
+                Hvad sker der med chatsamtalen efter den er slut?
+              </p>
+              <p>
+                Når en chatsamtale er slut, vil chat-vinduet stå åbent, indtil
+                du selv lukker det. I kan derfor sagtens sige farvel og den
+                frivillige kan lukke chatten, men du vil stadig kunne se, hvad I
+                har skrevet om, indtil du selv lukker vinduet.
+              </p>
+
+              <p class="font-semibold mt-4">
+                Hvorfor står der optaget og hvad betyder ventetiden?
+              </p>
+              <p>
+                Du kan komme i en ventekø. Der er typisk ca. 10 min ventetid —
+                hvis ventetiden overstiger 15 min kan du forsøge igen senere.
+              </p>
+            </article>
+
+            <!-- Slide 2 -->
+            <article
+              x-show="info === 'info2'"
+              x-cloak
+              x-transition
+              class="space-y-4 hidden"
+            >
+              <h3 class="text-2xl text-primaryblue100 font-semibold">
+                UngTilUngs værdier
+              </h3>
+              <p>
+                Vores værdier bygger på respekt, nærvær og fællesskab.
+                Frivillige møder unge uden fordømmelse og arbejder for at skabe
+                trygge rum, hvor unge kan blive set og hørt.
+              </p>
+              <p>
+                Frivillige får løbende supervision og støtte fra medarbejdere,
+                så kvaliteten bevares.
+              </p>
+            </article>
+
+            <!-- Slide 3 -->
+            <article
+              x-show="info === 'info3'"
+              x-cloak
+              x-transition
+              class="space-y-4 hidden"
+            >
+              <h3 class="text-2xl text-primaryblue100 font-semibold">
+                Etiske principper
+              </h3>
+              <p>
+                Vi vægter fortrolighed, ansvarlighed og sikkerhed. Frivillige
+                følger klare retningslinjer for anonymitet og indberetning.
+              </p>
+              <p>
+                Der er procedurer for håndtering af kritiske situationer og
+                opfølgning.
+              </p>
+            </article>
+
+            <!-- Slide 4 -->
+            <article
+              x-show="info === 'info4'"
+              x-cloak
+              x-transition
+              class="space-y-4 hidden"
+            >
+              <h3 class="text-2xl text-primaryblue100 font-semibold">
+                Sådan hjælper chatten
+              </h3>
+              <p>
+                Chatten er et sted til at blive hørt og spejlet. Frivillige
+                bruger egne erfaringer til at skabe tryghed, men giver ikke
+                terapi. Målet er støtte og hjælp til at finde næste skridt.
+              </p>
+              <p>
+                Du kan altid gå tilbage i chatten og læse samtalen, indtil du
+                selv lukker vinduet.
+              </p>
+            </article>
+
+            <!-- Slide 5 -->
+            <article
+              x-show="info === 'info5'"
+              x-cloak
+              x-transition
+              class="space-y-4 hidden"
+            >
+              <h3 class="text-2xl text-primaryblue100 font-semibold">
+                Kontakt & Support
+              </h3>
+              <p>
+                Har du brug for hjælp udover chatten, kan du finde
+                kontaktinformationer og vejledninger her.
+                Frivilligkoordinationen svarer på spørgsmål om onboarding og
+                support.
+              </p>
+              <p>
+                For presserelaterede henvendelser eller samarbejde, kontakt os
+                via email eller LinkedIn.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bliv frivillig section-->
+
+      <section class="mt-20 mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- image -->
+        <div class="relative w-full max-w-[380px] mx-auto">
+          <!-- Orange outline -->
+          <div
+            class="absolute -top-6 right-[-25px]
+         h-[92%] w-[95%]
+         border-2 border-orange60
+         rounded-3xl
+         border-l-0 border-t-0"
+          >
+          </div>
+
+          <!-- Image container -->
+          <div class="relative rounded-3xl overflow-hidden shadow-sm">
+            <Image
+              src={image6}
+              alt="2 happy people"
+              class="rounded-3xl w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+        <!-- Boks -->
+        <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
+          <Heading
+            htmlheading="h2"
+            size="xsmall"
+            stylingclasses="text-primaryblue60"
+          >
+            Tilmeld dig her!
+          </Heading>
+          <p>
+            På landsplan har vi mere end 100 frivillige, som støtter unge i
+            deres udfordringer og er med til at øge deres trivsel. Har du lyst
+            til at hjælpe unge, udvikle dine egne kompetencer og blive en del af
+            et fedt frivilligt fællesskab? Så udfyld ansøgningsskemaet!
+          </p>
+          <div class="mt-4">
+            <Button variant="secondary" size="medium"> Send andsøgning </Button>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </section></MainLayout
+>
