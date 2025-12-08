@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+
 import "../styles/tailwind.css";
 import "animate.css";
 const { title } = Astro.props;
@@ -15,6 +17,7 @@ import Link from "../components/Link.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{Astro.props.title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script
       defer
       src="https://unpkg.com/tailwindcss-intersect@2.x.x/dist/observer.min.js"
@@ -28,6 +31,16 @@ import Link from "../components/Link.astro";
     </header>
 
     <main>
+      <!-- Chatten sticky start -->
+      <div id="ctaknaptrigger"></div>
+      <div
+        id="ctaknap"
+        class="fixed top-1/2 -right-16 -translate-y-1/2 rotate-270 z-50
+         opacity-0 pointer-events-none transition-opacity duration-300"
+      >
+        <Button variant="primary" size="medium">Chatten</Button>
+      </div>
+      <!-- Chatten sticky slut -->
       <slot />
     </main>
 
@@ -36,3 +49,26 @@ import Link from "../components/Link.astro";
     </footer>
   </body>
 </html>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("ctaknap");
+    const trigger = document.getElementById("ctaknaptrigger");
+
+    function checkPosition() {
+      const triggerTop = trigger.getBoundingClientRect().top;
+
+      if (triggerTop < window.innerHeight * 0.2) {
+        // vis knappen
+        btn.classList.remove("opacity-0", "pointer-events-none");
+        btn.classList.add("opacity-100");
+      } else {
+        // skjul knappen
+        btn.classList.add("opacity-0", "pointer-events-none");
+        btn.classList.remove("opacity-100");
+      }
+    }
+
+    window.addEventListener("scroll", checkPosition);
+    checkPosition();
+  });
+</script>

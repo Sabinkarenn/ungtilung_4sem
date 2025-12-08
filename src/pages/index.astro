@@ -6,6 +6,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import heroimage from "../assets/images/heroimage1.webp";
 import image2 from "../assets/images/image2.webp";
+import image6 from "../assets/images/image6.webp";
 import image4 from "../assets/images/image4.webp";
 import anonym from "../assets/images/anonym.webp";
 import samtale from "../assets/images/samtale.webp";
@@ -26,7 +27,9 @@ import Form from "../components/Form.astro";
     >
       <!-- Headline & Tagline -->
       <div class="flex flex-col gap-2">
-        <Heading htmlheading="h1" size="xlarge">Ung til ung</Heading>
+        <div class="animate__animated animate__fadeInLeft animate__once">
+          <Heading htmlheading="h1" size="xlarge">Ung til ung</Heading>
+        </div>
 
         <p class="text-lg text-darkblue max-w-xl">
           Dit digitale fællesskab, der hjælper dig skabe det liv, du ønsker —
@@ -34,7 +37,9 @@ import Form from "../components/Form.astro";
         </p>
 
         <div class="mt-4">
-          <Button variant="secondary" size="medium"> Læs mere </Button>
+          <Button href="#ungtilung" variant="secondary" size="medium">
+            Læs mere
+          </Button>
         </div>
       </div>
 
@@ -60,29 +65,29 @@ import Form from "../components/Form.astro";
 
   <!-- Hvad er ung til ung section -->
 
-  <section class="mt-20">
-    <div class="mx-auto px-6 lg:px-8">
+  <section id="ungtilung" class="mt-30">
+    <div class="px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <!-- image -->
         <div class="relative w-full max-w-[400px] mx-auto">
           <!-- Orange outline -->
           <div
             class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
-             rounded-3xl border-l-0 border-t-0"
+             rounded-xl border-l-0 border-t-0"
           >
           </div>
 
-          <div class="relative rounded-3xl p-4">
+          <div class="relative rounded-xl p-4">
             <Image
               src={image2}
               alt="2 friends hugging"
-              class="rounded-3xl w-full h-auto object-cover"
+              class="rounded-xl w-full h-auto object-cover"
             />
           </div>
         </div>
 
         <!-- tekst indhold -->
-        <div class="text-base lg:pl-8">
+        <div class="text-base">
           <Heading htmlheading="h2" size="large"
             >Ingen kan alt – alle kan noget</Heading
           >
@@ -116,7 +121,7 @@ import Form from "../components/Form.astro";
           </div>
 
           <div class="mt-8">
-            <Button variant="primary" size="medium"> Læs mere </Button>
+            <Button variant="primary" size="medium"> Tilmeld dig </Button>
           </div>
         </div>
       </div>
@@ -124,10 +129,11 @@ import Form from "../components/Form.astro";
   </section>
 
   <!-- vores tilbud section -->
-  <section
-    class="justify-center items-center mt-20 grid grid-cols-2 md:grid-cols-4 gap-4"
-  >
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:m-4 gap-6">
+  <div class="mt-30 justify-center text-center">
+    <Heading htmlheading="h2" size="large">vores tilbud</Heading>
+  </div>
+  <section class="justify-center items-center flex gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:m-4 gap-19">
       <Tilbudscard
         url="/samtaleforlob"
         bg="bg-green40"
@@ -139,7 +145,7 @@ import Form from "../components/Form.astro";
       <Tilbudscard
         url="/fællesskab"
         bg="bg-primaryblue60"
-        icon="fællesskab.svg"
+        icon="fælleskab.svg"
         iconalt="Fællesskab"
         title="Fællesskab"
       />
@@ -164,18 +170,41 @@ import Form from "../components/Form.astro";
 
   <!-- Volunteer section-->
 
-  <section class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div><Image src={image2} alt="happy man on bike" class="" /></div>
+  <section class="mt-30 grid grid-cols-1 md:grid-cols-2 gap-15">
+    <!-- image -->
+    <div class="relative w-full max-w-[380px] mx-auto">
+      <!-- Orange outline -->
+      <div
+        class="absolute -top-6 right-[-25px]
+       h-[92%] w-[95%]
+       border-2 border-orange60
+       rounded-3xl
+       border-l-0 border-t-0"
+      >
+      </div>
+
+      <!-- Image container -->
+      <div class="relative rounded-3xl overflow-hidden shadow-sm">
+        <Image
+          src={image6}
+          alt="2 happy people"
+          class="rounded-3xl w-full h-auto object-cover"
+        />
+      </div>
+    </div>
     <div>
       <!-- Boks -->
-      <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
-        <Heading
-          htmlheading="h2"
-          size="xsmall"
-          stylingclasses="text-primaryblue60"
-        >
-          Bliv friviilig
-        </Heading>
+      <aside class="w-full max-w-sm bg-green60 rounded-xl pr-10 p-10">
+        <div class="mb-">
+          <Heading
+            htmlheading="h2"
+            size="xsmall"
+            stylingclasses="text-primaryblue60"
+          >
+            Bliv friviilig
+          </Heading>
+        </div>
+
         <p>
           Hos UngTilUng er vi mere end 100 aktive frivillige, men vi har altid
           brug for flere, så vi sammen kan støtte unge i at skabe det liv, de

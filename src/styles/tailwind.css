@@ -28,20 +28,9 @@
   --color-green100: #3a5f34;
 }
 
-/* Lokale fonts  */
-@font-face {
-  font-family: "GT Walsheim";
-  src: url("/gtwlasheim.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "bommerslap";
-  src: url("/bommer.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
 
 /* Base layer med typografi */
 @layer base {
@@ -51,10 +40,10 @@
   ::backdrop,
   ::file-selector-button {
     h1 {
-      font-family: "bommerslap";
+      font-family: "Crete Round";
     }
     h2 {
-      font-family: "GT Walsheim", sans-serif;
+      font-family: "DM sans", sans-serif;
       @apply text-primaryblue60;
     }
 
@@ -66,7 +55,7 @@
     li,
     a {
       @apply text-primaryblue100;
-      font-family: "GT Walsheim", sans-serif;
+      font-family: "DM sans", sans-serif;
     }
 
     /* a til links i header */
@@ -78,14 +67,13 @@
       @apply mb-6;
     }
     div {
-      font-family: "GT Walsheim", sans-serif;
+      font-family: "DM sans", sans-serif;
       @apply text-primaryblue60;
     }
     button {
-      font-family: "GT Walsheim", sans-serif;
+      font-family: "DM sans", sans-serif;
       @apply text-primaryblue100;
       @apply text-lg;
-      @apply font-bold;
     }
 
     span {

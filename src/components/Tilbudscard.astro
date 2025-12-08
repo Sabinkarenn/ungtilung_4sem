@@ -1,24 +1,34 @@
 ---
 const { url = "/", bg = "", icon = "", iconalt = "", title = "" } = Astro.props;
+const imgSrc = icon ? `/${icon.replace(/^\/+/, "")}` : null;
 ---
 
 <a href={url} class="block w-full no-underline text-inherit">
   <div
     class="relative w-full max-w-[220px] mx-auto transition-transform duration-300 hover:scale-105"
   >
-    <!-- Selve kortet -->
-    <div
-      class={`rounded-3xl p-30 flex flex-col items-center justify-center h-[400px]  ${bg}`}
-    >
-      <!-- Illustration -->
-      <img
-        src={`/${icon}`}
-        alt={iconalt}
-        class="w-[300px] h-[300px] object-contain"
-      />
+    <div class={`rounded-3xl p-6 flex flex-col h-[400px] ${bg}`}>
+      <div class="h-[20%]"></div>
 
-      <!-- Titel -->
-      <p class="text-white tracking-wide">
+      <!-- Mid content  -->
+      <div class="flex-grow flex items-center justify-center">
+        {
+          imgSrc ? (
+            <img
+              src={imgSrc}
+              alt={iconalt || title}
+              class="w-full max-w-[160px] h-auto object-contain"
+            />
+          ) : (
+            <div class="w-full max-w-[160px] h-[120px]  rounded-md flex items-center justify-center text-sm text-gray-500">
+              Ingen illustration
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Titel nederst -->
+      <p class="text-white text-xl tracking-wide text-center mt-4">
         {title}
       </p>
     </div>

@@ -52,7 +52,7 @@ import Slider2 from "../components/Slider2.astro";
     </div>
 
     <!-- chattens åbningstider section -->
-    <section class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section class="mt-30 grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- image -->
       <div class="relative w-full max-w-[380px] mx-auto">
         <!-- Orange outline -->
@@ -76,12 +76,14 @@ import Slider2 from "../components/Slider2.astro";
       </div>
 
       <!-- Boks -->
-      <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
-        <Heading htmlheading="h2" size="xsmall">
-          Chattens åbningstider
-        </Heading>
+      <aside class="w-full max-w-sm bg-green60 rounded-xl p-10">
+        <div class="mb-5">
+          <Heading htmlheading="h2" size="xsmall">
+            Chattens åbningstider
+          </Heading>
+        </div>
 
-        <ul class="space-y-3 text-white">
+        <ul class="space-y-3 text-white px-2">
           <li class="flex justify-between items-center">
             <span class="font-bold">Mandag</span>
             <span class="text-base">16.00 – 20.00</span>
@@ -121,7 +123,7 @@ import Slider2 from "../components/Slider2.astro";
     </section>
   </section>
   <!-- Citat slider section-->
-  <section class="mt-20">
+  <section class="mt-30">
     <Slider2 />
   </section>
 
@@ -129,7 +131,7 @@ import Slider2 from "../components/Slider2.astro";
 
   <!-- overordnet section til info -->
   <section
-    class="relative flex flex-col md:flex-row items-center md:justify-center px-4 mb-20"
+    class="relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
     x-data="{ info: 'info1' }"
   >
     <!-- div der styre de forskellige muligheder af info -->
@@ -150,6 +152,9 @@ import Slider2 from "../components/Slider2.astro";
       </div>
       <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
       <div x-show="info === 'info1'" x-transition class="p-4">
+        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+          >Oftest stillede spørgsmål</Heading
+        >
         <p class="font-bold">
           Hvad sker der med chatsamtalen efter den er slut?
         </p>
@@ -193,6 +198,9 @@ import Slider2 from "../components/Slider2.astro";
         >
       </div>
       <div x-show="info === 'info2'" x-transition class="p-4">
+        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+          >Ung til ungs værdier</Heading
+        >
         <p>
           Vores værdier bygger på et ligeværdigt møde mellem jer der bruger
           chatten og vores frivillige. Vores frivillige bidrager til, at du i
@@ -225,39 +233,37 @@ import Slider2 from "../components/Slider2.astro";
         >
       </div>
       <div x-show="info === 'info3'" x-transition class="p-4">
-        <p class="italic">
-          Nakkefestival er en lille dansk non-profit musikfestival beliggende i
-          Odsherred i det nordvestlige Sjælland. Endskønt festivalen strengt
-          taget ligger indenfor Rørvigs grænser, er den opkaldt efter den lille
-          landsby Nakke, der ligger tættere på festivalpladsen end selve Rørvig
-          by. Nakkefestival afholdes på boldbanerne bag Rørvighallen med Rørvig
-          Sognegård og Rørvig Friskole som naboer.
+        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+          >Ung til ungs 5 etiske principper</Heading
+        >
+        <p>
+          Fortrolighed, anonymitet og tavshedspligt: Alle brugeres identitet og
+          de oplysninger, de deler, skal beskyttes. Der skal være klare
+          retningslinjer for, hvordan data behandles, og ingen oplysninger må
+          deles uden samtykke. Rådgiverne har tavshedspligt, men følger pligt
+          ift underretning og afværgerpligt.
         </p>
-        <Heading htmlheading="h4" size="small">Transport</Heading>
+        <p>
+          Empati: Rådgivningen skal være baseret på respekt, empati og
+          forståelse. Rådgiverne skal forstå og acceptere brugernes forskellige
+          baggrunde, værdier og livsstile uden at dømme.
+        </p>
+        <p>
+          Kompetence: Rådgiverne skal have tilstrækkelig uddannelse, træning og
+          erfaring til at kunne yde effektiv og ansvarlig støtte til brugeren.
+          Der skal være løbende muligheder for supervision.
+        </p>
+        <p>
+          Grænser og sikkerhed: Der er klare retningslinjer for, hvordan
+          rådgiverne skal håndtere situationer, hvor brugerne har svære
+          udfordringer, som ikke kan håndteres i rådgivningen.
+        </p>
 
         <p>
-          Vil man tage brug af den offentlige transport på sin rejse mod
-          Nakkefestival, så er der fint med muligheder:
-        </p>
-        <p>
-          Kommer man fra København af, kan man tage regionaltoget mod
-          Kalundborg, stå af på Holbæk station for derefter at tage bus 560 mod
-          Nykøbing Sj. st. Fra Nykøbing St. st. kan man derfra tage bus 562 mod
-          Nykøbing Sj. st., for så at stå af ved stoppet Sognegården
-          (Odsherred). Der efter mangler man blot at gå et kort stykke vej til
-          indgangen af Nakkefestivalen.
-        </p>
-        <p>
-          En anden mulighed er at tage S-toget, linje A til Hillerød st., skifte
-          til Lokalbane 920R mod Hundested Havn St. og så tage færgen til Rørvig
-          havn, hvorfra man enten kan gå, cykle eller tage en bus 562 mod
-          Nykøbing Sj. st. og så endeligt stå af ved stoppestedet Sognegården
-          (Odsherred).
-        </p>
-        <p>
-          Kommer man fra Roskilde af, eller længere vest på, kan det igen bedst
-          betale sig at tage til Holbæk station og derfra følge de ovenstående
-          rejsebeskrivelser. Vi glæder os til at se jer! &lt;3 &lt;3 &lt;3
+          Ingen diskrimination: Rådgiverne må ikke diskriminere brugerne på
+          baggrund af køn, race, religion, seksuel orientering, handicap eller
+          andre karakteristika. Alle skal have lige adgang til støtte og
+          ressourcer.
         </p>
       </div>
     </div>

@@ -6,6 +6,9 @@ import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Blogcard from "../components/Blogcard.astro";
 import heroimage3 from "../assets/images/heroimage3.webp";
+import image8 from "../assets/images/image8.webp";
+import Slider from "../components/Slider.astro";
+import Form from "../components/Form.astro";
 ---
 
 <MainLayout>
@@ -50,71 +53,291 @@ import heroimage3 from "../assets/images/heroimage3.webp";
       </div>
     </div>
   </section>
+  <!-- blog section -->
 
-  <section class="text-center px-4">
-    <Heading htmlheading="h2" size="large" stylingclasses="text-orange"
-      >Se events for dagene her!</Heading
-    >
-    <div x-data="{ dagaktiv: 'Alle blogs' }">
-      <!-- Knapper til alle blogs -->
+  <section class="mt-30 text-center px-4">
+    <!-- Alle blogs vises ved indlæsning -->
+    <div x-data="{ dagaktiv: 'alleblogs' }">
+      <!-- Filter knapper -->
       <div
         class="flex flex-col items-center gap-6 lg:flex-row lg:justify-center lg:gap-13 mb-10"
       >
+        <!-- Alle blogs -->
         <button
           @click="dagaktiv = 'alleblogs'"
-          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
-          :class="{ 'bg-darkyellow': dagaktiv === 'alleblogs' }"
+          class="filter-btn text-white border-2 border-orange100 transition rounded-xl cursor-pointer px-12 py-2"
+          :class="dagaktiv === 'alleblogs' ? 'bg-orange100' : 'bg-orange60'"
         >
           Alle blogs
         </button>
 
+        <!-- Angst -->
         <button
-          @click="dagaktiv = 'dag2'"
-          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
-          :class="{ 'bg-darkyellow': dagaktiv === 'dag2' }"
+          @click="dagaktiv = 'angst'"
+          class="filter-btn text-white border-2 border-orange100 transition rounded-xl cursor-pointer px-12 py-2"
+          :class="dagaktiv === 'angst' ? 'bg-orange100' : 'bg-orange60'"
         >
-          d. 24 juli
+          Angst
         </button>
 
+        <!-- Ensomhed -->
         <button
-          @click="dagaktiv = 'dag3'"
-          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
-          :class="{ 'bg-darkyellow': dagaktiv === 'dag3' }"
+          @click="dagaktiv = 'ensomhed'"
+          class="filter-btn text-white border-2 border-orange100 transition rounded-xl cursor-pointer px-12 py-2"
+          :class="dagaktiv === 'ensomhed' ? 'bg-orange100' : 'bg-orange60'"
         >
-          d. 25 juli
+          Ensomhed
         </button>
 
+        <!-- Venskaber -->
         <button
-          @click="dagaktiv = 'dag4'"
-          class="filter-btn text-darkblue border-2 border-darkblue hover:border-orange hover:text-orange transition rounded-xl cursor-pointer px-12 p-4 bg-beige"
-          :class="{ 'bg-darkyellow': dagaktiv === 'dag4' }"
+          @click="dagaktiv = 'venskaber'"
+          class="filter-btn text-white border-2 border-orange100 transition rounded-xl cursor-pointer px-12 py-2"
+          :class="dagaktiv === 'venskaber' ? 'bg-orange100' : 'bg-orange60'"
         >
-          d. 26 juli
+          Venskaber
         </button>
       </div>
       <!-- Alle blogs -->
       <!-- grid til cards -->
-      <Blogcard
-        url="/singleview"
-        cardimage="venner.jpg"
-        cardimagealt="To venner"
-        category="Venskab"
-        categoryColor="bg-green40"
-        date="2. april 2025"
-        author="Anne P."
-        cardtitle="Det nemme venskab er en illusion"
-      />
+      <div
+        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
+        x-show="dagaktiv === 'alleblogs'"
+      >
+        <Blogcard
+          url="/singleview"
+          cardimage="blog1.webp"
+          cardimagealt="To venner"
+          category="Venskab"
+          categoryColor="bg-green40"
+          date="2. april 2025"
+          author="Anne P."
+          cardtitle="Det nemme venskab er en illusion"
+        />
 
-      <Blogcard
-        url="/singleview"
-        cardimage="angst.jpg"
-        cardimagealt="Ung med computer"
-        category="Angst"
-        categoryColor="bg-primaryblue60"
-        date="3. december 2024"
-        author="Anne P."
-        cardtitle="Sådan falder du i søvn selvom du har tankemylder"
-      />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog2.webp"
+          cardimagealt="2 venner"
+          category="Venskab"
+          categoryColor="bg-green60"
+          date="4 februar 2025"
+          author="Anne P."
+          cardtitle="5 konkrete tips til at få nye venner"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog3.webp"
+          cardimagealt="Ung med computer"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="3. december 2024"
+          author="Anne P."
+          cardtitle="Sådan falder du i søvn selvom du har tankemylder"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog4.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="1. december 2024"
+          author="Anne P."
+          cardtitle="Ensomhed: Når man føler sig alene i sommeren"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog5.webp"
+          cardimagealt="Ensom ung"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="24. november 2024"
+          author="Anne P."
+          cardtitle="Bekymringer, kontrol og travle tanker"
+        />
+
+        <Blogcard
+          url="/singleview"
+          cardimage="blog6.webp"
+          cardimagealt="Ensom ung"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="13. november 2024"
+          author="Anne P."
+          cardtitle="Tankemylder: skriv, skriv, skriv"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog7.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="2. november 2024"
+          author="Anne P."
+          cardtitle="Det store venskabsfokus"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog8.webp"
+          cardimagealt="3 venner"
+          category="Venskab"
+          categoryColor="bg-green60"
+          date="29. oktober 2024"
+          author="Anne P."
+          cardtitle="En ven til hver lejlighed"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog9.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="1. oktober 2024"
+          author="Anne P."
+          cardtitle="Du er ikke alene, selvom det føles sådan"
+        />
+      </div>
+      <!-- Angst-->
+      <div
+        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        x-show="dagaktiv === 'angst'"
+      >
+        <Blogcard
+          url="/singleview"
+          cardimage="blog3.webp"
+          cardimagealt="Ung med computer"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="3. december 2024"
+          author="Anne P."
+          cardtitle="Sådan falder du i søvn selvom du har tankemylder"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog5.webp"
+          cardimagealt="Ensom ung"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="24. november 2024"
+          author="Anne P."
+          cardtitle="Bekymringer, kontrol og travle tanker"
+        />
+
+        <Blogcard
+          url="/singleview"
+          cardimage="blog6.webp"
+          cardimagealt="Ensom ung"
+          category="Angst"
+          categoryColor="bg-primaryblue40"
+          date="13. november 2024"
+          author="Anne P."
+          cardtitle="Tankemylder: skriv, skriv, skriv"
+        />
+      </div>
+
+      <!-- Ensomhed-->
+      <div
+        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        x-show="dagaktiv === 'ensomhed'"
+      >
+        <Blogcard
+          url="/singleview"
+          cardimage="blog4.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="1. december 2024"
+          author="Anne P."
+          cardtitle="Ensomhed: Når man føler sig alene i sommeren"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog7.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="2. november 2024"
+          author="Anne P."
+          cardtitle="Det store venskabsfokus"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog9.webp"
+          cardimagealt="Ensom ung"
+          category="Ensom"
+          categoryColor="bg-primaryblue80"
+          date="1. oktober 2024"
+          author="Anne P."
+          cardtitle="Du er ikke alene, selvom det føles sådan"
+        />
+      </div>
+      <!--Venskaber-->
+      <div
+        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        x-show="dagaktiv === 'venskaber'"
+      >
+        <Blogcard
+          url="/singleview"
+          cardimage="blog1.webp"
+          cardimagealt="To venner"
+          category="Venskab"
+          categoryColor="bg-green40"
+          date="2. april 2025"
+          author="Anne P."
+          cardtitle="Det nemme venskab er en illusion"
+        />
+
+        <Blogcard
+          url="/singleview"
+          cardimage="blog2.webp"
+          cardimagealt="2 venner"
+          category="Venskab"
+          categoryColor="bg-green60"
+          date="4 februar 2025"
+          author="Anne P."
+          cardtitle="5 konkrete tips til at få nye venner"
+        />
+        <Blogcard
+          url="/singleview"
+          cardimage="blog8.webp"
+          cardimagealt="3 venner"
+          category="Venskab"
+          categoryColor="bg-green60"
+          date="29. oktober 2024"
+          author="Anne P."
+          cardtitle="En ven til hver lejlighed"
+        />
+      </div>
+    </div>
+  </section>
+  <!-- Citat slider section-->
+  <section class="mt-30">
+    <Slider />
+  </section>
+
+  <!-- Form section-->
+  <section
+    class="mt-30 mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+  >
+    <div><Form /></div>
+
+    <!-- image-->
+
+    <div class="relative w-full max-w-[370px] mx-auto">
+      <!-- Orange outline -->
+      <div
+        class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
+      rounded-3xl border-l-0 border-t-0"
+      >
+      </div>
+
+      <div class="relative rounded-3xl p-4">
+        <Image
+          src={image8}
+          alt="2 happy people"
+          class="rounded-3xl w-full h-auto object-cover"
+        />
+      </div>
     </div>
   </section>
 </MainLayout>

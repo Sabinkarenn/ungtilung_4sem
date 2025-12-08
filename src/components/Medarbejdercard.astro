@@ -23,7 +23,7 @@ import Heading from "../components/Heading.astro";
   >
     <!-- Outer card -->
     <div
-      class="rounded-2xl border-2 border-orange60 bg-beige p-4 flex flex-col gap-4 relative overflow-hidden"
+      class="rounded-xl border-2 border-orange60 bg-beige p-4 gap-4 relative overflow-hidden"
     >
       <!-- Image wrapper (giver indre kant + afrundede hjørner) -->
       <div class="w-full flex justify-center">
@@ -37,7 +37,7 @@ import Heading from "../components/Heading.astro";
       </div>
 
       <!-- Tekstindhold -->
-      <div class="pt-4">
+      <div class="pt-4 pl-2">
         <Heading htmlheading="h2" size="small">{name}</Heading>
 
         <p class="text-sm text-primaryblue100 font-semibold mb-2">{role}</p>
@@ -47,24 +47,20 @@ import Heading from "../components/Heading.astro";
         </p>
       </div>
 
-      <!-- email venstr og linkedin ikon nederst højre -->
-      <div class="mt-4 flex justify-between">
+      <!-- email venstre og linkedin ikon nederst højre -->
+      <div class="mt-4 flex text-center justify-start">
         <a
           href={`mailto:${email}`}
-          class="flex gap-2 text-primaryblue100 text-sm no-underline"
+          class="text-primaryblue100 text-sm no-underline"
         >
           <!-- email icon -->
           <a href="/" class="">
-            <img src="/mail.svg" alt="mail icon" class="h-10" />
+            <img src="/mail.svg" alt="mail icon" class="h-14" />
           </a>
           <span class="underline text-primaryblue100 pl-3">{email}</span>
         </a>
 
-        <a
-          href={linkedin}
-          class="flex items-center gap-2"
-          aria-label="Til forsiden"
-        >
+        <a href={linkedin} class="gap-2" aria-label="Til forsiden">
           <img src="/linkedin.svg" alt="Linkedin icon" class="h-20" />
         </a>
       </div>
