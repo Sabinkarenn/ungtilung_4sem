@@ -11,57 +11,65 @@ import mind from "../assets/images/mind.webp";
 
 <footer class="bg-beige border-t-2 border-primaryblue60 py-12 px-6">
   <div
-    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 items-start"
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 items-start"
   >
-    <!-- Kolonne 1: Logo -->
-    <div class="flex flex-col md:items-start">
-      <img src="/ungtilunglogo.svg" alt="Logo" class="h-10 w-auto mb-8" />
+    <!-- logo -->
+    <div class="flex items-start">
+      <img src="/ungtilunglogo.svg" alt="UngTilUng logo" class="h-10 w-auto" />
     </div>
 
-    <!-- Kolonne 2: Find os -->
-    <div class="flex flex-col items-center text-center">
-      <Heading htmlheading="h2" size="small">Find os</Heading>
-
-      <div class="flex flex-col gap-6">
-        <a href="#" class="flex justify-center">
-          <img src="/facebook.svg" class="h-10 w-10" alt="Facebook" />
-        </a>
-        <a href="#" class="flex justify-center">
-          <img src="/instagram.svg" class="h-10 w-10" alt="Instagram" />
-        </a>
-        <a href="#" class="flex justify-center">
-          <img src="/tiktok.svg" class="h-10 w-10" alt="TikTok" />
-        </a>
+    <!-- Find os  -->
+    <div class="flex flex-col items-start md:items-start text-left">
+      <div class="mb-3">
+        <Heading htmlheading="h2" size="small">Find os</Heading>
+      </div>
+      <!-- ikoner  -->
+      <div class="flex flex-col gap-4">
+        <a href="https://www.facebook.com/ungtilungcom" class="block"
+          ><img src="/facebook.svg" alt="Facebook" class="h-8 w-8" /></a
+        >
+        <a href="https://www.instagram.com/ungtilung/?hl=en" class="block"
+          ><img src="/instagram.svg" alt="Instagram" class="h-8 w-8" /></a
+        >
+        <a href="https://www.tiktok.com/@ungtilung" class="block"
+          ><img src="/tiktok.svg" alt="TikTok" class="h-8 w-8" /></a
+        >
       </div>
     </div>
 
-    <!-- Kolonne 3: Kontakt + partnerlogoer -->
-    <div
-      class="flex flex-col items-center md:items-end text-end md:text-left gap-10"
-    >
-      <!-- Kontakt -->
-      <div>
+    <!-- Kontakt os  -->
+    <div class="flex flex-col items-start md:items-start text-left">
+      <div class="mb-3">
         <Heading htmlheading="h2" size="small">Kontakt os</Heading>
-        <p class="leading-relaxed">
-          UngTilUng<br />
-          Esromgade 15, 5<br />
-          2200 København N<br /><br />
-          Email: hej@ungtilung.com<br />
-          CVR: 30940261
-        </p>
       </div>
+      <p class="leading-relaxed">
+        UngTilUng<br />
+        Esromgade 15, 5<br />
+        2200 København N<br /><br />
+        Email: hej@ungtilung.com<br />
+        CVR: 30940261
+      </p>
+    </div>
 
-      <!-- Partnerlogoer -->
-      <div
-        class="flex flex-col sm:flex-row items-center sm:justify-end gap-6 mt-6"
-      >
+    <!-- Partnerlogoer -->
+    <div class="flex w-full">
+      <div class="ml-auto flex flex-col items-end space-y-4">
         <Image
           src={fn}
           alt="FN verdensmål logo"
-          class="w-full h-auto object-cover"
+          class="h-12 w-auto object-contain"
         />
-        <Image src={mind} alt="logo" class="w-full h-auto object-cover" />
-        <Image src={rådgivning} alt="logo" class="w-full h-auto object-cover" />
+        <Image
+          src={mind}
+          alt="Mind Community logo"
+          class="h-12 w-auto object-contain"
+        />
+
+        <Image
+          src={fn}
+          alt="Rådgivnings Danmark logo"
+          class="h-12 w-auto object-contain"
+        />
       </div>
     </div>
   </div>
