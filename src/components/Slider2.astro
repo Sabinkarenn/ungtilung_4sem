@@ -1,0 +1,190 @@
+---
+import Heading from "../components/Heading.astro";
+import Button from "../components/Button.astro";
+---
+
+<!-- INFO SLIDER -->
+<div class="carousel w-full max-w-7xl mx-auto p-6">
+  <!-- SLIDE 1 -->
+  <div id="info1" class="carousel-item relative w-full">
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
+      <!-- Arrows -->
+      <div class="absolute right-6 top-6 flex gap-3">
+        <a
+          href="#info2"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200
+           w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          ←
+        </a>
+        <a
+          href="#info2"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          →
+        </a>
+      </div>
+
+      <!-- Content -->
+      <Heading htmlheading="h3" size="medium">Snak med os anonymt</Heading>
+
+      <p class="leading-relaxed mt-4 max-w-5xl">
+        Du mellem 16-35 år. Du er anonym og kan derfor fortælle præcis, hvordan
+        du har det. I chatten kan du vende stort og småt. Om det er ensomhed,
+        angst/nervøsitet, kærestesorg, tristhed eller lavt selvværd. Frivillige
+        sidder klar og kan give dig støtte og andre øjne på det du går rundt
+        med. Chatten kan give dig rum til det, der ellers kan føles svært at
+        tale om – så giv dig selv lov til at tale om det, der fylder hos dig.
+      </p>
+      <p class="mt-4 leading-relaxed max-w-5xl">
+        Obs: Selvom chattens åbningstider er søn-man kl. 16-20 og tir-ons kl.
+        17-19, så kræver det at der er frivillige, som kan tage en vagt. Det er
+        ikke altid tilfældet og du kan derfor risikere at komme ind i tidsrummet
+        og der står at der er lukket. Vi forsøger hele tiden, at fylde vagter op
+        så godt vi kan.
+      </p>
+      <div class="flex justify-center mt-7">
+        <Button href="#" variant="secondary" size="medium">Læs mere</Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div id="info2" class="carousel-item relative w-full">
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
+      <!-- Arrows -->
+      <div class="absolute right-6 top-6 flex gap-3">
+        <a
+          href="#info1"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          ←
+        </a>
+        <a
+          href="#info1"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          →
+        </a>
+      </div>
+
+      <!-- Content -->
+      <Heading htmlheading="h3" size="medium">Hvem chatter du med?</Heading>
+
+      <p class="mt-4 leading-relaxed max-w-3xl">
+        Vi er frivillige unge mellem 18-35 år, som selv har været gennem
+        forskellige udfordringer i livet. Vi ved derfor, hvordan det kan føles
+        og ved, at det kan være svært at tale om det, du kæmper med. Og vi er
+        her for, at du kan have et sted, hvor du kan snakke om alt det, der
+        fylder. Vi har alle taget UngTilUngs uddannelse, der har klædt os på til
+        at sidde i chatten og lytte, støtte og anerkende dig og vi får jævnlig
+        supervision.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- DOTS -->
+<div class="flex justify-center gap-4 mt-4">
+  <a
+    href="#info1"
+    class="info-dot w-3 h-3 rounded-full bg-primaryblue60"
+    aria-label="Gå til slide 1"></a>
+  <a
+    href="#info2"
+    class="info-dot w-3 h-3 rounded-full border-2 border-primaryblue60 bg-transparent"
+    aria-label="Gå til slide 2"></a>
+</div>
+
+<script>
+  (function () {
+    // Find slides dynamisk (alle elementer med .carousel-item)
+    const slideEls = Array.from(document.querySelectorAll(".carousel-item"));
+    if (!slideEls.length) return;
+
+    // Byg slideIds i samme rækkefølge som DOM
+    const slideIds = slideEls.map((el) => "#" + el.id);
+
+    // Find dots (kun de specifikke prikker)
+    const dots = Array.from(document.querySelectorAll(".info-dot"));
+
+    // Safety: dots skal matche antal slides - ellers fortsæt, men log
+    if (dots.length !== slideIds.length) {
+      console.warn("Antal dots matcher ikke antal slides:", {
+        slides: slideIds.length,
+        dots: dots.length,
+      });
+    }
+
+    // Hjælpefunktion: sæt aktiv ud fra index
+    function setActiveIndex(activeIndex) {
+      // bounds check
+      const idx = Math.max(0, Math.min(activeIndex, slideIds.length - 1));
+
+      slideIds.forEach((id, i) => {
+        const slide = document.querySelector(id);
+        if (!slide) return;
+        if (i === idx) {
+          slide.classList.remove("hidden");
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+
+      // Opdater dots: match ved index - hvis der er færre dots end slides, undgå fejl
+      dots.forEach((dot, i) => {
+        if (i === idx) {
+          dot.classList.add("bg-primaryblue60");
+          dot.classList.remove("border-2", "bg-transparent");
+        } else {
+          dot.classList.remove("bg-primaryblue60");
+          dot.classList.add("border-2", "bg-transparent");
+        }
+      });
+    }
+
+    // Find active index ud fra hash (eller 0 hvis ingen)
+    function getActiveIndexFromHash() {
+      const hash = window.location.hash || "";
+      const idx = slideIds.indexOf(hash);
+      return idx !== -1 ? idx : 0;
+    }
+
+    // Initial sæt
+    setActiveIndex(getActiveIndexFromHash());
+
+    // Når hash ændres (pile eller browser navigation)
+    window.addEventListener("hashchange", () => {
+      setActiveIndex(getActiveIndexFromHash());
+    });
+
+    // Gør dots klikbare: opdater hash via history.replaceState for ikke at scrolle
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetHash =
+          dot.getAttribute("href") || slideIds[i] || slideIds[0];
+        // Opdater URL hash uden automatisk scroll
+        history.replaceState(null, "", targetHash);
+        // Sæt aktivt slide
+        setActiveIndex(i);
+      });
+    });
+
+    // (Valgfrit) gør pile-links mere præcise hvis du ønsker at undgå browser-scroll:
+    // Vi lytter på klik på pile-anchors inde i carousel og opdaterer via history.replaceState
+    const arrowAnchors = Array.from(
+      document.querySelectorAll('.carousel a[href^="#"]')
+    );
+    arrowAnchors.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        // lad browser opdatere hash som normalt — vi håndterer hashchange ovenfor
+        // hvis du vil undgå scroll, uncomment nedenstående lines:
+        // e.preventDefault();
+        // const target = a.getAttribute('href');
+        // history.replaceState(null, '', target);
+        // setActiveIndex(slideIds.indexOf(target));
+      });
+    });
+  })();
+</script>

@@ -22,9 +22,10 @@ import Heading from "../components/Heading.astro";
     >
       <!-- Headline & Tagline -->
       <div class="flex flex-col gap-2">
-        <Heading htmlheading="h1" size="xlarge">Om os</Heading>
-
-        <p class="text-lg text-darkblue max-w-xl">
+        <div class="animate__animated animate__fadeInLeft animate__once">
+          <Heading htmlheading="h1" size="xlarge">Om os</Heading>
+        </div>
+        <p class="text-lg max-w-xl">
           Bliv klogere på UngTilUng og vores vision for et stærkt ungt digitalt
           fællesskab
         </p>
@@ -207,7 +208,7 @@ import Heading from "../components/Heading.astro";
   </section>
 
   <!-- Vores vision section -->
-  <section class="mt-20 mb-20">
+  <section class="mt-30 mb-30">
     <Slider3 />
   </section>
 </MainLayout>

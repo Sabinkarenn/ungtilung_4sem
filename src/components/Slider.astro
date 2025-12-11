@@ -1,0 +1,183 @@
+---
+import Heading from "../components/Heading.astro";
+---
+
+<!-- INFO SLIDER -->
+<div class="carousel w-full max-w-7xl mx-auto p-6">
+  <!-- SLIDE 1 -->
+  <div id="info1" class="carousel-item relative w-full">
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
+      <!-- Arrows -->
+      <div class="absolute right-6 top-6 flex gap-3">
+        <a
+          href="#info2"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200
+           w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          ←
+        </a>
+        <a
+          href="#info2"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          →
+        </a>
+      </div>
+
+      <!-- Content -->
+      <div class="justify-center text-center">
+        <div class="mt-15 mb-6">
+          <Heading htmlheading="h2" size="large"
+            >“Jeg blev mere optimistisk på fremtiden og de næste skridt. Det
+            gjorde en stor forskel at mærke, at jeg ikke stod alene, og at der
+            faktisk findes et trygt sted, hvor man kan få støtte og blive
+            forstået.”</Heading
+          >
+        </div>
+        <div class="">
+          <Heading htmlheading="h3" size="medium">- Anonym ung</Heading>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div id="info2" class="carousel-item relative w-full">
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
+      <!-- Arrows -->
+      <div class="absolute right-6 top-6 flex gap-3">
+        <a
+          href="#info1"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          ←
+        </a>
+        <a
+          href="#info1"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
+        >
+          →
+        </a>
+      </div>
+
+      <!-- Content -->
+      <div class="justify-center text-center">
+        <div class="mt-15 mb-6">
+          <Heading htmlheading="h2" size="large"
+            >“Efter forløbet føler jeg mig mere optimistisk omkring fremtiden og
+            de næste skridt. Det gav mig mod på at arbejde videre med mig selv
+            og en følelse af, at jeg godt kan komme igennem det, jeg står i.”</Heading
+          >
+        </div>
+        <div class="">
+          <Heading htmlheading="h3" size="medium">- Anonym ung</Heading>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOTS -->
+<div class="flex justify-center gap-4 mt-4">
+  <a
+    href="#info1"
+    class="info-dot w-3 h-3 rounded-full bg-primaryblue60"
+    aria-label="Gå til slide 1"></a>
+  <a
+    href="#info2"
+    class="info-dot w-3 h-3 rounded-full border-2 border-primaryblue60 bg-transparent"
+    aria-label="Gå til slide 2"></a>
+</div>
+
+<script>
+  (function () {
+    // Find slides dynamisk (alle elementer med .carousel-item)
+    const slideEls = Array.from(document.querySelectorAll(".carousel-item"));
+    if (!slideEls.length) return;
+
+    // Byg slideIds i samme rækkefølge som DOM
+    const slideIds = slideEls.map((el) => "#" + el.id);
+
+    // Find dots (kun de specifikke prikker)
+    const dots = Array.from(document.querySelectorAll(".info-dot"));
+
+    // Safety: dots skal matche antal slides - ellers fortsæt, men log
+    if (dots.length !== slideIds.length) {
+      console.warn("Antal dots matcher ikke antal slides:", {
+        slides: slideIds.length,
+        dots: dots.length,
+      });
+    }
+
+    // Hjælpefunktion: sæt aktiv ud fra index
+    function setActiveIndex(activeIndex) {
+      // bounds check
+      const idx = Math.max(0, Math.min(activeIndex, slideIds.length - 1));
+
+      slideIds.forEach((id, i) => {
+        const slide = document.querySelector(id);
+        if (!slide) return;
+        if (i === idx) {
+          slide.classList.remove("hidden");
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+
+      // Opdater dots: match ved index - hvis der er færre dots end slides, undgå fejl
+      dots.forEach((dot, i) => {
+        if (i === idx) {
+          dot.classList.add("bg-primaryblue60");
+          dot.classList.remove("border-2", "bg-transparent");
+        } else {
+          dot.classList.remove("bg-primaryblue60");
+          dot.classList.add("border-2", "bg-transparent");
+        }
+      });
+    }
+
+    // Find active index ud fra hash (eller 0 hvis ingen)
+    function getActiveIndexFromHash() {
+      const hash = window.location.hash || "";
+      const idx = slideIds.indexOf(hash);
+      return idx !== -1 ? idx : 0;
+    }
+
+    // Initial sæt
+    setActiveIndex(getActiveIndexFromHash());
+
+    // Når hash ændres (pile eller browser navigation)
+    window.addEventListener("hashchange", () => {
+      setActiveIndex(getActiveIndexFromHash());
+    });
+
+    // Gør dots klikbare: opdater hash via history.replaceState for ikke at scrolle
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetHash =
+          dot.getAttribute("href") || slideIds[i] || slideIds[0];
+        // Opdater URL hash uden automatisk scroll
+        history.replaceState(null, "", targetHash);
+        // Sæt aktivt slide
+        setActiveIndex(i);
+      });
+    });
+
+    // (Valgfrit) gør pile-links mere præcise hvis du ønsker at undgå browser-scroll:
+    // Vi lytter på klik på pile-anchors inde i carousel og opdaterer via history.replaceState
+    const arrowAnchors = Array.from(
+      document.querySelectorAll('.carousel a[href^="#"]')
+    );
+    arrowAnchors.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        // lad browser opdatere hash som normalt — vi håndterer hashchange ovenfor
+        // hvis du vil undgå scroll, uncomment nedenstående lines:
+        // e.preventDefault();
+        // const target = a.getAttribute('href');
+        // history.replaceState(null, '', target);
+        // setActiveIndex(slideIds.indexOf(target));
+      });
+    });
+  })();
+</script>

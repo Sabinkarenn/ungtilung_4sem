@@ -2,22 +2,23 @@
 import Heading from "../components/Heading.astro";
 ---
 
-<!-- INFO SLIDER  -->
-<div class="carousel w-full max-w-5xl mx-auto p-6">
+<!-- INFO SLIDER -->
+<div class="carousel w-full max-w-7xl mx-auto p-6">
   <!-- SLIDE 1 -->
   <div id="info1" class="carousel-item relative w-full">
-    <div class="w-full rounded-2xl border-2 border-primaryblue60 bg-beige p-10">
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
       <!-- Arrows -->
       <div class="absolute right-6 top-6 flex gap-3">
         <a
           href="#info2"
-          class="w-10 h-10 flex items-center justify-center border-2 border-primaryblue100 rounded-full text-primaryblue100"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200
+           w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
         >
           ←
         </a>
         <a
           href="#info2"
-          class="w-10 h-10 flex items-center justify-center border-2 border-primaryblue100 rounded-full text-primaryblue100"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
         >
           →
         </a>
@@ -29,7 +30,7 @@ import Heading from "../components/Heading.astro";
       <p class="leading-relaxed mt-4 max-w-3xl">
         UngTilUng’s vision er at unge i alderen 18-35 år skal trives i deres
         liv, og have værktøjer og ressourcer til at håndtere hverdagens og
-        livets udfordringer.  UngTilUng vil skabe et online univers, hvor unge
+        livets udfordringer. UngTilUng vil skabe et online univers, hvor unge
         kan dele deres udfordringer, tanker og følelser, samt give dem
         muligheden for at arbejde med sig selv gennem digitale initiativer og
         sunde fællesskaber.
@@ -48,20 +49,18 @@ import Heading from "../components/Heading.astro";
 
   <!-- SLIDE 2 -->
   <div id="info2" class="carousel-item relative w-full">
-    <div
-      class="w-full rounded-2xl border-2 border-primaryblue100 bg-beige p-10"
-    >
+    <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
       <!-- Arrows -->
       <div class="absolute right-6 top-6 flex gap-3">
         <a
           href="#info1"
-          class="w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue100"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
         >
           ←
         </a>
         <a
           href="#info1"
-          class="w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue100"
+          class="hover:bg-primaryblue60 hover:text-beige transition-colors duration-200 w-10 h-10 flex items-center justify-center border-2 border-primaryblue60 rounded-full text-primaryblue60"
         >
           →
         </a>
@@ -101,40 +100,54 @@ import Heading from "../components/Heading.astro";
 
 <!-- DOTS -->
 <div class="flex justify-center gap-4 mt-4">
-  <a href="#info1" class="w-3 h-3 rounded-full bg-primaryblue60"></a>
-  <a href="#info2" class="w-3 h-3 rounded-full border-2 border-primaryblue60"
-  ></a>
+  <a
+    href="#info1"
+    class="info-dot w-3 h-3 rounded-full bg-primaryblue60"
+    aria-label="Gå til slide 1"></a>
+  <a
+    href="#info2"
+    class="info-dot w-3 h-3 rounded-full border-2 border-primaryblue60 bg-transparent"
+    aria-label="Gå til slide 2"></a>
 </div>
+
 <script>
   (function () {
-    // Liste over slide ids i samme rækkefølge som i dit markup
-    const slideIds = ["#info1", "#info2"];
+    // Find slides dynamisk (alle elementer med .carousel-item)
+    const slideEls = Array.from(document.querySelectorAll(".carousel-item"));
+    if (!slideEls.length) return;
 
-    // Query slides and dots
-    const slides = slideIds.map((id) => document.querySelector(id));
-    const dots = [
-      document.querySelector('a[href="#info1"]'),
-      document.querySelector('a[href="#info2"]'),
-    ];
+    // Byg slideIds i samme rækkefølge som DOM
+    const slideIds = slideEls.map((el) => "#" + el.id);
 
-    // Safety: hvis ikke fundet, stop
-    if (slides.some((s) => !s) || dots.some((d) => !d)) return;
+    // Find dots (kun de specifikke prikker)
+    const dots = Array.from(document.querySelectorAll(".info-dot"));
 
-    function setActiveByHash() {
-      const hash = window.location.hash || "#info1";
-      const activeIndex =
-        slideIds.indexOf(hash) !== -1 ? slideIds.indexOf(hash) : 0;
+    // Safety: dots skal matche antal slides - ellers fortsæt, men log
+    if (dots.length !== slideIds.length) {
+      console.warn("Antal dots matcher ikke antal slides:", {
+        slides: slideIds.length,
+        dots: dots.length,
+      });
+    }
 
-      slides.forEach((slide, idx) => {
-        if (idx === activeIndex) {
+    // Hjælpefunktion: sæt aktiv ud fra index
+    function setActiveIndex(activeIndex) {
+      // bounds check
+      const idx = Math.max(0, Math.min(activeIndex, slideIds.length - 1));
+
+      slideIds.forEach((id, i) => {
+        const slide = document.querySelector(id);
+        if (!slide) return;
+        if (i === idx) {
           slide.classList.remove("hidden");
         } else {
           slide.classList.add("hidden");
         }
       });
 
-      dots.forEach((dot, idx) => {
-        if (idx === activeIndex) {
+      // Opdater dots: match ved index - hvis der er færre dots end slides, undgå fejl
+      dots.forEach((dot, i) => {
+        if (i === idx) {
           dot.classList.add("bg-primaryblue60");
           dot.classList.remove("border-2", "bg-transparent");
         } else {
@@ -144,17 +157,47 @@ import Heading from "../components/Heading.astro";
       });
     }
 
-    // Initial set
-    setActiveByHash();
+    // Find active index ud fra hash (eller 0 hvis ingen)
+    function getActiveIndexFromHash() {
+      const hash = window.location.hash || "";
+      const idx = slideIds.indexOf(hash);
+      return idx !== -1 ? idx : 0;
+    }
 
-    // Listen for changes when user clicks arrows (hash changes) or uses back/forward
-    window.addEventListener("hashchange", setActiveByHash);
+    // Initial sæt
+    setActiveIndex(getActiveIndexFromHash());
 
-    // Also make dots clickable update instantly (they are anchors, but update classes immediately)
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        // small timeout to let browser update hash first, then sync classes
-        setTimeout(setActiveByHash, 10);
+    // Når hash ændres (pile eller browser navigation)
+    window.addEventListener("hashchange", () => {
+      setActiveIndex(getActiveIndexFromHash());
+    });
+
+    // Gør dots klikbare: opdater hash via history.replaceState for ikke at scrolle
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetHash =
+          dot.getAttribute("href") || slideIds[i] || slideIds[0];
+        // Opdater URL hash uden automatisk scroll
+        history.replaceState(null, "", targetHash);
+        // Sæt aktivt slide
+        setActiveIndex(i);
+      });
+    });
+
+    // (Valgfrit) gør pile-links mere præcise hvis du ønsker at undgå browser-scroll:
+    // Vi lytter på klik på pile-anchors inde i carousel og opdaterer via history.replaceState
+    const arrowAnchors = Array.from(
+      document.querySelectorAll('.carousel a[href^="#"]')
+    );
+    arrowAnchors.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        // lad browser opdatere hash som normalt — vi håndterer hashchange ovenfor
+        // hvis du vil undgå scroll, uncomment nedenstående lines:
+        // e.preventDefault();
+        // const target = a.getAttribute('href');
+        // history.replaceState(null, '', target);
+        // setActiveIndex(slideIds.indexOf(target));
       });
     });
   })();
