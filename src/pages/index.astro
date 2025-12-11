@@ -6,7 +6,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import heroimage from "../assets/images/heroimage1.webp";
 import image2 from "../assets/images/image2.webp";
-import image6 from "../assets/images/image6.webp";
+import image9 from "../assets/images/image9.webp";
 import image4 from "../assets/images/image4.webp";
 import anonym from "../assets/images/anonym.webp";
 import samtale from "../assets/images/samtale.webp";
@@ -30,11 +30,10 @@ import Form from "../components/Form.astro";
         <div class="animate__animated animate__fadeInLeft animate__once">
           <Heading htmlheading="h1" size="xlarge">Ung til ung</Heading>
         </div>
-
-        <p class="text-lg max-w-xl">
+        <Heading htmlheading="h3" size="small">
           Dit digitale fællesskab, der hjælper dig skabe det liv, du ønsker —
-          alene og sammen med andre
-        </p>
+          alene og sammen med andre</Heading
+        >
 
         <div class="mt-4">
           <Button href="#ungtilung" variant="secondary" size="medium">
@@ -48,11 +47,11 @@ import Form from "../components/Form.astro";
         <!-- Orange outline -->
         <div
           class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
-           rounded-3xl border-l-0 border-t-0"
+           rounded-2xl border-l-0 border-t-0"
         >
         </div>
 
-        <div class="relative rounded-3xl p-4">
+        <div class="relative rounded-2xl p-4">
           <Image
             src={heroimage}
             alt="3 happy people"
@@ -77,7 +76,7 @@ import Form from "../components/Form.astro";
           >
           </div>
 
-          <div class="relative rounded-xl p-4">
+          <div class="relative rounded-2xl p-4">
             <Image
               src={image2}
               alt="2 friends hugging"
@@ -87,7 +86,7 @@ import Form from "../components/Form.astro";
         </div>
 
         <!-- tekst indhold -->
-        <div class="text-base">
+        <div class="text-base lg: pr-20">
           <Heading htmlheading="h2" size="large"
             >Ingen kan alt – alle kan noget</Heading
           >
@@ -135,7 +134,7 @@ import Form from "../components/Form.astro";
   <section class="justify-center items-center flex gap-5">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:m-4 gap-19">
       <Tilbudscard
-        url="/samtaleforlob"
+        url="/vorestilbud"
         bg="bg-green40"
         icon="samtale.svg"
         iconalt="Samtaleforløb"
@@ -143,7 +142,7 @@ import Form from "../components/Form.astro";
       />
 
       <Tilbudscard
-        url="/fællesskab"
+        url="/vorestilbud"
         bg="bg-primaryblue60"
         icon="fælleskab.svg"
         iconalt="Fællesskab"
@@ -151,7 +150,7 @@ import Form from "../components/Form.astro";
       />
 
       <Tilbudscard
-        url="/chat"
+        url="/vorestilbud"
         bg="bg-primaryblue20"
         icon="chat.svg"
         iconalt="Anonym chat"
@@ -159,7 +158,7 @@ import Form from "../components/Form.astro";
       />
 
       <Tilbudscard
-        url="/kurser"
+        url="/vorestilbud"
         bg="bg-green80"
         icon="hjælp.svg"
         iconalt="Kurser"
@@ -172,7 +171,7 @@ import Form from "../components/Form.astro";
 
   <section class="mt-30 grid grid-cols-1 md:grid-cols-2 gap-15">
     <!-- image -->
-    <div class="relative w-full max-w-[380px] mx-auto">
+    <div class="relative w-full max-w-[480px] mx-auto">
       <!-- Orange outline -->
       <div
         class="absolute -top-6 right-[-25px]
@@ -186,7 +185,7 @@ import Form from "../components/Form.astro";
       <!-- Image container -->
       <div class="relative rounded-3xl overflow-hidden shadow-sm">
         <Image
-          src={image6}
+          src={image9}
           alt="2 happy people"
           class="rounded-3xl w-full h-auto object-cover"
         />
@@ -194,25 +193,24 @@ import Form from "../components/Form.astro";
     </div>
     <div>
       <!-- Boks -->
-      <aside class="w-full max-w-sm bg-green60 rounded-xl pr-10 p-10">
-        <div class="mb-">
-          <Heading
-            htmlheading="h2"
-            size="xsmall"
-            stylingclasses="text-primaryblue60"
-          >
-            Bliv friviilig
-          </Heading>
+      <aside
+        class="w-full max-h-lg max-w-lg bg-green60 rounded-xl pr-10 p-10 mx-auto"
+      >
+        <div class="mb-5">
+          <Heading htmlheading="h3" size="medium">Bliv frivillig</Heading>
         </div>
 
-        <p>
+        <p class="text-beige">
           Hos UngTilUng er vi mere end 100 aktive frivillige, men vi har altid
           brug for flere, så vi sammen kan støtte unge i at skabe det liv, de
           ønsker. Bliv en del af vores stærke frivilligfællesskab og vær med til
           at hjælpe unge.
         </p>
+
         <div class="mt-4">
-          <Button variant="secondary" size="medium"> Læs mere </Button>
+          <Button href="/frivillig" variant="secondary" size="medium">
+            Læs mere
+          </Button>
         </div>
       </aside>
     </div>
@@ -238,7 +236,7 @@ import Form from "../components/Form.astro";
       >
       </div>
 
-      <div class="relative rounded-3xl p-4">
+      <div class="relative rounded-2xl p-4">
         <Image
           src={image4}
           alt="2 happy people"

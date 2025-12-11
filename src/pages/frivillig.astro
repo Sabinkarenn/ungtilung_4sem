@@ -4,7 +4,7 @@ import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
-import heroimage3 from "../assets/images/heroimage3.webp";
+import heroimage4 from "../assets/images/heroimage4.webp";
 import image6 from "../assets/images/image6.webp";
 ---
 
@@ -19,12 +19,14 @@ import image6 from "../assets/images/image6.webp";
     >
       <!-- Headline & Tagline -->
       <div class="flex flex-col gap-2">
-        <Heading htmlheading="h1" size="xlarge">Bliv frivllig</Heading>
+        <div class="animate__animated animate__fadeInLeft animate__once">
+          <Heading htmlheading="h1" size="xlarge">Bliv frivillig</Heading>
+        </div>
 
-        <p class="max-w-xl">
+        <Heading htmlheading="h3" size="small">
           Hos UngTilUng kan du være den, der gør hverdagen lidt lettere for
-          andre unge
-        </p>
+          andre unge</Heading
+        >
 
         <div class="mt-4">
           <Button variant="secondary" size="small"> Send andsøgning </Button>
@@ -42,7 +44,7 @@ import image6 from "../assets/images/image6.webp";
 
         <div class="relative rounded-3xl p-4">
           <Image
-            src={heroimage3}
+            src={heroimage4}
             alt="People happy"
             class="rounded-3xl w-full h-auto object-cover"
           />
@@ -113,46 +115,46 @@ import image6 from "../assets/images/image6.webp";
           <div class="flex flex-col md:flex-row gap-3 mb-6">
             <button
               @click="info = 'info1'"
-              :class="info === 'info1' ? 'bg-green60 ring-2 ring-primaryblue100' : 'bg-green20'"
-              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+              :class="info === 'info1' ? 'bg-green20 ring-2 ring-primaryblue100' : 'bg-green20'"
+              class="text-left rounded-xl px-4 py-3 border-2 border-primaryblue100 text-primaryblue100 w-full"
             >
               Instagram-ansvarlig
             </button>
 
             <button
               @click="info = 'info2'"
-              :class="info === 'info2' ? 'bg-blue60 ring-2 ring-primaryblue100' : 'bg-blue20'"
-              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+              :class="info === 'info2' ? 'bg-primaryblue40 ring-2 ring-primaryblue100' : 'bg-primaryblue40'"
+              class="text-left rounded-xl px-4 py-3 border-2 border-primaryblue100 text-primaryblue100 w-full"
             >
               Skrive-gruppeleder
             </button>
 
             <button
               @click="info = 'info3'"
-              :class="info === 'info3' ? 'bg-orange60 ring-2 ring-primaryblue100' : 'bg-orange20'"
-              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+              :class="info === 'info3' ? 'bg-orange20 ring-2 ring-primaryblue100' : 'bg-orange20'"
+              class="text-left rounded-xl px-4 py-3 border-2 border-primaryblue100 text-primaryblue100 w-full"
             >
               Fantasy-gruppeleder
             </button>
 
             <button
               @click="info = 'info4'"
-              :class="info === 'info4' ? 'bg-green-light ring-2 ring-primaryblue100' : 'bg-green-10'"
-              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+              :class="info === 'info4' ? 'bg-green60 ring-2 ring-primaryblue100' : 'bg-green60'"
+              class="text-left rounded-xl px-4 py-3 border-2 border-primaryblue100 text-primaryblue100 w-full"
             >
               Krea gruppeleder
             </button>
 
             <button
               @click="info = 'info5'"
-              :class="info === 'info5' ? 'bg-violet-light ring-2 ring-primaryblue100' : 'bg-violet-10'"
-              class="text-left rounded-xl px-4 py-3 border border-primaryblue100 text-primaryblue100 w-full"
+              :class="info === 'info5' ? 'bg-primaryblue20 ring-2 ring-primaryblue100' : 'bg-primaryblue20'"
+              class="text-left rounded-xl px-4 py-3 border-2 border-primaryblue100 text-primaryblue100 w-full"
             >
               Chatter
             </button>
           </div>
 
-          <!-- CARD / INDHOLD -->
+          <!-- indhold -->
           <div
             class="rounded-xl border-2 border-primaryblue100 bg-beige p-8 min-h-[260px]"
           >
@@ -163,67 +165,135 @@ import image6 from "../assets/images/image6.webp";
               x-transition
               class="space-y-4"
             >
-              <h3 class="text-2xl text-primaryblue100 font-semibold">
-                Oftest stillede spørgsmål
-              </h3>
-              <p class="font-semibold">
-                Hvad sker der med chatsamtalen efter den er slut?
-              </p>
-              <p>
-                Når en chatsamtale er slut, vil chat-vinduet stå åbent, indtil
-                du selv lukker det. I kan derfor sagtens sige farvel og den
-                frivillige kan lukke chatten, men du vil stadig kunne se, hvad I
-                har skrevet om, indtil du selv lukker vinduet.
-              </p>
+              <div class="text-start">
+                <Heading htmlheading="h2" size="large"
+                  >Instagram-ansvarlig</Heading
+                >
+                <p>Frivillig Instagram-ansvarlig (18-35 år)</p>
 
-              <p class="font-semibold mt-4">
-                Hvorfor står der optaget og hvad betyder ventetiden?
-              </p>
-              <p>
-                Du kan komme i en ventekø. Der er typisk ca. 10 min ventetid —
-                hvis ventetiden overstiger 15 min kan du forsøge igen senere.
-              </p>
+                <p class="mt-4">
+                  UngTilUng søger frivillige til at drive vores Instagram, dele
+                  erfaringer om ungdomsudfordringer og skabe et autentisk
+                  community.
+                </p>
+
+                <p class="mt-4">Dine opgaver:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                  <li>Én vagtuge ca. hver 5.-6. uge med 2-3 opslag i Canva.</li>
+                  <li>
+                    Følge ugentlige temaer som ensomhed, selvværd og studiepres.
+                  </li>
+                  <li>
+                    Dele egne erfaringer for at skabe håb og normalisere, at
+                    unge kan have det svært.
+                  </li>
+                  <li>
+                    Henvise til UngTilUngs tilbud som chat og mentorordning.
+                  </li>
+                </ul>
+
+                <p class="mt-4">Vi søger dig, der:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                  <li>Tør dele dine oplevelser for at hjælpe andre unge.</li>
+                  <li>Bruger sociale medier og følger trends.</li>
+                  <li>
+                    Kan kommunikere skriftligt og skabe nærværende indhold.
+                  </li>
+                  <li>Har lyst til kreativ frihed og idéudvikling.</li>
+                </ul>
+
+                <p class="mt-4">Vi tilbyder:</p>
+                <ul class="list-disc list-inside ml-4 space-y-2">
+                  <li>Fleksibelt frivilligjob hjemmefra.</li>
+                  <li>
+                    SoMe-uddannelse, sparring og erfaring med branding og Canva.
+                  </li>
+                  <li>
+                    Et trygt fællesskab med fokus på at gøre en forskel for
+                    unge.
+                  </li>
+                </ul>
+              </div>
             </article>
-
             <!-- Slide 2 -->
             <article
               x-show="info === 'info2'"
               x-cloak
               x-transition
-              class="space-y-4 hidden"
+              class="space-y-4"
             >
-              <h3 class="text-2xl text-primaryblue100 font-semibold">
-                UngTilUngs værdier
-              </h3>
-              <p>
-                Vores værdier bygger på respekt, nærvær og fællesskab.
-                Frivillige møder unge uden fordømmelse og arbejder for at skabe
-                trygge rum, hvor unge kan blive set og hørt.
-              </p>
-              <p>
-                Frivillige får løbende supervision og støtte fra medarbejdere,
-                så kvaliteten bevares.
-              </p>
-            </article>
+              <div class="text-start">
+                <Heading htmlheading="h2" size="large"
+                  >Skrive-gruppeleder</Heading
+                >
+                <p>
+                  Bliv frivillig skrive-gruppeleder Vil du være med til at skabe
+                  et trygt og kreativt digitalt fællesskab for unge, der elsker
+                  at skrive? Som skrive-gruppeleder faciliterer du seks online
+                  skriveaftener sammen med en medleder, hvor I guider en lille
+                  gruppe unge gennem temaer, skriveøvelser og samtaler. Du får
+                  et komplet forløb med materiale, så du skal blot præsentere
+                  oplæg, skabe rummet og deltage i øvelserne sammen med
+                  deltagerne.
+                </p>
 
+                <p class="mt-4">
+                  Det hele foregår hjemmefra én fast aften om ugen.
+                </p>
+
+                <p class="mt-4">
+                  Vi søger dig, der kan lide at skrive, kan skabe ro og nærvær i
+                  samtaler, og som har lyst til at tage ansvar i et lille
+                  fællesskab.
+                </p>
+
+                <p class="mt-4">
+                  Du får erfaring med facilitering, digitale fællesskaber og
+                  skriveprocesser – og et fleksibelt frivilligjob, hvor du gør
+                  en konkret forskel for unge.
+                </p>
+              </div>
+            </article>
             <!-- Slide 3 -->
             <article
               x-show="info === 'info3'"
               x-cloak
               x-transition
-              class="space-y-4 hidden"
+              class="space-y-4"
             >
-              <h3 class="text-2xl text-primaryblue100 font-semibold">
-                Etiske principper
-              </h3>
-              <p>
-                Vi vægter fortrolighed, ansvarlighed og sikkerhed. Frivillige
-                følger klare retningslinjer for anonymitet og indberetning.
-              </p>
-              <p>
-                Der er procedurer for håndtering af kritiske situationer og
-                opfølgning.
-              </p>
+              <div class="text-start">
+                <Heading htmlheading="h2" size="large"
+                  >Fantasy-gruppeleder</Heading
+                >
+                <p>
+                  Vi søger frivillige fantasy-gruppeledere, der vil skabe et
+                  trygt digitalt fællesskab for unge, som elsker fantasy. Som
+                  gruppeleder møder du en lille fast gruppe online hver uge,
+                  hvor I deler jeres interesse, taler om bøger, karakterer og
+                  universer og laver hyggelige aktiviteter som tema-aftener,
+                  quizzer og små lege.
+                </p>
+
+                <p class="mt-4">
+                  Du står for at facilitere samtalerne sammen med en
+                  med-gruppeleder, holde struktur på mødeaftenerne og skabe et
+                  rart rum, hvor alle føler sig velkomne. Du skal ikke være
+                  ekspert – bare kunne lytte, stille spørgsmål og være nysgerrig
+                  på de unges perspektiver.
+                </p>
+
+                <p class="mt-4">
+                  Alt foregår digitalt, og du får både online uddannelse,
+                  supervision og et fællesskab med andre frivillige. Hvis du er
+                  22-35 år, interesserer dig for fantasy og har lyst til at gøre
+                  en forskel for unge, der søger et sted at høre til, så glæder
+                  vi os til at høre fra dig.
+                </p>
+
+                <p class="mt-4">
+                  Udfyld ansøgningsskemaet og vælg “Fantasy-gruppeleder”.
+                </p>
+              </div>
             </article>
 
             <!-- Slide 4 -->
@@ -231,20 +301,38 @@ import image6 from "../assets/images/image6.webp";
               x-show="info === 'info4'"
               x-cloak
               x-transition
-              class="space-y-4 hidden"
+              class="space-y-4"
             >
-              <h3 class="text-2xl text-primaryblue100 font-semibold">
-                Sådan hjælper chatten
-              </h3>
-              <p>
-                Chatten er et sted til at blive hørt og spejlet. Frivillige
-                bruger egne erfaringer til at skabe tryghed, men giver ikke
-                terapi. Målet er støtte og hjælp til at finde næste skridt.
-              </p>
-              <p>
-                Du kan altid gå tilbage i chatten og læse samtalen, indtil du
-                selv lukker vinduet.
-              </p>
+              <div class="text-start">
+                <Heading htmlheading="h2" size="large">Krea-gruppeleder</Heading
+                >
+                <p>
+                  Vil du være frivillig gruppeleder for digitale krea-aftener
+                  for unge?
+                </p>
+
+                <p class="mt-4">
+                  Som gruppeleder skaber du et trygt digitalt fællesskab for
+                  unge, der vil møde nye mennesker gennem hyggelige, kreative
+                  aktiviteter. Sammen med en med-gruppeleder faciliterer I et
+                  roligt online rum, hvor relationer kan gro, mens I sidder og
+                  strikker, tegner, maler eller hvad end du selv har lyst til at
+                  lave.
+                </p>
+
+                <p class="mt-4">
+                  Du styrker dine kompetencer, får ledererfaring og får
+                  indflydelse på et projekt i udvikling – alt sammen hjemmefra,
+                  én hverdagsaften om ugen. UngTilUng står klar med digital
+                  uddannelse, sparring og støtte hele vejen.
+                </p>
+
+                <p class="mt-4">
+                  Hvis du er empatisk, nysgerrig på mennesker og har lyst til at
+                  gøre en reel forskel for unge i et digitalt fællesskab – så er
+                  det måske dig, vi leder efter.
+                </p>
+              </div>
             </article>
 
             <!-- Slide 5 -->
@@ -252,21 +340,34 @@ import image6 from "../assets/images/image6.webp";
               x-show="info === 'info5'"
               x-cloak
               x-transition
-              class="space-y-4 hidden"
+              class="space-y-4"
             >
-              <h3 class="text-2xl text-primaryblue100 font-semibold">
-                Kontakt & Support
-              </h3>
-              <p>
-                Har du brug for hjælp udover chatten, kan du finde
-                kontaktinformationer og vejledninger her.
-                Frivilligkoordinationen svarer på spørgsmål om onboarding og
-                support.
-              </p>
-              <p>
-                For presserelaterede henvendelser eller samarbejde, kontakt os
-                via email eller LinkedIn.
-              </p>
+              <div class="text-start">
+                <Heading htmlheading="h2" size="large">Chatter</Heading>
+                <p>
+                  Vores frivillige chattere er her for at støtte unge, der har
+                  det svært – og gøre det på en måde, hvor du altid føler dig
+                  mødt, set og forstået. Som frivillig bruger du dine egne
+                  erfaringer fra svære perioder til at skabe tryghed og
+                  motivation for andre unge, der står i lignende situationer.
+                </p>
+
+                <p class="mt-4">
+                  Chatten er et sted, hvor unge kan åbne op og blive lyttet til
+                  uden at blive dømt. Det handler ikke om terapi, men om nærvær,
+                  forståelse og at give plads til det, der fylder. Som frivillig
+                  bliver du klædt godt på med online uddannelse og løbende
+                  supervision, så du altid føler dig støttet – både fagligt og
+                  personligt.
+                </p>
+
+                <p class="mt-4">
+                  Som chatter er du en vigtig del af et fællesskab, der brænder
+                  for at styrke unges mentale trivsel. Du er med til at skabe et
+                  rum, hvor unge kan mærke, at de ikke står alene, og hvor dine
+                  ord kan gøre en reel forskel i deres hverdag.
+                </p>
+              </div>
             </article>
           </div>
         </div>
@@ -317,5 +418,5 @@ import image6 from "../assets/images/image6.webp";
         </aside>
       </section>
     </div>
-  </section></MainLayout
->
+  </section>
+</MainLayout>

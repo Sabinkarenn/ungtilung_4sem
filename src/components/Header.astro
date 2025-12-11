@@ -13,7 +13,6 @@ import Heading from "../components/Heading.astro";
     aria-label="Hovednavigation"
   >
     <div class="flex items-center justify-between">
-      <!-- LEFT: logo + desktop links -->
       <div class="flex items-center gap-8">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2" aria-label="Til forsiden">
@@ -38,7 +37,6 @@ import Heading from "../components/Heading.astro";
 
       <!--CTA (desktop) + burger (mobil) -->
       <div class="flex items-center gap-4">
-        <!-- Desktop CTA -->
         <div class="hidden md:block">
           <Button variant="primary" size="small">
             Opret brugere / Login
@@ -46,7 +44,7 @@ import Heading from "../components/Heading.astro";
         </div>
 
         <!-- Mobile burger -->
-        <div class="md:hidden relative">
+        <div class="md:hidden">
           <input
             id="menu-toggle"
             type="checkbox"
@@ -54,13 +52,10 @@ import Heading from "../components/Heading.astro";
             aria-controls="mobile-menu"
           />
 
-          <!-- Burger-ikon -->
           <label
             for="menu-toggle"
             id="menu-toggle-label"
             class="cursor-pointer p-2 inline-flex items-center justify-center"
-            aria-hidden="false"
-            aria-expanded="false"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +63,6 @@ import Heading from "../components/Heading.astro";
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
@@ -78,22 +72,21 @@ import Heading from "../components/Heading.astro";
             </svg>
           </label>
 
-          <!-- Mobile dropdown (fylder under nav) -->
+          <!-- Mobile dropdown -->
           <div
             id="mobile-menu"
-            class="absolute top-full left-0 right-0 bg-beige z-40 origin-top transform scale-y-0 opacity-0 pointer-events-none transition-all duration-200 peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
+            class="absolute top-full w-screen bg-beige origin-top transform
+                   scale-y-0 opacity-0 pointer-events-none transition-all duration-200
+                   max-h-[100vh] overflow-y-auto
+                   peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
             style="transform-origin: top;"
-            aria-hidden="true"
           >
-            <!-- Inder-container så dropdown får luft omkring sig som i designet -->
             <div class="mx-4 my-4 bg-beige p-6 rounded-xl">
-              <!-- Øverste række: CTA + luk ikon -->
               <div class="flex items-center justify-between mb-10">
                 <Button variant="primary" size="small">
                   Opret bruger / login
                 </Button>
 
-                <!-- Close icon - samme stil som i billedet -->
                 <label for="menu-toggle" class="cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +104,6 @@ import Heading from "../components/Heading.astro";
                 </label>
               </div>
 
-              <!-- Navigation links -->
               <ul
                 class="flex flex-col gap-8 text-primaryblue100 text-2xl font-normal"
               >

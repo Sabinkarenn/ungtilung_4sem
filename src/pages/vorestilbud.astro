@@ -20,12 +20,13 @@ import Slider2 from "../components/Slider2.astro";
     >
       <!-- Headline & Tagline -->
       <div class="flex flex-col gap-2">
-        <Heading htmlheading="h1" size="xlarge">Vores tilbud</Heading>
-
-        <p class="max-w-xl">
-          Dit digitale fællesskab, der hjælper dig skabe det liv, du ønsker —
-          alene og sammen med andre
-        </p>
+        <div class="animate__animated animate__fadeInLeft animate__once">
+          <Heading htmlheading="h1" size="xlarge">Vores tilbud</Heading>
+        </div>
+        <Heading htmlheading="h3" size="small">
+          Vores chat er til dig, der vil skrive om det, der fylder – vi
+          frivillige vil lytte, støtte og anerkende dig i det, du kommer med
+        </Heading>
 
         <div class="mt-4">
           <Button variant="secondary" size="medium"> Chatten </Button>
@@ -66,21 +67,20 @@ import Slider2 from "../components/Slider2.astro";
         </div>
 
         <!-- Image container -->
-        <div class="relative rounded-3xl overflow-hidden shadow-sm">
+        <div class="relative rounded-2xl overflow-hidden shadow-sm">
           <Image
             src={image6}
             alt="2 happy people"
-            class="rounded-3xl w-full h-auto object-cover"
+            class="rounded-2xl w-full h-auto object-cover"
           />
         </div>
       </div>
-
       <!-- Boks -->
-      <aside class="w-full max-w-sm bg-green60 rounded-xl p-10">
+      <aside
+        class="w-full max-h-lg max-w-lg bg-green60 rounded-xl pr-10 p-10 mx-auto"
+      >
         <div class="mb-5">
-          <Heading htmlheading="h2" size="xsmall">
-            Chattens åbningstider
-          </Heading>
+          <Heading htmlheading="h3" size="medium">Bliv frivillig</Heading>
         </div>
 
         <ul class="space-y-3 text-white px-2">
@@ -122,150 +122,147 @@ import Slider2 from "../components/Slider2.astro";
       </aside>
     </section>
   </section>
-  <!-- Citat slider section-->
-  <section class="mt-30">
-    <Slider2 />
-  </section>
-
-  <!-- Info section-->
-
-  <!-- overordnet section til info -->
-  <section
-    class="mt-30 relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
-    x-data="{ info: 'info1' }"
-  >
-    <!-- div der styre de forskellige muligheder af info -->
-    <div
-      class="flex flex-col md:flex-row w-full max-w-sm md:max-w-2xl border-2 border-primaryblue100 rounded-xl z-10"
-    >
-      <!-- Oftest stillede spørgsmål section -->
-      <div
-        class="bg-green60 items-center text-center cursor-pointer border-2 rounded-xl p-4 md:w-16"
-        @click="info = 'info1'"
-      >
-        <Heading
-          htmlheading="h3"
-          size="small"
-          stylingclasses="md:rotate-90 text-nowrap mb-0"
-          >Oftest stillede spørgsmål</Heading
-        >
-      </div>
-      <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
-      <div x-show="info === 'info1'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
-          >Oftest stillede spørgsmål</Heading
-        >
-        <p class="font-bold">
-          Hvad sker der med chatsamtalen efter den er slut?
-        </p>
-
-        <p>
-          Når en chatsamtale er slut, vil chat-vinduet stå åbent, indtil du selv
-          lukker det. I kan derfor sagtens sige farvel og den frivillige kan
-          lukke chatten, men du vil stadig kunne se, hvad I har skrevet om,
-          indtil du selv lukker vinduet. Du har derfor tid til at sidde efter
-          jeres snak og gennemlæse, hvad I har skrevet om.
-        </p>
-        <p class="font-bold">
-          Hvorfor står der optaget og hvad betyder ventetiden?
-        </p>
-        <p>
-          Du vil kunne opleve at komme ind i chatten, men ikke kommer ind og
-          snakke med en frivillig. Det vil være fordi, at du så sidder i en
-          vente kø. I gennemsnit er der 10 min ventetid, hvis du ender i køen.
-          Du vil høre en ringetone, når det er din tid til at komme ind i
-          chatten. Du kan også opdage, at der vil optaget ved chatten. Det
-          betyder at ventetiden er længere end 15 min og du kan prøve at komme
-          igen senere på dagen.
-        </p>
-        <p class="font-bold">Kan jeg chatte med den samme frivillige?</p>
-        <p>
-          Det er tilfældigt, hvem der er på vagt og du kan derfor ikke vælge,
-          hvem du vil chatte med af frivillige. Hvis du ønsker at få tildelt en
-          fast rådgiver, så er vores samtaleforløb for dig.
-        </p>
-      </div>
-      <!-- Ung til ungs værdier section -->
-      <div
-        class="bg-green20 cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
-        @click="info = 'info2'"
-      >
-        <Heading
-          htmlheading="h3"
-          size="small"
-          stylingclasses="md:rotate-90 text-nowrap mb-0"
-          >Ung til ungs værdier</Heading
-        >
-      </div>
-      <div x-show="info === 'info2'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
-          >Ung til ungs værdier</Heading
-        >
-        <p>
-          Vores værdier bygger på et ligeværdigt møde mellem jer der bruger
-          chatten og vores frivillige. Vores frivillige bidrager til, at du i
-          chatten føler dig set, hørt og forstået. De frivillige møder dig med
-          respekt, anerkendelse og accept omkring din situation.
-        </p>
-
-        <p>
-          De frivillige har forståelse for vores forskelligheder. Mange af vores
-          frivillige har selv gået igennem svære udfordringer og vi tror på, at
-          egne erfaringer skaber en værdi igennem end ekstra forståelse for, at
-          have det svært.
-        </p>
-        <p>
-          De frivillige støtter, sparre og hjælper også hinanden og får
-          supervision fra medarbejdere i UngTilUng. Alt sammen, så vi kan give
-          den bedst mulige rådgivning til dig.
-        </p>
-      </div>
-      <!-- Ung til ungs 5 etiske principper section -->
-      <div
-        class="bg-pink cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
-        @click="info = 'info3'"
-      >
-        <Heading
-          htmlheading="h3"
-          size="small"
-          stylingclasses="md:rotate-90 text-nowrap mb-0"
-          >Ung til ungs 5 etiske principper</Heading
-        >
-      </div>
-      <div x-show="info === 'info3'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
-          >Ung til ungs 5 etiske principper</Heading
-        >
-        <p>
-          Fortrolighed, anonymitet og tavshedspligt: Alle brugeres identitet og
-          de oplysninger, de deler, skal beskyttes. Der skal være klare
-          retningslinjer for, hvordan data behandles, og ingen oplysninger må
-          deles uden samtykke. Rådgiverne har tavshedspligt, men følger pligt
-          ift underretning og afværgerpligt.
-        </p>
-        <p>
-          Empati: Rådgivningen skal være baseret på respekt, empati og
-          forståelse. Rådgiverne skal forstå og acceptere brugernes forskellige
-          baggrunde, værdier og livsstile uden at dømme.
-        </p>
-        <p>
-          Kompetence: Rådgiverne skal have tilstrækkelig uddannelse, træning og
-          erfaring til at kunne yde effektiv og ansvarlig støtte til brugeren.
-          Der skal være løbende muligheder for supervision.
-        </p>
-        <p>
-          Grænser og sikkerhed: Der er klare retningslinjer for, hvordan
-          rådgiverne skal håndtere situationer, hvor brugerne har svære
-          udfordringer, som ikke kan håndteres i rådgivningen.
-        </p>
-
-        <p>
-          Ingen diskrimination: Rådgiverne må ikke diskriminere brugerne på
-          baggrund af køn, race, religion, seksuel orientering, handicap eller
-          andre karakteristika. Alle skal have lige adgang til støtte og
-          ressourcer.
-        </p>
-      </div>
-    </div>
-  </section>
 </MainLayout>
+<!-- Citat slider section-->
+<section class="mt-30">
+  <Slider2 />
+</section>
+
+<!-- Info section-->
+
+<!-- overordnet section til info -->
+<section
+  class="mt-30 relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
+  x-data="{ info: 'info1' }"
+>
+  <!-- div der styre de forskellige muligheder af info -->
+  <div
+    class="flex flex-col md:flex-row w-full max-w-sm md:max-w-2xl border-2 border-primaryblue100 rounded-xl z-10"
+  >
+    <!-- Oftest stillede spørgsmål section -->
+    <div
+      class="bg-green60 items-center text-center cursor-pointer border-2 rounded-xl p-4 md:w-16"
+      @click="info = 'info1'"
+    >
+      <Heading
+        htmlheading="h3"
+        size="small"
+        stylingclasses="md:rotate-90 text-nowrap mb-0"
+        >Oftest stillede spørgsmål</Heading
+      >
+    </div>
+    <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
+    <div x-show="info === 'info1'" x-transition class="p-4">
+      <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        >Oftest stillede spørgsmål</Heading
+      >
+      <p class="font-bold">Hvad sker der med chatsamtalen efter den er slut?</p>
+
+      <p>
+        Når en chatsamtale er slut, vil chat-vinduet stå åbent, indtil du selv
+        lukker det. I kan derfor sagtens sige farvel og den frivillige kan lukke
+        chatten, men du vil stadig kunne se, hvad I har skrevet om, indtil du
+        selv lukker vinduet. Du har derfor tid til at sidde efter jeres snak og
+        gennemlæse, hvad I har skrevet om.
+      </p>
+      <p class="font-bold">
+        Hvorfor står der optaget og hvad betyder ventetiden?
+      </p>
+      <p>
+        Du vil kunne opleve at komme ind i chatten, men ikke kommer ind og
+        snakke med en frivillig. Det vil være fordi, at du så sidder i en vente
+        kø. I gennemsnit er der 10 min ventetid, hvis du ender i køen. Du vil
+        høre en ringetone, når det er din tid til at komme ind i chatten. Du kan
+        også opdage, at der vil optaget ved chatten. Det betyder at ventetiden
+        er længere end 15 min og du kan prøve at komme igen senere på dagen.
+      </p>
+      <p class="font-bold">Kan jeg chatte med den samme frivillige?</p>
+      <p>
+        Det er tilfældigt, hvem der er på vagt og du kan derfor ikke vælge, hvem
+        du vil chatte med af frivillige. Hvis du ønsker at få tildelt en fast
+        rådgiver, så er vores samtaleforløb for dig.
+      </p>
+    </div>
+    <!-- Ung til ungs værdier section -->
+    <div
+      class="bg-green20 cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
+      @click="info = 'info2'"
+    >
+      <Heading
+        htmlheading="h3"
+        size="small"
+        stylingclasses="md:rotate-90 text-nowrap mb-0"
+        >Ung til ungs værdier</Heading
+      >
+    </div>
+    <div x-show="info === 'info2'" x-transition class="p-4">
+      <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        >Ung til ungs værdier</Heading
+      >
+      <p>
+        Vores værdier bygger på et ligeværdigt møde mellem jer der bruger
+        chatten og vores frivillige. Vores frivillige bidrager til, at du i
+        chatten føler dig set, hørt og forstået. De frivillige møder dig med
+        respekt, anerkendelse og accept omkring din situation.
+      </p>
+
+      <p>
+        De frivillige har forståelse for vores forskelligheder. Mange af vores
+        frivillige har selv gået igennem svære udfordringer og vi tror på, at
+        egne erfaringer skaber en værdi igennem end ekstra forståelse for, at
+        have det svært.
+      </p>
+      <p>
+        De frivillige støtter, sparre og hjælper også hinanden og får
+        supervision fra medarbejdere i UngTilUng. Alt sammen, så vi kan give den
+        bedst mulige rådgivning til dig.
+      </p>
+    </div>
+    <!-- Ung til ungs 5 etiske principper section -->
+    <div
+      class="bg-pink cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
+      @click="info = 'info3'"
+    >
+      <Heading
+        htmlheading="h3"
+        size="small"
+        stylingclasses="md:rotate-90 text-nowrap mb-0"
+        >Ung til ungs 5 etiske principper</Heading
+      >
+    </div>
+    <div x-show="info === 'info3'" x-transition class="p-4">
+      <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        >Ung til ungs 5 etiske principper</Heading
+      >
+      <p>
+        Fortrolighed, anonymitet og tavshedspligt: Alle brugeres identitet og de
+        oplysninger, de deler, skal beskyttes. Der skal være klare
+        retningslinjer for, hvordan data behandles, og ingen oplysninger må
+        deles uden samtykke. Rådgiverne har tavshedspligt, men følger pligt ift
+        underretning og afværgerpligt.
+      </p>
+      <p>
+        Empati: Rådgivningen skal være baseret på respekt, empati og forståelse.
+        Rådgiverne skal forstå og acceptere brugernes forskellige baggrunde,
+        værdier og livsstile uden at dømme.
+      </p>
+      <p>
+        Kompetence: Rådgiverne skal have tilstrækkelig uddannelse, træning og
+        erfaring til at kunne yde effektiv og ansvarlig støtte til brugeren. Der
+        skal være løbende muligheder for supervision.
+      </p>
+      <p>
+        Grænser og sikkerhed: Der er klare retningslinjer for, hvordan
+        rådgiverne skal håndtere situationer, hvor brugerne har svære
+        udfordringer, som ikke kan håndteres i rådgivningen.
+      </p>
+
+      <p>
+        Ingen diskrimination: Rådgiverne må ikke diskriminere brugerne på
+        baggrund af køn, race, religion, seksuel orientering, handicap eller
+        andre karakteristika. Alle skal have lige adgang til støtte og
+        ressourcer.
+      </p>
+    </div>
+  </div>
+</section>

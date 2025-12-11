@@ -22,12 +22,13 @@ import Form from "../components/Form.astro";
     >
       <!-- Headline & Tagline -->
       <div class="flex flex-col gap-2">
-        <Heading htmlheading="h1" size="xlarge">Blog</Heading>
-
-        <p class="max-w-xl">
+        <div class="animate__animated animate__fadeInLeft animate__once">
+          <Heading htmlheading="h1" size="xlarge">Blog</Heading>
+        </div>
+        <Heading htmlheading="h3" size="small">
           Udforsk blog indlæg der er fyldt med viden, indsigt og inspiration til
           din hverdag.
-        </p>
+        </Heading>
 
         <div class="mt-4">
           <Button variant="secondary" size="medium"> Se ugens tema </Button>
