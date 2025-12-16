@@ -10,7 +10,7 @@ import Slider2 from "../components/Slider2.astro";
 ---
 
 <MainLayout>
-  <!-- Hero section -->
+  <!-- Hero sektion -->
 
   <section
     class="w-full bg-gradient-to-b from-[#FFD699] to-[#FBF5EC] py-20 px-6"
@@ -18,7 +18,7 @@ import Slider2 from "../components/Slider2.astro";
     <div
       class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
     >
-      <!-- Headline & Tagline -->
+      <!-- Headline & tagline -->
       <div class="flex flex-col gap-2">
         <div class="animate__animated animate__fadeInLeft animate__once">
           <Heading htmlheading="h1" size="xlarge">Vores tilbud</Heading>
@@ -29,11 +29,13 @@ import Slider2 from "../components/Slider2.astro";
         </Heading>
 
         <div class="mt-4">
-          <Button variant="secondary" size="medium"> Chatten </Button>
+          <Button href="#slider" variant="secondary" size="medium">
+            Læs mere
+          </Button>
         </div>
       </div>
 
-      <!-- Hero image -->
+      <!-- Hero billede -->
       <div class="hidden lg:block relative w-full max-w-[370px] mx-auto">
         <!-- Orange outline -->
         <div
@@ -52,17 +54,17 @@ import Slider2 from "../components/Slider2.astro";
       </div>
     </div>
 
-    <!-- Åbningstider section-->
+    <!-- Åbningstider sektion-->
 
     <section
       class="mx-auto max-w-7xl px-4 mt-35 grid grid-cols-1 md:grid-cols-2 gap-10"
     >
-      <!-- image -->
+      <!-- Billede -->
       <div
         id="fotoinview"
         class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
       >
-        <!-- Orange outline -->
+        <!-- Orange border -->
         <div
           class="absolute right-[-22px]
          h-[90%] w-[95%]
@@ -72,7 +74,7 @@ import Slider2 from "../components/Slider2.astro";
         >
         </div>
 
-        <!-- Image container -->
+        <!-- Billede container -->
         <div class="relative rounded-2xl overflow-hidden">
           <Image
             src={image6}
@@ -133,14 +135,14 @@ import Slider2 from "../components/Slider2.astro";
       </div>
     </section>
   </section>
-  <!-- Citat slider section-->
-  <section class="mt-35">
+  <!-- Citat slider sektion-->
+  <section id="slider" class="mt-35">
     <Slider2 />
   </section>
 
-  <!-- Info section-->
+  <!-- Info sektion-->
 
-  <!-- overordnet section til info -->
+  <!-- overordnet secktion til info -->
   <section
     class="mx-auto max-w-7xl px-4 mt-35 relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
     x-data="{ info: 'info1' }"
@@ -149,7 +151,7 @@ import Slider2 from "../components/Slider2.astro";
     <div
       class="flex flex-col md:flex-row w-full max-w-sm md:max-w-2xl border-2 border-primaryblue100 rounded-xl z-10"
     >
-      <!-- Oftest stillede spørgsmål section -->
+      <!-- Oftest stillede spørgsmål sektion -->
       <div
         class="bg-green60 items-center text-center cursor-pointer border-2 rounded-xl p-4 md:w-16"
         @click="info = 'info1'"
@@ -161,7 +163,7 @@ import Slider2 from "../components/Slider2.astro";
           >Oftest stillede spørgsmål</Heading
         >
       </div>
-      <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
+      <!-- x-show forbinder til click event ovenfor og udløser åbningen af sektionen -->
       <div x-show="info === 'info1'" x-transition class="p-4">
         <Heading htmlheading="h2" size="large" stylingclasses=" mb-2"
           >Oftest stillede spørgsmål</Heading
@@ -196,7 +198,7 @@ import Slider2 from "../components/Slider2.astro";
           fast rådgiver, så er vores samtaleforløb for dig.
         </p>
       </div>
-      <!-- Ung til ungs værdier section -->
+      <!-- Ung til ungs værdier sektion -->
       <div
         class="bg-green20 cursor-pointer rounded-xl text-center border-2 border-primaryblue100 p-4 md:w-16"
         @click="info = 'info2'"
@@ -231,7 +233,7 @@ import Slider2 from "../components/Slider2.astro";
           den bedst mulige rådgivning til dig.
         </p>
       </div>
-      <!-- Ung til ungs 5 etiske principper section -->
+      <!-- Ung til ungs 5 etiske principper sektion -->
       <div
         class="bg-primaryblue20 cursor-pointer text-center rounded-xl bg-primaryblue-40 border-2 border-primaryblue100 p-4 md:w-16"
         @click="info = 'info3'"

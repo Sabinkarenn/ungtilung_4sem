@@ -12,7 +12,7 @@ import Heading from "../components/Heading.astro";
 ---
 
 <MainLayout>
-  <!-- Hero section -->
+  <!-- Hero sektion -->
 
   <section
     class="w-full bg-gradient-to-b from-[#FFD699] to-[#FBF5EC] py-20 px-6"
@@ -37,9 +37,9 @@ import Heading from "../components/Heading.astro";
         </div>
       </div>
 
-      <!-- Hero image -->
+      <!-- Hero billede -->
       <div class="hidden lg:block relative w-full max-w-[370px] mx-auto">
-        <!-- Orange outline -->
+        <!-- Orange border -->
         <div
           class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
          rounded-2xl border-l-0 border-t-0"
@@ -57,15 +57,15 @@ import Heading from "../components/Heading.astro";
     </div>
   </section>
 
-  <!-- Hvem er ungtilung section -->
+  <!-- Hvem er ungtilung sektion -->
 
   <section class="mt-30 grid grid-cols-1 md:grid-cols-2 gap-10">
-    <!-- image -->
+    <!-- Billede -->
     <div
       id="fotoinview"
       class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
     >
-      <!-- Orange outline -->
+      <!-- Orange Border -->
       <div
         class="absolute right-[-22px]
            h-[90%] w-[95%]
@@ -75,7 +75,7 @@ import Heading from "../components/Heading.astro";
       >
       </div>
 
-      <!-- Image container -->
+      <!-- Billede container -->
       <div class="relative rounded-2xl overflow-hidden">
         <Image
           src={imageomos1}
@@ -86,7 +86,7 @@ import Heading from "../components/Heading.astro";
     </div>
 
     <div class="pl-5">
-      <!-- tesk section -->
+      <!-- tekst sektion -->
 
       <div class="mb-5">
         <Heading htmlheading="h2" size="medium">Hvem er Ungtilung?</Heading>
@@ -108,7 +108,7 @@ import Heading from "../components/Heading.astro";
     </div>
   </section>
 
-  <!-- Mød teamet section -->
+  <!-- Mød teamet sektion -->
 
   <section class="mt-40">
     <div class="max-w-7xl mx-auto px-4">
@@ -122,9 +122,8 @@ import Heading from "../components/Heading.astro";
       >
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/jannik"
             image="jannik.webp"
-            imageAlt="Jannik Dobusz"
+            imageAlt="jannik dobusz"
             name="Jannik Dobusz"
             role="Direktør"
             bio="Jeg startede UngTilUng i 2013 og har det overordnede ansvar for udviklingen og driften af UngTilUng."
@@ -135,7 +134,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/pernille"
             image="pernille.webp"
             imageAlt="Pernille Skov"
             name="Pernille Skov"
@@ -148,7 +146,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/julie"
             image="julie.webp"
             imageAlt="Julie Marie Jensen"
             name="Julie Marie Jensen"
@@ -161,7 +158,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/louise"
             image="louise.webp"
             imageAlt="Louise Thorendal"
             name="Louise Thorendal"
@@ -174,7 +170,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/rosalina"
             image="rosalina.webp"
             imageAlt="Rosalina Clausen"
             name="Rosalina Clausen"
@@ -187,7 +182,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/amalie"
             image="amalie.webp"
             imageAlt="Amalie Winther"
             name="Amalie Winther"
@@ -200,7 +194,6 @@ import Heading from "../components/Heading.astro";
 
         <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
-            url="/team/mikkel"
             image="mikkel.webp"
             imageAlt="Mikkel Birger"
             name="Mikkel Birger"
@@ -214,7 +207,7 @@ import Heading from "../components/Heading.astro";
     </div>
   </section>
 
-  <!-- Vores vision section -->
+  <!-- Vores vision sektion -->
   <section id="vision" class="mt-40 mb-30">
     <Slider3 />
   </section>
@@ -225,6 +218,6 @@ import Heading from "../components/Heading.astro";
 
   /* inView animation */
   inView("#fotoinview", () => {
-    animate("#fotoinview", { x: [-2000, 0] }, { duration: 3 });
+    animate("#fotoinview", { x: [-800, 0] }, { duration: 3 });
   });
 </script>

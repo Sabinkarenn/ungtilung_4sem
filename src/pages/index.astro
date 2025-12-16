@@ -17,7 +17,7 @@ import Form from "../components/Form.astro";
 ---
 
 <MainLayout title="Ung til ung">
-  <!-- Hero section -->
+  <!-- Hero sektion -->
 
   <section
     class="w-full bg-gradient-to-b from-[#BDC3FC] to-[#FBF5EC] py-20 px-6"
@@ -42,11 +42,11 @@ import Form from "../components/Form.astro";
         </div>
       </div>
 
-      <!-- Hero image -->
+      <!-- Hero billede -->
       <div
         class="hidden lg:block relative w-full max-w-[220px] sm:max-w-[280px] lg:max-w-[370px] mx-auto"
       >
-        <!-- Orange outline -->
+        <!-- Orange border -->
         <div
           class="absolute right-0 top-6 sm:top-8 lg:top-10
          h-[85%] w-[90%]
@@ -66,7 +66,7 @@ import Form from "../components/Form.astro";
     </div>
   </section>
 
-  <!-- Hvad er ung til ung section -->
+  <!-- Hvad er ung til ung sektion -->
 
   <section id="ungtilung" class="mx-auto max-w-7xl px-4 mt-20">
     <div class="px-4">
@@ -75,7 +75,7 @@ import Form from "../components/Form.astro";
         <div
           class="relative w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[400px] mx-auto"
         >
-          <!-- Orange outline -->
+          <!-- Orange border -->
           <div
             class="absolute right-0 top-6 sm:top-8 lg:top-10
            h-[85%] w-[90%]
@@ -136,15 +136,13 @@ import Form from "../components/Form.astro";
     </div>
   </section>
 
-  <!-- vores tilbud section -->
+  <!-- Vores tilbud sektion -->
   <div class="mt-35 text-center">
     <Heading htmlheading="h2" size="large">Vores tilbud</Heading>
   </div>
 
   <section class="mx-auto max-w-7xl px-4 mt-20">
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl gap-20"
-    >
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl">
       <Tilbudscard
         url="/vorestilbud"
         bg="bg-green60"
@@ -184,12 +182,12 @@ import Form from "../components/Form.astro";
   <section
     class="mx-auto max-w-7xl px-4 mt-35 grid grid-cols-1 md:grid-cols-2 gap-10"
   >
-    <!-- image -->
+    <!-- billede -->
     <div
       id="fotoinview"
       class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
     >
-      <!-- Orange outline -->
+      <!-- Orange border -->
       <div
         class="absolute right-[-22px]
            h-[90%] w-[95%]
@@ -199,7 +197,7 @@ import Form from "../components/Form.astro";
       >
       </div>
 
-      <!-- Image container -->
+      <!-- Billede container -->
       <div class="relative rounded-2xl overflow-hidden">
         <Image
           src={image9}
@@ -233,22 +231,22 @@ import Form from "../components/Form.astro";
       </aside>
     </div>
   </section>
-  <!-- Citat slider section-->
+  <!-- Citat slider sektion-->
   <section class="mt-35">
     <Slider />
   </section>
 
-  <!-- Form section-->
+  <!-- Form sektion-->
   <section
-    class="mx-auto max-w-7xl px-4 mt-35 mb-35 grid grid-cols-1 lg:grid-cols-2 gap-10"
+    class="mx-auto max-w-6xl px-6 mt-35 mb-35 grid grid-cols-1 lg:grid-cols-2 gap-10"
   >
     <div><Form /></div>
 
-    <!-- image -->
+    <!-- Billede -->
     <div
       class="relative w-full max-w-[280px] sm:max-w-[330px] lg:max-w-[370px] mx-auto"
     >
-      <!-- Orange outline -->
+      <!-- Orange border -->
       <div
         class="absolute right-0 top-6 sm:top-8 lg:top-10
            h-[85%] w-[90%]
