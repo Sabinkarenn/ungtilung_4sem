@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 import heroimage from "../assets/images/heroimage1.webp";
 import image2 from "../assets/images/image2.webp";
 import image9 from "../assets/images/image9.webp";
-import image4 from "../assets/images/image4.webp";
+import image6 from "../assets/images/image6.webp";
 import anonym from "../assets/images/anonym.webp";
 import samtale from "../assets/images/samtale.webp";
 import fælleskab from "../assets/images/fælleskab.webp";
@@ -68,7 +68,7 @@ import Form from "../components/Form.astro";
 
   <!-- Hvad er ung til ung sektion -->
 
-  <section id="ungtilung" class="mx-auto max-w-7xl px-4 mt-20">
+  <section id="ungtilung" class="mx-auto max-w-7xl px-4 mt-10 lg:mt-20">
     <div class="px-4">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <!-- image -->
@@ -137,12 +137,15 @@ import Form from "../components/Form.astro";
   </section>
 
   <!-- Vores tilbud sektion -->
-  <div class="mt-35 text-center">
+  <div class="mt-20 lg:mt-40 text-center">
     <Heading htmlheading="h2" size="large">Vores tilbud</Heading>
   </div>
 
   <section class="mx-auto max-w-7xl px-4 mt-20">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+           gap-8 place-items-center"
+    >
       <Tilbudscard
         url="/vorestilbud"
         bg="bg-green60"
@@ -180,12 +183,12 @@ import Form from "../components/Form.astro";
   <!-- Bliv frivillig sektion-->
 
   <section
-    class="mx-auto max-w-7xl px-4 mt-35 grid grid-cols-1 md:grid-cols-2 gap-10"
+    class="mx-auto max-w-7xl px-4 mt-20 lg:mt-40 grid grid-cols-1 md:grid-cols-2 gap-10"
   >
     <!-- billede -->
     <div
       id="fotoinview"
-      class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
+      class="relative mt-6 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
     >
       <!-- Orange border -->
       <div
@@ -210,13 +213,13 @@ import Form from "../components/Form.astro";
     <div>
       <!-- Boks -->
       <aside
-        class="w-full max-h-lg max-w-lg bg-green60 rounded-2xl p-6 lg:p-10 mx-auto"
+        class="w-full max-h-lg max-w-lg bg-green40 rounded-2xl m-5 p-5 lg:p-9 mx-auto"
       >
         <div class="mb-5">
           <Heading htmlheading="h2" size="medium">Bliv frivillig</Heading>
         </div>
 
-        <p class="text-beige pr-9">
+        <p class="pr-9">
           Hos UngTilUng er vi mere end 100 aktive frivillige, men vi har altid
           brug for flere, så vi sammen kan støtte unge i at skabe det liv, de
           ønsker. Bliv en del af vores stærke frivilligfællesskab og vær med til
@@ -232,13 +235,13 @@ import Form from "../components/Form.astro";
     </div>
   </section>
   <!-- Citat slider sektion-->
-  <section class="mt-35">
+  <section class="mt-20 lg:mt-40">
     <Slider />
   </section>
 
   <!-- Form sektion-->
   <section
-    class="mx-auto max-w-6xl px-6 mt-35 mb-35 grid grid-cols-1 lg:grid-cols-2 gap-10"
+    class="mx-auto max-w-6xl px-6 mt-20 lg:mt-40 mb-30 grid grid-cols-1 lg:grid-cols-2 gap-10"
   >
     <div><Form /></div>
 
@@ -257,7 +260,7 @@ import Form from "../components/Form.astro";
 
       <div class="relative rounded-2xl p-3 sm:p-4">
         <Image
-          src={image4}
+          src={image6}
           alt="2 happy people"
           class="rounded-2xl w-full h-auto object-cover"
         />

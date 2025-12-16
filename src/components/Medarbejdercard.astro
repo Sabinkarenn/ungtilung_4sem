@@ -1,55 +1,49 @@
 ---
-// MedarbejderCard.astro
-const {
-  image = "",
-  name = "",
-  role = "",
-  bio = "",
-  email = "",
-  linkedin = "#",
-} = Astro.props;
+const { image = "", name = "", role = "", bio = "", email = "" } = Astro.props;
 import Heading from "../components/Heading.astro";
 ---
 
-<div
-  class="relative w-full max-w-[360px] mx-auto hover:scale-[1.02] transition-transform duration-300"
+<a
+  href={`mailto:${email}`}
+  class="relative block h-full w-full max-w-[360px] mx-auto
+         hover:scale-[1.02] transition-transform duration-300
+         focus:outline-none focus:ring-2 focus:ring-orange60 rounded-2xl"
 >
-  <!-- Udenom card -->
   <div
-    class="rounded-2xl border-2 border-orange60 bg-beige p-4 gap-4 relative overflow-hidden"
+    class="flex h-full flex-col rounded-2xl border-2 border-orange60
+           bg-beige p-4 relative overflow-hidden cursor-pointer"
   >
     <!-- Billede -->
     <div class="w-full flex justify-center">
       <div class="w-full max-w-[300px] rounded-lg border-2 border-orange60">
         <img
           src={image}
+          alt={name}
           class="w-full h-[300px] object-cover rounded-lg block"
         />
       </div>
     </div>
 
-    <!-- Tekstindhold -->
-    <div class="pt-4 pl-2">
+    <!-- Tekst -->
+    <div class="pt-4 pl-2 flex flex-col flex-grow">
       <Heading htmlheading="h2" size="small">{name}</Heading>
 
-      <p class="text-sm text-primaryblue100 font-semibold mb-2">{role}</p>
+      <p class="text-sm text-primaryblue100 font-semibold mb-2">
+        {role}
+      </p>
 
-      <p class="text-sm text-primaryblue100 leading-relaxed">
+      <!-- Bio fylder forskellen -->
+      <p class="text-sm text-primaryblue100 leading-relaxed flex-grow">
         {bio}
       </p>
     </div>
 
-    <!-- Email -->
-    <div class="mt-4 w-full overflow-visible">
-      <a
-        href={`mailto:${email}`}
-        class="flex items-center gap-3 text-sm text-primaryblue"
-      >
-        <img src="/mail.svg" alt="Mail icon" class="h-7 w-7 shrink-0" />
-        <span class="whitespace-nowrap">
-          {email}
-        </span>
-      </a>
+    <!-- Email (samme placering i alle cards) -->
+    <div class="mt-4 flex items-center gap-3 text-sm text-primaryblue100 pl-2">
+      <img src="/mail.svg" alt="" class="h-7 w-7 shrink-0" />
+      <p class="text-sm text-primaryblue100 mb-2">
+        {email}
+      </p>
     </div>
   </div>
-</div>
+</a>

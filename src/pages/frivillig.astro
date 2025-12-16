@@ -55,7 +55,7 @@ import image10 from "../assets/images/image10.webp";
 
   <!-- Infografik section -->
 
-  <section class="mt-20 py-16">
+  <section class="mt-10 lg:mt-20 py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <!-- Titel -->
       <Heading htmlheading="h2" size="large">Vil du være med?</Heading>
@@ -109,7 +109,10 @@ import image10 from "../assets/images/image10.webp";
 
       <!-- Info slider section -->
 
-      <section class="mt-40 relative px-4 mb-20" x-data="{ info: 'info1' }">
+      <section
+        class="mt-20 lg:mt-40relative px-4 mb-20"
+        x-data="{ info: 'info1' }"
+      >
         <div class="max-w-5xl mx-auto">
           <!-- TOP TABS (mobile: stacked, desktop: row) -->
           <div class="flex flex-col md:flex-row gap-3 mb-6">
@@ -374,15 +377,18 @@ import image10 from "../assets/images/image10.webp";
       </section>
     </div>
   </section>
-  <!-- Volunteer section-->
 
-  <section class="mt-40 mb-30 grid grid-cols-1 md:grid-cols-2 gap-10">
-    <!-- image -->
+  <!-- Volunteer sektion-->
+
+  <section
+    class="mx-auto max-w-7xl px-4 mt-20 lg:mt-40 mb-30 grid grid-cols-1 md:grid-cols-2 gap-10"
+  >
+    <!-- billede -->
     <div
       id="fotoinview"
-      class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
+      class="relative mt-6 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
     >
-      <!-- Orange outline -->
+      <!-- Orange border -->
       <div
         class="absolute right-[-22px]
            h-[90%] w-[95%]
@@ -392,11 +398,11 @@ import image10 from "../assets/images/image10.webp";
       >
       </div>
 
-      <!-- Image container -->
+      <!-- Billede container -->
       <div class="relative rounded-2xl overflow-hidden">
         <Image
           src={image10}
-          alt="3 people hugging"
+          alt="4 people hugging"
           class="rounded-2xl w-full h-auto object-cover"
         />
       </div>
@@ -405,13 +411,13 @@ import image10 from "../assets/images/image10.webp";
     <div>
       <!-- Boks -->
       <aside
-        class="w-full max-h-lg max-w-lg bg-green60 rounded-2xl p-6 lg:p-10 mx-auto"
+        class="w-full max-h-lg max-w-lg bg-green40 rounded-2xl m-5 p-5 lg:p-9 mx-auto"
       >
         <div class="mb-5">
           <Heading htmlheading="h2" size="medium">Bliv frivillig nu!</Heading>
         </div>
 
-        <p class="text-beige pr-9">
+        <p class="pr-9">
           På landsplan har vi mere end 100 frivillige, som støtter unge i deres
           udfordringer og er med til at øge deres trivsel. Har du lyst til at
           hjælpe unge, udvikle dine egne kompetencer og blive en del af et fedt

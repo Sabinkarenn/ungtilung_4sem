@@ -3,32 +3,34 @@ const { url = "/", bg = "", icon = "", iconalt = "", title = "" } = Astro.props;
 const imgSrc = icon ? `/${icon.replace(/^\/+/, "")}` : null;
 ---
 
-<a href={url} class="block w-full no-underline text-inherit">
+<a href={url} class="block no-underline text-inherit">
   <div
-    class="relative w-full max-w-[220px] mx-auto transition-transform duration-300 hover:scale-105"
+    class="relative mx-auto w-[250px] h-[400px]
+           transition-transform duration-300 hover:scale-105"
   >
-    <div class={`rounded-2xl p-6 flex flex-col w-[250px] h-[400px] ${bg}`}>
-      <div class="h-[20%]"></div>
+    <div class={`flex h-full flex-col rounded-2xl p-6 ${bg}`}>
+      <!-- Spacer top (kontrolleret) -->
+      <div class="flex-1"></div>
 
-      <!-- Mid content  -->
-      <div class="flex-grow flex items-center justify-center">
+      <!-- Mid content -->
+      <div class="flex flex-1 items-center justify-center">
         {
           imgSrc ? (
             <img
               src={imgSrc}
               alt={iconalt || title}
-              class="w-full max-w-[160px] h-auto object-contain"
+              class="max-w-[160px] w-full h-auto object-contain"
             />
           ) : (
-            <div class="w-full max-w-[160px] h-[120px]  rounded-md flex items-center justify-center text-sm text-gray-500">
+            <div class="flex h-[120px] w-full max-w-[160px] items-center justify-center rounded-md text-sm text-gray-500">
               Ingen illustration
             </div>
           )
         }
       </div>
 
-      <!-- Titel nederst -->
-      <p class="text-white text-xl tracking-wide text-center mt-4">
+      <!-- Titel -->
+      <p class="mt-4 text-center text-xl tracking-wide text-white">
         {title}
       </p>
     </div>
