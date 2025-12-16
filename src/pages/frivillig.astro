@@ -5,7 +5,7 @@ import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import heroimage4 from "../assets/images/heroimage4.webp";
-import image6 from "../assets/images/image6.webp";
+import image10 from "../assets/images/image10.webp";
 ---
 
 <MainLayout>
@@ -73,7 +73,7 @@ import image6 from "../assets/images/image6.webp";
         <!-- icon 1 -->
         <div class="flex flex-col items-center text-center px-4">
           <div
-            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+            class="animate__animated animate__pulse animate__infinite w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
           >
             <img src="/earth.svg" alt="earth icon" class="h-10" />
           </div>
@@ -85,7 +85,7 @@ import image6 from "../assets/images/image6.webp";
         <!-- icon 2 -->
         <div class="flex flex-col items-center text-center px-4">
           <div
-            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+            class="animate__animated animate__pulse animate__infinite w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
           >
             <img src="/plant.svg" alt="plant icon" class="h-10" />
           </div>
@@ -97,7 +97,7 @@ import image6 from "../assets/images/image6.webp";
         <!-- icon 1 -->
         <div class="flex flex-col items-center text-center px-4">
           <div
-            class="w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
+            class="animate__animated animate__pulse animate__infinite w-20 h-20 rounded-full bg-orange60 flex items-center justify-center mb-6"
           >
             <img src="/heart.svg" alt="heart icon" class="h-10" />
           </div>
@@ -372,51 +372,67 @@ import image6 from "../assets/images/image6.webp";
           </div>
         </div>
       </section>
+    </div>
+  </section>
+  <!-- Volunteer section-->
 
-      <!-- Bliv frivillig section-->
+  <section class="mt-40 mb-30 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <!-- image -->
+    <div
+      id="fotoinview"
+      class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
+    >
+      <!-- Orange outline -->
+      <div
+        class="absolute right-[-22px]
+           h-[90%] w-[95%]
+           border-3 border-orange60
+           rounded-2xl
+           border-l-2 border-t-2"
+      >
+      </div>
 
-      <section class="mt-40 mb-20 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- image -->
-        <div class="relative w-full max-w-[380px] mx-auto">
-          <!-- Orange outline -->
-          <div
-            class="absolute -top-6 right-[-25px]
-         h-[92%] w-[95%]
-         border-2 border-orange60
-         rounded-3xl
-         border-l-0 border-t-0"
-          >
-          </div>
+      <!-- Image container -->
+      <div class="relative rounded-2xl overflow-hidden">
+        <Image
+          src={image10}
+          alt="3 people hugging"
+          class="rounded-2xl w-full h-auto object-cover"
+        />
+      </div>
+    </div>
 
-          <!-- Image container -->
-          <div class="relative rounded-3xl overflow-hidden shadow-sm">
-            <Image
-              src={image6}
-              alt="2 happy people"
-              class="rounded-3xl w-full h-auto object-cover"
-            />
-          </div>
+    <div>
+      <!-- Boks -->
+      <aside
+        class="w-full max-h-lg max-w-lg bg-green60 rounded-2xl p-6 lg:p-10 mx-auto"
+      >
+        <div class="mb-5">
+          <Heading htmlheading="h2" size="medium">Bliv frivillig nu!</Heading>
         </div>
-        <!-- Boks -->
-        <aside class="w-full max-w-sm bg-green60 rounded-2xl p-8">
-          <Heading
-            htmlheading="h2"
-            size="xsmall"
-            stylingclasses="text-primaryblue60"
-          >
-            Tilmeld dig her!
-          </Heading>
-          <p>
-            På landsplan har vi mere end 100 frivillige, som støtter unge i
-            deres udfordringer og er med til at øge deres trivsel. Har du lyst
-            til at hjælpe unge, udvikle dine egne kompetencer og blive en del af
-            et fedt frivilligt fællesskab? Så udfyld ansøgningsskemaet!
-          </p>
-          <div class="mt-4">
-            <Button variant="secondary" size="medium"> Send andsøgning </Button>
-          </div>
-        </aside>
-      </section>
+
+        <p class="text-beige pr-9">
+          På landsplan har vi mere end 100 frivillige, som støtter unge i deres
+          udfordringer og er med til at øge deres trivsel. Har du lyst til at
+          hjælpe unge, udvikle dine egne kompetencer og blive en del af et fedt
+          frivilligt fællesskab? Så udfyld ansøgningsskemaet!
+        </p>
+
+        <div class="mt-4">
+          <Button href="/frivillig" variant="secondary" size="medium">
+            Send ansøgning
+          </Button>
+        </div>
+      </aside>
     </div>
   </section>
 </MainLayout>
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+
+  /* inView animation */
+  inView("#fotoinview", () => {
+    animate("#fotoinview", { x: [-2000, 0] }, { duration: 3 });
+  });
+</script>
