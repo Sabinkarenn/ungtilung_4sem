@@ -31,7 +31,9 @@ import Heading from "../components/Heading.astro";
         </Heading>
 
         <div class="mt-4">
-          <Button variant="secondary" size="medium"> Læs mere </Button>
+          <Button href="#vision" variant="secondary" size="medium">
+            Læs mere
+          </Button>
         </div>
       </div>
 
@@ -56,42 +58,53 @@ import Heading from "../components/Heading.astro";
   </section>
 
   <!-- Hvem er ungtilung section -->
-  <section class="mt-20 grid grid-cols-1 md:grid-cols-2">
+
+  <section class="mt-30 grid grid-cols-1 md:grid-cols-2 gap-10">
     <!-- image -->
-    <div class="relative w-full max-w-[380px] mx-auto">
+    <div
+      id="fotoinview"
+      class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
+    >
       <!-- Orange outline -->
       <div
-        class="absolute -top-6 right-[-25px]
-                 h-[92%] w-[95%]
-                 border-2 border-orange60
-                 rounded-3xl
-                 border-l-0 border-t-0"
+        class="absolute right-[-22px]
+           h-[90%] w-[95%]
+           border-3 border-orange60
+           rounded-2xl
+           border-l-2 border-t-2"
       >
       </div>
 
       <!-- Image container -->
-      <div class="relative rounded-2xl overflow-hidden shadow-sm">
+      <div class="relative rounded-2xl overflow-hidden">
         <Image
           src={imageomos1}
-          alt="2 happy people"
+          alt="4 people hugging"
           class="rounded-2xl w-full h-auto object-cover"
         />
       </div>
     </div>
 
-    <!-- tekst indhold -->
-    <div class="m-6 text-base lg:pl-8">
-      <Heading htmlheading="h2" size="large">Hvem er Ungtilung?</Heading>
+    <div class="pl-5">
+      <!-- tesk section -->
 
-      <p class="mt-5 md:text-base max-w-prose">
-        UngTilUng er et projekt under Foreningen UngTrivsel (Tidligere
-        Foreningen Den Boligsociale Fond). UngTilUng blev stiftet i 2013 med
-        formålet om at hjælpe unge mellem 16-35 år med at styrke deres trivsel –
-        gennem digitale initiativer. UngTilUng er drevet af et fagligt stærkt
-        team og mere end 100 passionerede frivillige. De fleste med egne
-        erfaringer, som derfor til fulde forstår, hvordan det er at være ung med
-        de udfordringer, det kan medføre.
+      <div class="mb-5">
+        <Heading htmlheading="h2" size="medium">Hvem er Ungtilung?</Heading>
+      </div>
+
+      <p class="pr-25">
+        iftet i 2013 med formålet om at hjælpe unge mellem 16-35 år med at
+        styrke deres trivsel – gennem digitale initiativer. UngTilUng er drevet
+        af et fagligt stærkt team og mere end 100 passionerede frivillige. De
+        fleste med egne erfaringer, som derfor til fulde forstår, hvordan det er
+        at være ung med de udfordringer, det kan medføre.
       </p>
+
+      <div class="mt-4">
+        <Button href="#vision" variant="secondary" size="medium">
+          Læs mere
+        </Button>
+      </div>
     </div>
   </section>
 
@@ -104,10 +117,10 @@ import Heading from "../components/Heading.astro";
       </div>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center items-stretch"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8
+             justify-items-center items-stretch"
       >
-        <!-- Wrap hvert kort i en wrapper der bestemmer bredden -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/jannik"
             image="jannik.webp"
@@ -120,8 +133,7 @@ import Heading from "../components/Heading.astro";
           />
         </div>
 
-        <!-- Pernille -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/pernille"
             image="pernille.webp"
@@ -134,36 +146,33 @@ import Heading from "../components/Heading.astro";
           />
         </div>
 
-        <!-- Julie -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/julie"
             image="julie.webp"
             imageAlt="Julie Marie Jensen"
             name="Julie Marie Jensen"
-            role="Projektleder for digitale fælleskaber"
+            role="Projektleder for digitale fællesskaber"
             bio="Jeg er ansvarlig for frivillige i kommunikationsteamet og for gruppelederne for vores fællesskaber samt udviklingen af vores kommunikations- og fællesskabstilbud. Cand. Mag. i Dansk & Psykologi"
             email="jmj@ungtilung.com"
             linkedin=""
           />
         </div>
 
-        <!-- Louise -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/louise"
             image="louise.webp"
             imageAlt="Louise Thorendal"
             name="Louise Thorendal"
             role="Administrativ medarbejder"
-            bio="Jeg sidder primært med administrativt og IT/teknik, og derudover er jeg er studerende på CBS, hvor jeg læser psykologi og erhvervsøkonomi."
+            bio="Jeg sidder primært med administrativt og IT/teknik, og derudover er jeg studerende på CBS, hvor jeg læser psykologi og erhvervsøkonomi."
             email="lt@ungtilung.com"
             linkedin=""
           />
         </div>
 
-        <!-- Rosalina -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/rosalina"
             image="rosalina.webp"
@@ -176,8 +185,7 @@ import Heading from "../components/Heading.astro";
           />
         </div>
 
-        <!-- Amalie -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/amalie"
             image="amalie.webp"
@@ -190,8 +198,7 @@ import Heading from "../components/Heading.astro";
           />
         </div>
 
-        <!-- Mikkel -->
-        <div class="max-w-[320px] w-full">
+        <div class="max-w-[320px] w-full min-h-[620px]">
           <MedarbejderCard
             url="/team/mikkel"
             image="mikkel.webp"
@@ -208,7 +215,16 @@ import Heading from "../components/Heading.astro";
   </section>
 
   <!-- Vores vision section -->
-  <section class="mt-40 mb-30">
+  <section id="vision" class="mt-40 mb-30">
     <Slider3 />
   </section>
 </MainLayout>
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+
+  /* inView animation */
+  inView("#fotoinview", () => {
+    animate("#fotoinview", { x: [-2000, 0] }, { duration: 3 });
+  });
+</script>

@@ -3,7 +3,6 @@
 const {
   url = "/singleview",
   image = "",
-  imageAlt = "",
   name = "",
   role = "",
   bio = "",
@@ -18,26 +17,25 @@ import Heading from "../components/Heading.astro";
   class="block w-full no-underline text-inherit"
   aria-label={`Gå til ${name}`}
 >
-  <div class="w-full hover:scale-[1.02] transition-transform duration-300">
+  <div
+    class="relative w-full max-w-[360px] mx-auto hover:scale-[1.02] transition-transform duration-300"
+  >
     <!-- Outer card -->
     <div
-      class="rounded-xl border-2 border-orange60 bg-beige p-4 gap-4 relative overflow-hidden h-full flex flex-col"
+      class="rounded-2xl border-2 border-orange60 bg-beige p-4 gap-4 relative overflow-hidden"
     >
-      <!-- Image wrapper -->
+      <!-- Image wrapper (giver indre kant + afrundede hjørner) -->
       <div class="w-full flex justify-center">
-        <div
-          class="w-full max-w-[300px] rounded-lg border-2 border-orange60 overflow-hidden"
-        >
+        <div class="w-full max-w-[300px] rounded-lg border-2 border-orange60">
           <img
             src={image}
-            alt={imageAlt}
-            class="w-full h-[300px] object-cover block"
+            class="w-full h-[300px] object-cover rounded-lg block"
           />
         </div>
       </div>
 
-      <!-- Tekstindhold (flex-grow for at skubbe footer til bund) -->
-      <div class="pt-4 pl-0 flex-1">
+      <!-- Tekstindhold -->
+      <div class="pt-4 pl-2">
         <Heading htmlheading="h2" size="small">{name}</Heading>
 
         <p class="text-sm text-primaryblue100 font-semibold mb-2">{role}</p>
@@ -47,28 +45,21 @@ import Heading from "../components/Heading.astro";
         </p>
       </div>
 
-      <!-- footer: email venstre og linkedin ikon højre -->
-      <div class="mt-4 flex items-center justify-between">
-        <div class="flex items-center">
-          <a
-            href={`mailto:${email}`}
-            class="flex items-center no-underline text-primaryblue100 text-sm"
-          >
-            <img src="/mail.svg" alt="mail icon" class="h-6 w-6" />
-            <span class="underline pl-2 text-sm">{email}</span>
-          </a>
-        </div>
-
-        <div>
-          <a
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Linkedin profil"
-          >
-            <img src="/linkedin.svg" alt="Linkedin icon" class="h-6 w-6" />
-          </a>
-        </div>
+      <!-- email venstre og linkedin ikon nederst højre -->
+      <div class="justify-end mt-4 flex">
+        <a
+          href={`mailto:${email}`}
+          class="text-primaryblue100 text-sm no-underline"
+        >
+          <!-- email icon -->
+          <img src="/mail.svg" alt="mail icon" class="h-14" />
+          <span class="text-primaryblue100 pl-3">{email}</span>
+        </a>
+      </div>
+      <div class="flex justify-end">
+        <a href={linkedin} aria-label="Linkedin">
+          <img src="/linkedin.svg" alt="Linkedin icon" class="h-8" />
+        </a>
       </div>
     </div>
   </div>

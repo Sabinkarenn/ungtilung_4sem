@@ -56,7 +56,7 @@ import Form from "../components/Form.astro";
   </section>
   <!-- blog section -->
 
-  <section class="mt-40 text-center px-4">
+  <section class="mt-20 text-center px-4">
     <!-- Alle blogs vises ved indlæsning -->
     <div x-data="{ dagaktiv: 'alleblogs' }">
       <!-- Filter knapper -->
@@ -102,22 +102,21 @@ import Form from "../components/Form.astro";
       <!-- Alle blogs -->
       <!-- grid til cards -->
       <div
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20 eventcards"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
         x-show="dagaktiv === 'alleblogs'"
       >
         <Blogcard
-          url="/singleview"
           cardimage="blog1.webp"
           cardimagealt="To venner"
           category="Venskab"
-          categoryColor="bg-green40"
+          categoryColor="bg-green60"
           date="2. april 2025"
           author="Anne P."
           cardtitle="Det nemme venskab er en illusion"
+          cardtext="Venskaber er ikke altid så nemme, som vi tror."
         />
 
         <Blogcard
-          url="/singleview"
           cardimage="blog2.webp"
           cardimagealt="2 venner"
           category="Venskab"
@@ -125,9 +124,9 @@ import Form from "../components/Form.astro";
           date="4 februar 2025"
           author="Anne P."
           cardtitle="5 konkrete tips til at få nye venner"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog3.webp"
           cardimagealt="Ung med computer"
           category="Angst"
@@ -135,9 +134,9 @@ import Form from "../components/Form.astro";
           date="3. december 2024"
           author="Anne P."
           cardtitle="Sådan falder du i søvn selvom du har tankemylder"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog4.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -145,9 +144,9 @@ import Form from "../components/Form.astro";
           date="1. december 2024"
           author="Anne P."
           cardtitle="Ensomhed: Når man føler sig alene i sommeren"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog5.webp"
           cardimagealt="Ensom ung"
           category="Angst"
@@ -155,10 +154,10 @@ import Form from "../components/Form.astro";
           date="24. november 2024"
           author="Anne P."
           cardtitle="Bekymringer, kontrol og travle tanker"
+          cardtext=""
         />
 
         <Blogcard
-          url="/singleview"
           cardimage="blog6.webp"
           cardimagealt="Ensom ung"
           category="Angst"
@@ -166,9 +165,9 @@ import Form from "../components/Form.astro";
           date="13. november 2024"
           author="Anne P."
           cardtitle="Tankemylder: skriv, skriv, skriv"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog7.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -176,9 +175,9 @@ import Form from "../components/Form.astro";
           date="2. november 2024"
           author="Anne P."
           cardtitle="Det store venskabsfokus"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog8.webp"
           cardimagealt="3 venner"
           category="Venskab"
@@ -186,9 +185,9 @@ import Form from "../components/Form.astro";
           date="29. oktober 2024"
           author="Anne P."
           cardtitle="En ven til hver lejlighed"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog9.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -196,15 +195,15 @@ import Form from "../components/Form.astro";
           date="1. oktober 2024"
           author="Anne P."
           cardtitle="Du er ikke alene, selvom det føles sådan"
+          cardtext=""
         />
       </div>
       <!-- Angst-->
       <div
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
         x-show="dagaktiv === 'angst'"
       >
         <Blogcard
-          url="/singleview"
           cardimage="blog3.webp"
           cardimagealt="Ung med computer"
           category="Angst"
@@ -212,9 +211,9 @@ import Form from "../components/Form.astro";
           date="3. december 2024"
           author="Anne P."
           cardtitle="Sådan falder du i søvn selvom du har tankemylder"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog5.webp"
           cardimagealt="Ensom ung"
           category="Angst"
@@ -222,10 +221,10 @@ import Form from "../components/Form.astro";
           date="24. november 2024"
           author="Anne P."
           cardtitle="Bekymringer, kontrol og travle tanker"
+          cardtext=""
         />
 
         <Blogcard
-          url="/singleview"
           cardimage="blog6.webp"
           cardimagealt="Ensom ung"
           category="Angst"
@@ -233,16 +232,16 @@ import Form from "../components/Form.astro";
           date="13. november 2024"
           author="Anne P."
           cardtitle="Tankemylder: skriv, skriv, skriv"
+          cardtext=""
         />
       </div>
 
       <!-- Ensomhed-->
       <div
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
         x-show="dagaktiv === 'ensomhed'"
       >
         <Blogcard
-          url="/singleview"
           cardimage="blog4.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -250,9 +249,9 @@ import Form from "../components/Form.astro";
           date="1. december 2024"
           author="Anne P."
           cardtitle="Ensomhed: Når man føler sig alene i sommeren"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog7.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -260,9 +259,9 @@ import Form from "../components/Form.astro";
           date="2. november 2024"
           author="Anne P."
           cardtitle="Det store venskabsfokus"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog9.webp"
           cardimagealt="Ensom ung"
           category="Ensom"
@@ -270,15 +269,15 @@ import Form from "../components/Form.astro";
           date="1. oktober 2024"
           author="Anne P."
           cardtitle="Du er ikke alene, selvom det føles sådan"
+          cardtext=""
         />
       </div>
       <!--Venskaber-->
       <div
-        class="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 p-4 max-w-5xl mx-auto mb-20"
         x-show="dagaktiv === 'venskaber'"
       >
         <Blogcard
-          url="/singleview"
           cardimage="blog1.webp"
           cardimagealt="To venner"
           category="Venskab"
@@ -286,10 +285,10 @@ import Form from "../components/Form.astro";
           date="2. april 2025"
           author="Anne P."
           cardtitle="Det nemme venskab er en illusion"
+          cardtext=""
         />
 
         <Blogcard
-          url="/singleview"
           cardimage="blog2.webp"
           cardimagealt="2 venner"
           category="Venskab"
@@ -297,9 +296,9 @@ import Form from "../components/Form.astro";
           date="4 februar 2025"
           author="Anne P."
           cardtitle="5 konkrete tips til at få nye venner"
+          cardtext=""
         />
         <Blogcard
-          url="/singleview"
           cardimage="blog8.webp"
           cardimagealt="3 venner"
           category="Venskab"
@@ -307,6 +306,7 @@ import Form from "../components/Form.astro";
           date="29. oktober 2024"
           author="Anne P."
           cardtitle="En ven til hver lejlighed"
+          cardtext=""
         />
       </div>
     </div>
