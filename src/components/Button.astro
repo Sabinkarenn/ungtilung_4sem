@@ -1,31 +1,37 @@
 ---
-const { variant = "primary", size = "large" } = Astro.props;
+const { href = null, variant = "primary", size = "large" } = Astro.props;
 
 const buttonStyling = "btn my-2 border-2 shadow-none rounded-xl";
 
-// Variants
 const variantClasses = {
   primary:
-    "bg-primaryblue60 text-beige  hover:text-primaryblue100 border-primaryblue100 hover:bg-beige  hover:border-primaryblue60",
+    "bg-orange60 text-beige hover:text-primaryblue100 hover:bg-beige border-orange100 hover:border-orange60",
   secondary:
-    "bg-orange60 text-beige hover:bg-blue hover:text-primaryblue100  hover:bg-beige border-orange100 hover:border-orange60",
+    "bg-primaryblue60 text-beige hover:text-primaryblue100 border-primaryblue100 hover:bg-beige hover:border-primaryblue60",
 };
 
-// Sizes
 const sizeClasses = {
-  large: "px-12 py-5",
+  large: "px-33 py-2",
   medium: "px-12 py-2",
   small: "px-4 py-2",
 };
+
+const classes = [
+  buttonStyling,
+  variantClasses[variant],
+  sizeClasses[size],
+  "cursor-pointer inline-flex items-center justify-center",
+];
 ---
 
-<button
-  class:list={[
-    buttonStyling,
-    variantClasses[variant],
-    sizeClasses[size],
-    "cursor-pointer",
-  ]}
->
-  <slot />
-</button>
+{
+  href ? (
+    <a href={href} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type="button" class:list={classes}>
+      <slot />
+    </button>
+  )
+}
