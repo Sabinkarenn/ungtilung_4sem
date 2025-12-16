@@ -52,17 +52,21 @@ import Slider2 from "../components/Slider2.astro";
       </div>
     </div>
 
-    <!-- chattens åbningstider section -->
-    <section class="mt-40 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Åbningstider section-->
+
+    <section class="mt-40 grid grid-cols-1 md:grid-cols-2 gap-10">
       <!-- image -->
-      <div class="relative w-full max-w-[380px] mx-auto">
+      <div
+        id="fotoinview"
+        class="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] mx-auto"
+      >
         <!-- Orange outline -->
         <div
-          class="absolute -top-6 right-[-25px]
-           h-[92%] w-[95%]
-           border-2 border-orange60
-           rounded-3xl
-           border-l-0 border-t-0"
+          class="absolute right-[-22px]
+         h-[90%] w-[95%]
+         border-3 border-orange60
+         rounded-2xl
+         border-l-2 border-t-2"
         >
         </div>
 
@@ -70,56 +74,61 @@ import Slider2 from "../components/Slider2.astro";
         <div class="relative rounded-2xl overflow-hidden">
           <Image
             src={image6}
-            alt="2 happy people"
+            alt="4 people hugging"
             class="rounded-2xl w-full h-auto object-cover"
           />
         </div>
       </div>
-      <!-- Boks -->
-      <aside
-        class="w-full max-h-lg max-w-lg bg-green60 rounded-xl pr-10 p-10 mx-auto"
-      >
-        <div class="mb-5">
-          <Heading htmlheading="h3" size="medium">Bliv frivillig</Heading>
-        </div>
 
-        <ul class="space-y-3 text-white px-2">
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Mandag</span>
-            <span class="text-base">16.00 – 20.00</span>
-          </li>
+      <div>
+        <!-- Boks -->
+        <aside
+          class="w-full max-h-lg max-w-lg bg-green60 rounded-2xl p-6 lg:p-10 mx-auto"
+        >
+          <div class="mb-5">
+            <Heading htmlheading="h2" size="medium"
+              >Chattens Åbningstider</Heading
+            >
+          </div>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Tirsdag</span>
-            <span class="text-base">17.00 – 19.00</span>
-          </li>
+          <ul class="space-y-3 text-beige px-2">
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Mandag</span>
+              <span class="text-base">16.00 – 20.00</span>
+            </li>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Onsdag</span>
-            <span class="text-base">17.00 – 19.00</span>
-          </li>
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Tirsdag</span>
+              <span class="text-base">17.00 – 19.00</span>
+            </li>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Torsdag</span>
-            <span class="text-base">17.00 – 19.00</span>
-          </li>
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Onsdag</span>
+              <span class="text-base">17.00 – 19.00</span>
+            </li>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Fredag</span>
-            <span class="text-base">Lukket</span>
-          </li>
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Torsdag</span>
+              <span class="text-base">17.00 – 19.00</span>
+            </li>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Lørdag</span>
-            <span class="text-base">Lukket</span>
-          </li>
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Fredag</span>
+              <span class="text-base">Lukket</span>
+            </li>
 
-          <li class="flex justify-between items-center">
-            <span class="font-bold">Søndag</span>
-            <span class="text-base">16.00 – 20.00</span>
-          </li>
-        </ul>
-      </aside>
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Lørdag</span>
+              <span class="text-base">Lukket</span>
+            </li>
+
+            <li class="flex justify-between items-center">
+              <span class="font-bold">Søndag</span>
+              <span class="text-base">16.00 – 20.00</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
     </section>
   </section>
   <!-- Citat slider section-->
@@ -131,7 +140,7 @@ import Slider2 from "../components/Slider2.astro";
 
   <!-- overordnet section til info -->
   <section
-    class="mt-30 relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
+    class="mt-40 relative flex flex-col md:flex-row items-center md:justify-center px-10 mb-20"
     x-data="{ info: 'info1' }"
   >
     <!-- div der styre de forskellige muligheder af info -->
@@ -152,7 +161,7 @@ import Slider2 from "../components/Slider2.astro";
       </div>
       <!-- x-show forbinder til click event ovenfor og udløser åbningen af sectionen -->
       <div x-show="info === 'info1'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        <Heading htmlheading="h2" size="large" stylingclasses=" mb-2"
           >Oftest stillede spørgsmål</Heading
         >
         <p class="font-bold">
@@ -187,7 +196,7 @@ import Slider2 from "../components/Slider2.astro";
       </div>
       <!-- Ung til ungs værdier section -->
       <div
-        class="bg-green20 cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
+        class="bg-green20 cursor-pointer rounded-xl text-center border-2 border-primaryblue100 p-4 md:w-16"
         @click="info = 'info2'"
       >
         <Heading
@@ -198,7 +207,7 @@ import Slider2 from "../components/Slider2.astro";
         >
       </div>
       <div x-show="info === 'info2'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        <Heading htmlheading="h2" size="large" stylingclasses=" mb-2"
           >Ung til ungs værdier</Heading
         >
         <p>
@@ -222,7 +231,7 @@ import Slider2 from "../components/Slider2.astro";
       </div>
       <!-- Ung til ungs 5 etiske principper section -->
       <div
-        class="bg-pink cursor-pointer text-center border-2 border-darkblue p-4 md:w-16"
+        class="bg-pink cursor-pointer text-center border-2 border-primaryblue100 p-4 md:w-16"
         @click="info = 'info3'"
       >
         <Heading
@@ -233,7 +242,7 @@ import Slider2 from "../components/Slider2.astro";
         >
       </div>
       <div x-show="info === 'info3'" x-transition class="p-4">
-        <Heading htmlheading="h2" size="medium" stylingclasses=" mb-3"
+        <Heading htmlheading="h2" size="large" stylingclasses=" mb-2"
           >Ung til ungs 5 etiske principper</Heading
         >
         <p>
@@ -269,3 +278,12 @@ import Slider2 from "../components/Slider2.astro";
     </div>
   </section>
 </MainLayout>
+<script>
+  /* Import af Motion One bibliotek */
+  import { animate, stagger, inView, scroll } from "motion";
+
+  /* inView animation */
+  inView("#fotoinview", () => {
+    animate("#fotoinview", { x: [-2000, 0] }, { duration: 3 });
+  });
+</script>
