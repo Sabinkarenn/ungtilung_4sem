@@ -8,7 +8,7 @@ import Heading from "../components/Heading.astro";
 
 <header class="w-full bg-beige border-b-2 border-primaryblue60">
   <nav
-    class="max-w-7xl mx-auto px-4 relative py-4"
+    class="max-w-7xl mx-auto px-4 relative py-2"
     role="navigation"
     aria-label="Hovednavigation"
   >
@@ -19,7 +19,7 @@ import Heading from "../components/Heading.astro";
           <img src="/ungtilunglogo.svg" alt="UngTilUng logo" class="h-10" />
         </a>
 
-        <!-- Desktop menu (venstre side på md+) -->
+        <!-- Desktop menu  -->
         <ul class="hidden md:flex items-center gap-8 text-primaryblue100">
           <li><a href="/" class="hover:text-primaryblue60">Forside</a></li>
           <li>
@@ -35,8 +35,8 @@ import Heading from "../components/Heading.astro";
         </ul>
       </div>
 
-      <!--CTA (desktop) + burger (mobil) -->
-      <div class="flex items-center gap-4">
+      <!--CTA (desktop) & burger (mobil) -->
+      <div class="flex items-start gap-4">
         <div class="hidden md:block">
           <Button variant="primary" size="small">
             Opret brugere / Login
@@ -75,11 +75,13 @@ import Heading from "../components/Heading.astro";
           <!-- Mobile dropdown -->
           <div
             id="mobile-menu"
-            class="absolute top-full w-screen bg-beige origin-top transform
-                   scale-y-0 opacity-0 pointer-events-none transition-all duration-200
-                   max-h-[100vh] overflow-y-auto
-                   peer-checked:scale-y-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
-            style="transform-origin: top;"
+            class="z-50
+             absolute top-full right-0 w-screen bg-beige
+       origin-top-right transform
+       scale-x-0 opacity-0 pointer-events-none
+       transition-all duration-200
+       max-h-[100vh] overflow-y-auto
+       peer-checked:scale-x-100 peer-checked:opacity-100 peer-checked:pointer-events-auto"
           >
             <div class="mx-4 my-4 bg-beige p-6 rounded-xl">
               <div class="flex items-center justify-between mb-10">

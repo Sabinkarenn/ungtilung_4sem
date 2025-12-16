@@ -20,11 +20,11 @@ import Heading from "../components/Heading.astro";
   <div
     class="relative w-full max-w-[360px] mx-auto hover:scale-[1.02] transition-transform duration-300"
   >
-    <!-- Outer card -->
+    <!-- Udenom card -->
     <div
       class="rounded-2xl border-2 border-orange60 bg-beige p-4 gap-4 relative overflow-hidden"
     >
-      <!-- Image wrapper (giver indre kant + afrundede hjørner) -->
+      <!-- Billede -->
       <div class="w-full flex justify-center">
         <div class="w-full max-w-[300px] rounded-lg border-2 border-orange60">
           <img
@@ -45,20 +45,16 @@ import Heading from "../components/Heading.astro";
         </p>
       </div>
 
-      <!-- email venstre og linkedin ikon nederst højre -->
-      <div class="justify-end mt-4 flex">
+      <!-- Email -->
+      <div class="mt-4 w-full overflow-visible">
         <a
           href={`mailto:${email}`}
-          class="text-primaryblue100 text-sm no-underline"
+          class="flex items-center gap-3 text-sm text-primaryblue"
         >
-          <!-- email icon -->
-          <img src="/mail.svg" alt="mail icon" class="h-14" />
-          <span class="text-primaryblue100 pl-3">{email}</span>
-        </a>
-      </div>
-      <div class="flex justify-end">
-        <a href={linkedin} aria-label="Linkedin">
-          <img src="/linkedin.svg" alt="Linkedin icon" class="h-8" />
+          <img src="/mail.svg" alt="Mail icon" class="h-7 w-7 shrink-0" />
+          <span class="whitespace-nowrap">
+            {email}
+          </span>
         </a>
       </div>
     </div>
