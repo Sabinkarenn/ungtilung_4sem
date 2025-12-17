@@ -9,7 +9,7 @@ import image10 from "../assets/images/image10.webp";
 ---
 
 <MainLayout>
-  <!-- Hero section -->
+  <!-- Hero sektion -->
 
   <section
     class="w-full bg-gradient-to-b from-[#D6E6CD] to-[#FBF5EC] py-20 px-6"
@@ -29,13 +29,13 @@ import image10 from "../assets/images/image10.webp";
         >
 
         <div class="mt-4">
-          <Button variant="secondary" size="small"> Send andsøgning </Button>
+          <Button variant="secondary" size="small"> Send ansøgning </Button>
         </div>
       </div>
 
-      <!-- Hero image -->
+      <!-- Hero sektion-->
       <div class="hidden lg:block relative w-full max-w-[370px] mx-auto">
-        <!-- Orange outline -->
+        <!-- Orange border -->
         <div
           class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
        rounded-3xl border-l-0 border-t-0"
@@ -53,20 +53,20 @@ import image10 from "../assets/images/image10.webp";
     </div>
   </section>
 
-  <!-- Infografik section -->
+  <!-- Infografik sektion -->
 
-  <section class="mt-10 lg:mt-20 py-16">
+  <section class="mt-10 lg:mt-10 py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <!-- Titel -->
       <Heading htmlheading="h2" size="large">Vil du være med?</Heading>
 
       <!-- Intro tekst -->
       <p class="max-w-3xl mx-auto mb-15 text-left">
-        Iftet i 2013 med formålet om at hjælpe unge mellem 16–35 år med at
+        Stiftet i 2013 med formålet om at hjælpe unge mellem 16–35 år med at
         styrke deres trivsel – gennem digitale initiativer. UngTilUng er drevet
         af et fagligt stærkt team og mere end 100 passionerede frivillige.
       </p>
-      <!-- Ikon-række -->
+
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start"
       >
@@ -107,14 +107,11 @@ import image10 from "../assets/images/image10.webp";
         </div>
       </div>
 
-      <!-- Info slider section -->
+      <!-- Info slider sektion -->
 
-      <section
-        class="mt-20 lg:mt-40relative px-4 mb-20"
-        x-data="{ info: 'info1' }"
-      >
+      <section class="mt-20 lg:mt-40 relative px-4" x-data="{ info: 'info1' }">
         <div class="max-w-5xl mx-auto">
-          <!-- TOP TABS (mobile: stacked, desktop: row) -->
+          <!-- Knapper -->
           <div class="flex flex-col md:flex-row gap-3 mb-6">
             <button
               @click="info = 'info1'"
@@ -157,7 +154,7 @@ import image10 from "../assets/images/image10.webp";
             </button>
           </div>
 
-          <!-- indhold -->
+          <!-- Indhold -->
           <div
             class="rounded-xl border-2 border-primaryblue100 bg-beige p-8 min-h-[260px]"
           >
@@ -378,7 +375,7 @@ import image10 from "../assets/images/image10.webp";
     </div>
   </section>
 
-  <!-- Volunteer sektion-->
+  <!-- Bliv friviilig sektion-->
 
   <section
     class="mx-auto max-w-7xl px-4 mt-20 lg:mt-40 mb-30 grid grid-cols-1 md:grid-cols-2 gap-10"
