@@ -12,7 +12,7 @@ import Form from "../components/Form.astro";
 ---
 
 <MainLayout>
-  <!-- Hero section -->
+  <!-- Hero sektion -->
 
   <section
     class="w-full bg-gradient-to-b from-[#D6E6CD] to-[#FBF5EC] py-20 px-6"
@@ -31,13 +31,15 @@ import Form from "../components/Form.astro";
         </Heading>
 
         <div class="mt-4">
-          <Button variant="secondary" size="medium"> Se ugens tema </Button>
+          <Button href="#alleblogs" variant="secondary" size="medium">
+            Se ugens tema
+          </Button>
         </div>
       </div>
 
-      <!-- Hero image -->
+      <!-- Hero billede -->
       <div class="hidden lg:block relative w-full max-w-[370px] mx-auto">
-        <!-- Orange outline -->
+        <!-- Orange border -->
         <div
           class="absolute right-0 top-10 h-[85%] w-[90%] border-3 border-orange60
            rounded-2xl border-l-0 border-t-0"
@@ -54,9 +56,9 @@ import Form from "../components/Form.astro";
       </div>
     </div>
   </section>
-  <!-- blog section -->
+  <!-- Blog setion -->
 
-  <section class="mt-20 text-center px-4">
+  <section id="alleblogs" class="mt-20 text-center px-4">
     <!-- Alle blogs vises ved indlæsning -->
     <div x-data="{ dagaktiv: 'alleblogs' }">
       <!-- Filter knapper -->
@@ -311,7 +313,7 @@ import Form from "../components/Form.astro";
       </div>
     </div>
   </section>
-  <!-- Citat slider section-->
+  <!-- Citat slider sektion-->
   <section class="mt-40">
     <Slider />
   </section>

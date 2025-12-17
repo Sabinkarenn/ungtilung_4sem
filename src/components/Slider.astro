@@ -2,12 +2,12 @@
 import Heading from "../components/Heading.astro";
 ---
 
-<!-- INFO SLIDER -->
+<!-- Info slider-->
 <div class="carousel w-full mx-auto max-w-6xl px-6">
-  <!-- SLIDE 1 -->
+  <!-- Slide 1 -->
   <div id="info1" class="carousel-item relative w-full">
     <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
-      <!-- Arrows -->
+      <!-- Pile -->
       <div class="absolute right-6 top-6 flex gap-3">
         <a
           href="#info2"
@@ -24,7 +24,7 @@ import Heading from "../components/Heading.astro";
         </a>
       </div>
 
-      <!-- Content -->
+      <!-- Indhold -->
       <div class="justify-center text-center">
         <div class="mt-15 mb-6">
           <Heading htmlheading="h2" size="large"
@@ -41,10 +41,10 @@ import Heading from "../components/Heading.astro";
     </div>
   </div>
 
-  <!-- SLIDE 2 -->
+  <!-- Slide 2 -->
   <div id="info2" class="carousel-item relative w-full">
     <div class="w-full rounded-xl border-2 border-primaryblue60 bg-beige p-10">
-      <!-- Arrows -->
+      <!-- Pile -->
       <div class="absolute right-6 top-6 flex gap-3">
         <a
           href="#info1"
@@ -60,7 +60,7 @@ import Heading from "../components/Heading.astro";
         </a>
       </div>
 
-      <!-- Content -->
+      <!-- Indhold -->
       <div class="justify-center text-center">
         <div class="mt-15 mb-6">
           <Heading htmlheading="h2" size="large"
@@ -77,7 +77,7 @@ import Heading from "../components/Heading.astro";
   </div>
 </div>
 
-<!-- DOTS -->
+<!-- Prikker -->
 <div class="flex justify-center gap-4 mt-4">
   <a
     href="#info1"
@@ -91,17 +91,13 @@ import Heading from "../components/Heading.astro";
 
 <script>
   (function () {
-    // Find slides dynamisk (alle elementer med .carousel-item)
     const slideEls = Array.from(document.querySelectorAll(".carousel-item"));
     if (!slideEls.length) return;
 
-    // Byg slideIds i samme rækkefølge som DOM
     const slideIds = slideEls.map((el) => "#" + el.id);
 
-    // Find dots (kun de specifikke prikker)
     const dots = Array.from(document.querySelectorAll(".info-dot"));
 
-    // Safety: dots skal matche antal slides - ellers fortsæt, men log
     if (dots.length !== slideIds.length) {
       console.warn("Antal dots matcher ikke antal slides:", {
         slides: slideIds.length,
@@ -109,9 +105,7 @@ import Heading from "../components/Heading.astro";
       });
     }
 
-    // Hjælpefunktion: sæt aktiv ud fra index
     function setActiveIndex(activeIndex) {
-      // bounds check
       const idx = Math.max(0, Math.min(activeIndex, slideIds.length - 1));
 
       slideIds.forEach((id, i) => {
@@ -124,7 +118,6 @@ import Heading from "../components/Heading.astro";
         }
       });
 
-      // Opdater dots: match ved index - hvis der er færre dots end slides, undgå fejl
       dots.forEach((dot, i) => {
         if (i === idx) {
           dot.classList.add("bg-primaryblue60");
@@ -136,48 +129,33 @@ import Heading from "../components/Heading.astro";
       });
     }
 
-    // Find active index ud fra hash (eller 0 hvis ingen)
     function getActiveIndexFromHash() {
       const hash = window.location.hash || "";
       const idx = slideIds.indexOf(hash);
       return idx !== -1 ? idx : 0;
     }
 
-    // Initial sæt
     setActiveIndex(getActiveIndexFromHash());
 
-    // Når hash ændres (pile eller browser navigation)
     window.addEventListener("hashchange", () => {
       setActiveIndex(getActiveIndexFromHash());
     });
 
-    // Gør dots klikbare: opdater hash via history.replaceState for ikke at scrolle
     dots.forEach((dot, i) => {
       dot.addEventListener("click", (e) => {
         e.preventDefault();
         const targetHash =
           dot.getAttribute("href") || slideIds[i] || slideIds[0];
-        // Opdater URL hash uden automatisk scroll
         history.replaceState(null, "", targetHash);
-        // Sæt aktivt slide
         setActiveIndex(i);
       });
     });
 
-    // (Valgfrit) gør pile-links mere præcise hvis du ønsker at undgå browser-scroll:
-    // Vi lytter på klik på pile-anchors inde i carousel og opdaterer via history.replaceState
     const arrowAnchors = Array.from(
       document.querySelectorAll('.carousel a[href^="#"]')
     );
     arrowAnchors.forEach((a) => {
-      a.addEventListener("click", (e) => {
-        // lad browser opdatere hash som normalt — vi håndterer hashchange ovenfor
-        // hvis du vil undgå scroll, uncomment nedenstående lines:
-        // e.preventDefault();
-        // const target = a.getAttribute('href');
-        // history.replaceState(null, '', target);
-        // setActiveIndex(slideIds.indexOf(target));
-      });
+      a.addEventListener("click", (e) => {});
     });
   })();
 </script>
