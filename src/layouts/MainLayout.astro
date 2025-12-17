@@ -49,26 +49,3 @@ import Link from "../components/Link.astro";
     </footer>
   </body>
 </html>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("ctaknap");
-    const trigger = document.getElementById("ctaknaptrigger");
-
-    function checkPosition() {
-      const triggerTop = trigger.getBoundingClientRect().top;
-
-      if (triggerTop < window.innerHeight * 0.2) {
-        // vis knappen
-        btn.classList.remove("opacity-0", "pointer-events-none");
-        btn.classList.add("opacity-100");
-      } else {
-        // skjul knappen
-        btn.classList.add("opacity-0", "pointer-events-none");
-        btn.classList.remove("opacity-100");
-      }
-    }
-
-    window.addEventListener("scroll", checkPosition);
-    checkPosition();
-  });
-</script>
